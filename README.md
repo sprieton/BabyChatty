@@ -1,2 +1,2 @@
 # BabyChatty
-Pedriatic NLP Proyect
+Pedriatic NLP Project
