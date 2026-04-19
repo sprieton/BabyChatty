@@ -47,7 +47,7 @@ Create a .env file in the root directory and add your API credentials:
 OLLAMA_API_KEY=your_key_here
 ```
 
-📈 System Usage
+### 📈 System Usage
 To start the assistant, simply run the main script:
 ```bash
 python main.py
@@ -55,9 +55,25 @@ python main.py
 
 Note: On the first run, the system will detect the absence of the vector database and automatically perform data ingestion from the files located in the data/ folder.
 
-📝 Development Notes
+### 📝 Development Notes
 Chunking: The system uses recursive character splitting (1000 chars with 150 overlap) to preserve medical context.
 
 Embeddings: Powered by all-MiniLM-L6-v2 for a balance between speed and retrieval accuracy.
 
 Frontend: A Streamlit interface is currently under development to replace the CLI.
+
+### Project files
+
+- main.py: The orchestrator that starts the system, coordinates database loading, and launches the chat interface.
+
+- src/config.py: Centralizes all directory paths and model names to keep the project organized and easy to maintain.
+
+- src/chunk_embed_store.py: Handles data loading, recursive chunking, and the creation or loading of the Chroma vector database.
+
+- src/chat.py: Contains the RAG logic, performs context retrieval, and manages the conversation with the Llama 3.1 model.
+
+- data/: The folder where your raw scraped data is stored in .parquet and .jsonl formats.
+
+- chroma_db/: The directory where your bot's "vector brain" is stored once the information has been processed.
+
+- notebooks/lemma_LDA_TopicVis.ipynb: Extraction of document topics with LDA and visualization (html file)
