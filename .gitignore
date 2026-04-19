@@ -1,0 +1,13 @@
+# Entorno virtual específico
+baby_venv/
+
+# Variables de entorno
+.env
+
+# Base de datos y datos
+chroma_db/
+data/
+
+# Python y VSCode
+__pycache__/
+.vscode/
