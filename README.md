@@ -66,6 +66,8 @@ Frontend: A Streamlit interface is currently under development to replace the CL
 
 - main.py: The orchestrator that starts the system, coordinates database loading, and launches the chat interface.
 
+- app.py: The web interface development.
+
 - src/config.py: Centralizes all directory paths and model names to keep the project organized and easy to maintain.
 
 - src/chunk_embed_store.py: Handles data loading, recursive chunking, and the creation or loading of the Chroma vector database.
@@ -77,3 +79,18 @@ Frontend: A Streamlit interface is currently under development to replace the CL
 - chroma_db/: The directory where your bot's "vector brain" is stored once the information has been processed.
 
 - notebooks/lemma_LDA_TopicVis.ipynb: Extraction of document topics with LDA and visualization (html file).
+
+## 🌐 Web Interface (Streamlit)
+
+The project includes a user-friendly web interface built with **Streamlit**. This interface connects to the same RAG logic as the CLI but provides a modern chat experience.
+
+### Key Features:
+- **Persistent Chat History:** Keeps track of the conversation during the session.
+- **Resource Caching:** The vector database is loaded once and stored in memory for near-instant responses.
+- **Context Debugging:** Displays how many medical data chunks were retrieved for each query.
+
+### How to Run the Web App:
+
+```bash
+streamlit run app.py
+```
