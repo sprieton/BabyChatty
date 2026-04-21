@@ -7,7 +7,7 @@ def main():
     print("=== UC3M PEDIATRIC RAG SYSTEM ===")
     
     # 1. Aseguramos que el vectorstore existe, si no, lo crea una sola vez
-    # Esta función debería encapsular la lógica de tu 'chunk_embed_store.py'
+    # Esta función encapsula la lógica del 'chunk_embed_store.py'
     try:
         vectorstore = get_or_create_vectorstore()
     except Exception as e:

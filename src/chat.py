@@ -15,13 +15,14 @@ ollama_api_key = os.getenv("OLLAMA_API_KEY")
 OLLAMA_URL = "https://yiyuan.tsc.uc3m.es"
 llm_model = MODEL_NAME
 
-# --- 2. CONFIGURACIÓN DEL CLIENTE OLLAMA (Tal cual tu práctica) ---
+# --- 2. CONFIGURACIÓN DEL CLIENTE OLLAMA ---
 client = ollama.Client(
     host=OLLAMA_URL,
     headers={"X-API-KEY": ollama_api_key},
 )
 
 def start_rag(vectorstore):
+    # meto vectorspace como argumento así no hay que cargarlo
     # 3. CARGAR BASE DE DATOS LOCAL
     # print("Loading local database...")
     # embeddings = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL)
@@ -34,7 +35,7 @@ def start_rag(vectorstore):
         if user_input.lower() in ['exit', 'quit']: break
 
         # 4. RECUPERACIÓN (Retrieval)
-        # Buscamos los 3 fragmentos más relevantes en nuestra DB local
+        # Buscamos los k fragmentos más relevantes en nuestra DB local (lo pongo a 5)
         docs = vectorstore.similarity_search(user_input, k=5)
         context = "\n\n".join([doc.page_content for doc in docs])
 
@@ -42,6 +43,8 @@ def start_rag(vectorstore):
         prompt_final = f"""You are a professional Pediatric Assistant. 
         Use the following pieces of retrieved context to answer the question. 
         If you don't know the answer, just say you don't know.
+        If a different topic question is posed (example: "What is the weather today?") you should answer that you don't have that information.
+        Never invent any response; if there is not in the data, answer that you don't know.
 
         CRITICAL: Answer strictly in the same language as the input.
         Always add: 'This is not medical advice, please consult a pediatrician.'

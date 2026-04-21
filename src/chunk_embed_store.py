@@ -6,7 +6,7 @@ from langchain_core.documents import Document
 from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 
-# Importamos las rutas y modelos desde tu nuevo config
+# Importamos las rutas y modelos desde config
 from src.config import PARQUET_FILE, CHROMA_DIR, EMBEDDING_MODEL
 
 def load_and_chunk_data(file_path):
@@ -39,7 +39,7 @@ def load_and_chunk_data(file_path):
 
 def save_to_vector_db(chunks):
     """Crea la base de datos vectorial desde cero."""
-    # CHROMA_DIR viene de config.py (es un objeto Path)
+    # CHROMA_DIR viene de config.py
     if CHROMA_DIR.exists():
         shutil.rmtree(CHROMA_DIR)
         print(f"Base de datos antigua en {CHROMA_DIR} eliminada.")
@@ -74,6 +74,6 @@ def get_or_create_vectorstore():
     
     return vectorstore
 
-# Esto permite que si ejecutas este script solo, se genere la DB
+# Esto permite que al ejecutar este script solo, se genere la DB
 if __name__ == "__main__":
     get_or_create_vectorstore()
