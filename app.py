@@ -36,12 +36,12 @@ if prompt := st.chat_input("Ask me about pediatric health..."):
         with st.spinner("Searching medical database..."):
             try:
                 # Llamamos a la lógica de chat.py
-                """
-                answer, num_docs = get_ai_response(prompt, vectorstore)
+                # """
+                # answer, num_docs = get_ai_response(prompt, vectorstore)
                 
-                st.markdown(answer)
-                st.caption(f"ℹRetrieved {num_docs} context chunks from database.")
-                """
+                # st.markdown(answer)
+                # st.caption(f"ℹRetrieved {num_docs} context chunks from database.")
+                # """
                 answer, docs = get_ai_response(prompt, vectorstore)
                 st.markdown(answer)
 
