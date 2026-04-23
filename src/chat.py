@@ -29,7 +29,13 @@ def get_ai_response(user_input, vectorstore):
     # 1. RECUPERACIÓN (Retrieval)
     # Buscamos los 5 fragmentos más relevantes
     docs = vectorstore.similarity_search(user_input, k=5)
-    context = "\n\n".join([doc.page_content for doc in docs])
+    # Add source info to the context for better traceability:
+    context_parts = []
+    for i, doc in enumerate(docs, 1):
+        title = doc.metadata.get("title", "Unknown")
+        source = doc.metadata.get("source", "Unknown")
+        context_parts.append(f"[Source {i}: {title} | {source}]\n{doc.page_content}")
+    context = "\n\n".join(context_parts)
 
     # 2. CONSTRUCCIÓN DEL PROMPT (Tu lógica exacta)
     prompt_final = f"""You are a professional Pediatric Assistant. 
@@ -74,6 +80,14 @@ def start_rag(vectorstore):
             
             print(f"\nAI: {answer}")
             print(f"DEBUG: Chunks recuperados: {len(docs)}")
+            print(f"\n📄 Sources used:")
+            seen = set()
+            for doc in docs:
+                url = doc.metadata.get("source", "unknown")
+                title = doc.metadata.get("title", "unknown")
+                if url not in seen:
+                    print(f"  - {title}: {url}")
+                    seen.add(url)
             
         except Exception as e:
             print(f"\nError de conexión: {e}")

@@ -36,10 +36,31 @@ if prompt := st.chat_input("Ask me about pediatric health..."):
         with st.spinner("Searching medical database..."):
             try:
                 # Llamamos a la lógica de chat.py
+                """
                 answer, num_docs = get_ai_response(prompt, vectorstore)
                 
                 st.markdown(answer)
                 st.caption(f"ℹRetrieved {num_docs} context chunks from database.")
+                """
+                answer, docs = get_ai_response(prompt, vectorstore)
+                st.markdown(answer)
+
+                # Show deduplicated sources used in the response
+                seen = set()
+                sources = []
+                for doc in docs:
+                    url = doc.metadata.get("source", "")
+                    title = doc.metadata.get("title", "Pediatric Article")
+                    if url and url not in seen:
+                        sources.append((title, url))
+                        seen.add(url)
+
+                if sources:
+                    with st.expander(f"📄 Sources ({len(sources)} documents used)"):
+                        for title, url in sources:
+                            st.markdown(f"- [{title}]({url})")
+
+                st.caption(f"ℹ️ Retrieved {len(docs)} context chunks from {len(sources)} documents.")
                 
                 # Guardar respuesta
                 st.session_state.messages.append({"role": "assistant", "content": answer})
