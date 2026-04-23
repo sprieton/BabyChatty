@@ -54,13 +54,27 @@ if prompt := st.chat_input("Ask me about pediatric health..."):
                     if url and url not in seen:
                         sources.append((title, url))
                         seen.add(url)
+                
+                ### para que no se muestren fuentes en caso de que el chat no pueda proporcionar una respuesta
+                # 1. Definimos las frases que indican falta de información
+                negative_phrases = [
+                    "i don't know", 
+                    "i dont know", 
+                    "no tengo información", 
+                    "no lo sé", 
+                    "no encontré información",
+                ]            
 
-                if sources:
+                # Verificamos si la respuesta contiene alguna de esas frases (en minúsculas)
+                answer_start = answer.lower()[:100] 
+                has_no_info = any(phrase in answer_start for phrase in negative_phrases)
+                st.markdown(f"has_no_infoooo: {has_no_info}")
+                if sources and not has_no_info:
                     with st.expander(f"📄 Sources ({len(sources)} documents used)"):
                         for title, url in sources:
                             st.markdown(f"- [{title}]({url})")
 
-                st.caption(f"ℹ️ Retrieved {len(docs)} context chunks from {len(sources)} documents.")
+                    st.caption(f"Retrieved {len(docs)} context chunks from {len(sources)} documents.")
                 
                 # Guardar respuesta
                 st.session_state.messages.append({"role": "assistant", "content": answer})

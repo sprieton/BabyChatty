@@ -41,11 +41,11 @@ def get_ai_response(user_input, vectorstore):
     prompt_final = f"""You are a professional Pediatric Assistant. 
     Use the following pieces of retrieved context to answer the question. 
     If you don't know the answer, just say you don't know.
-    If a different topic question is posed (example: "What is the weather today?") you should answer that you don't have that information.
+    If a different topic question is posed (example: "What is the weather today?", "What can I have for breakfast or for lunch?", "What is your favourite color?", etc.) you should answer that you don't have that information.
     Never invent any response; if there is not in the data, answer that you don't know.
 
     CRITICAL: Answer strictly in the same language as the input.
-    Always add: 'This is not medical advice, please consult a pediatrician.'
+    Always add: 'This is not medical advice, please consult a pediatrician.' or "Esto no es recomendación médica, por favor consulte a un pediatra." if the question was posed in Spanish. Adapt the message to the input language.
 
     Context: {context}
 
@@ -79,15 +79,28 @@ def start_rag(vectorstore):
             answer, docs = get_ai_response(user_input, vectorstore)
             
             print(f"\nAI: {answer}")
-            print(f"DEBUG: Chunks recuperados: {len(docs)}")
-            print(f"\n📄 Sources used:")
-            seen = set()
-            for doc in docs:
-                url = doc.metadata.get("source", "unknown")
-                title = doc.metadata.get("title", "unknown")
-                if url not in seen:
-                    print(f"  - {title}: {url}")
-                    seen.add(url)
+
+            ### para que no se muestren fuentes en caso de que el chat no pueda proporcionar una respuesta
+            negative_phrases = [
+                "i don't know", 
+                "i dont know", 
+                "no tengo información", 
+                "no lo sé", 
+                "no encontré información",
+            ]            
+            answer_start = answer.lower()[:100] 
+            has_no_info = any(phrase in answer_start for phrase in negative_phrases)
+
+            if not has_no_info and docs:
+                print(f"DEBUG: Chunks recuperados: {len(docs)}")
+                print(f"\n📄 Sources used:")
+                seen = set()
+                for doc in docs:
+                    url = doc.metadata.get("source", "unknown")
+                    title = doc.metadata.get("title", "unknown")
+                    if url not in seen:
+                        print(f"  - {title}: {url}")
+                        seen.add(url)
             
         except Exception as e:
             print(f"\nError de conexión: {e}")
