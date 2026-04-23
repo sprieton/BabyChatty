@@ -4,6 +4,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 from langchain_community.vectorstores import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
+from langdetect import detect, LangDetectException
 
 from src.config import CHROMA_DIR, MODEL_NAME, EMBEDDING_MODEL
 
@@ -21,6 +22,23 @@ client = ollama.Client(
     headers={"X-API-KEY": ollama_api_key},
 )
 
+def detect_language(text: str) -> str:
+    """Detecta el idioma del texto y devuelve su nombre completo en inglés."""
+    try:
+        lang_code = detect(text)
+        lang_map = {
+            "es": "Spanish",
+            "en": "English",
+            "fr": "French",
+            "de": "German",
+            "it": "Italian",
+            "pt": "Portuguese",
+            "ca": "Catalan",
+        }
+        return lang_map.get(lang_code, "English")  # fallback a English si no está en el mapa
+    except LangDetectException:
+        return "English"
+
 def get_ai_response(user_input, vectorstore):
     """
     Esta función contiene la lógica central del RAG. 
@@ -37,6 +55,7 @@ def get_ai_response(user_input, vectorstore):
         context_parts.append(f"[Source {i}: {title} | {source}]\n{doc.page_content}")
     context = "\n\n".join(context_parts)
 
+    detected_language = detect_language(user_input)
     # 2. CONSTRUCCIÓN DEL PROMPT (Tu lógica exacta)
     prompt_final = f"""You are a professional Pediatric Assistant. 
     Use the following pieces of retrieved context to answer the question. 
@@ -44,13 +63,18 @@ def get_ai_response(user_input, vectorstore):
     If a different topic question is posed (example: "What is the weather today?", "What can I have for breakfast or for lunch?", "What is your favourite color?", etc.) you should answer that you don't have that information.
     Never invent any response; if there is not in the data, answer that you don't know.
 
-    CRITICAL: Answer strictly in the same language as the input.
-    Always add: 'This is not medical advice, please consult a pediatrician.' or "Esto no es recomendación médica, por favor consulte a un pediatra." if the question was posed in Spanish. Adapt the message to the input language.
+    CRITICAL LANGUAGE RULE: The user is writing in {detected_language}.
+    You MUST respond entirely in {detected_language}. No exceptions.
+    Example: if {detected_language} is Spanish, write the full answer in Spanish.
+    Even the disclaimer at the end must be in {detected_language}.
+
+    Always add the disclaimer: 'This is not medical advice, please consult a pediatrician.'
+    (translated to {detected_language} if it is not English)
 
     Context: {context}
 
     Question: {user_input}
-    Helpful Answer:"""
+    Helpful Answer in {detected_language}:"""
 
     # 3. LLAMADA AL MODELO
     response = client.chat(
