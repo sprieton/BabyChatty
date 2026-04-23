@@ -7,7 +7,8 @@ This project is an intelligent assistant based on **RAG (Retrieval-Augmented Gen
 - `src/`: Source code (Scraper, Ingestion, Chat Logic, and Configuration).
 - `data/`: Retrieved documents in `.parquet` and `.jsonl` formats.
 - `chroma_db/`: Persistent vector database (automatically generated if missing).
-- `main.py`: Main entry point to launch the application.
+- `main.py`: Main entry point to launch the application in the terminal.
+- `app.py`: Main entry point to launch the application in Streamlit.
 - `requirements.txt`: List of Python dependencies.
 
 ## 🛠️ Installation and Setup
