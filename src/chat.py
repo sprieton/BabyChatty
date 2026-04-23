@@ -4,6 +4,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 from langchain_community.vectorstores import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
+from langdetect import detect, LangDetectException
 
 from src.config import CHROMA_DIR, MODEL_NAME, EMBEDDING_MODEL
 
@@ -20,6 +21,23 @@ client = ollama.Client(
     host=OLLAMA_URL,
     headers={"X-API-KEY": ollama_api_key},
 )
+
+def detect_language(text: str) -> str:
+    """Detecta el idioma del texto y devuelve su nombre completo en inglés."""
+    try:
+        lang_code = detect(text)
+        lang_map = {
+            "es": "Spanish",
+            "en": "English",
+            "fr": "French",
+            "de": "German",
+            "it": "Italian",
+            "pt": "Portuguese",
+            "ca": "Catalan",
+        }
+        return lang_map.get(lang_code, "English")  # fallback a English si no está en el mapa
+    except LangDetectException:
+        return "English"
 
 def get_ai_response(user_input, vectorstore):
     """
@@ -38,19 +56,40 @@ def get_ai_response(user_input, vectorstore):
     context = "\n\n".join(context_parts)
 
     # 2. CONSTRUCCIÓN DEL PROMPT (Tu lógica exacta)
-    prompt_final = f"""You are a professional Pediatric Assistant. 
-    Use the following pieces of retrieved context to answer the question. 
-    If you don't know the answer, just say you don't know.
-    If a different topic question is posed (example: "What is the weather today?") you should answer that you don't have that information.
-    Never invent any response; if there is not in the data, answer that you don't know.
+    # prompt_final = f"""You are a professional Pediatric Assistant. 
+    # Use the following pieces of retrieved context to answer the question. 
+    # If you don't know the answer, just say you don't know.
+    # If a different topic question is posed (example: "What is the weather today?") you should answer that you don't have that information.
+    # Never invent any response; if there is not in the data, answer that you don't know.
 
-    CRITICAL: Answer strictly in the same language as the input.
-    Always add: 'This is not medical advice, please consult a pediatrician.'
+    # CRITICAL: Answer strictly in the same language as the input.
+    # Always add: 'This is not medical advice, please consult a pediatrician.'
 
-    Context: {context}
+    # Context: {context}
 
-    Question: {user_input}
-    Helpful Answer:"""
+    # Question: {user_input}
+    # Helpful Answer:"""
+    # 2. DETECCIÓN DE IDIOMA Y CONSTRUCCIÓN DEL PROMPT
+    detected_language = detect_language(user_input)
+
+    prompt_final = f"""You are a professional Pediatric Assistant.
+        Use the following pieces of retrieved context to answer the question.
+        If you don't know the answer, just say you don't know.
+        If a different topic question is posed (example: "What is the weather today?") you should answer that you don't have that information.
+        Never invent any response; if the information is not in the context, say you don't know.
+
+        CRITICAL LANGUAGE RULE: The user is writing in {detected_language}.
+        You MUST respond entirely in {detected_language}. No exceptions.
+        Example: if {detected_language} is Spanish, write the full answer in Spanish.
+        Even the disclaimer at the end must be in {detected_language}.
+
+        Always add the disclaimer: 'This is not medical advice, please consult a pediatrician.'
+        (translated to {detected_language} if it is not English)
+
+        Context: {context}
+
+        Question: {user_input}
+        Helpful Answer in {detected_language}:"""
 
     # 3. LLAMADA AL MODELO
     response = client.chat(
