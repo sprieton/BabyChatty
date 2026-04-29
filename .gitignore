@@ -1,13 +1,14 @@
-# Entorno virtual específico
+# Virtual enviroment
 baby_venv/
 
-# Variables de entorno
+# Environment variables
 .env
 
-# Base de datos y datos
+# Database and database files
 chroma_db/
 data/
 
-# Python y VSCode
+# Python and VSCode
+*/__pycache__/
 __pycache__/
 .vscode/

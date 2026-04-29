@@ -43,7 +43,7 @@ pip install -r requirements.txt
 ```
 
 ### 4. Environment Variables
-Create a .env file in the root directory and add your API credentials:
+Create a .env file in the root directory of the project and add your API credentials:
 ```bash
 OLLAMA_API_KEY=your_key_here
 ```
