@@ -1,6 +1,9 @@
+import sys, os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 import streamlit as st
-from src.chunk_embed_store import get_or_create_vectorstore
-from src.chat import get_ai_response
+import ollama # Needed to catch specific API errors
+from utils import VectorDBFactory, RAGChat, GenConfig
 
 # ─────────────────────────────────────────────
 # PAGE CONFIG
@@ -127,7 +130,6 @@ html, body, [data-testid="stAppViewContainer"] {
 [data-testid="stSidebar"] .stButton > button:hover { opacity: .9 !important; transform: translateY(-1px) !important; }
 
 /* ── Suggestion chip buttons (main content) ── */
-/* Target every possible Streamlit button wrapper outside sidebar */
 .stButton > button,
 div[data-testid="stButton"] > button,
 button[kind="secondary"],
@@ -145,7 +147,6 @@ button[kind="primary"] {
     transition: border-color .15s, background .15s, color .15s, transform .1s !important;
     box-shadow: 0 2px 16px rgba(0,0,0,.07) !important;
 }
-/* Force the inner text elements — Streamlit nests <p> and <span> inside buttons */
 .stButton > button *, 
 div[data-testid="stButton"] > button *,
 button[kind="secondary"] *,
@@ -168,6 +169,7 @@ button[kind="secondary"]:hover *,
 button[kind="primary"]:hover * {
     color: #4db8b0 !important;
 }
+
 /* Sidebar overrides come AFTER to win specificity */
 [data-testid="stSidebar"] .stButton > button,
 [data-testid="stSidebar"] div[data-testid="stButton"] > button {
@@ -421,7 +423,6 @@ button[kind="primary"]:hover * {
 }
 
 /* ── Chat input override ── */
-/* Let Streamlit handle positioning naturally — no fixed override that ignores sidebar */
 [data-testid="stChatInput"] {
     background: var(--bg) !important;
     border-top: 1.5px solid var(--border) !important;
@@ -492,9 +493,11 @@ NEGATIVE_PHRASES = [
 ]
 
 def has_no_info(answer: str) -> bool:
+    """Checks if the LLM response contains a 'no info' disclaimer."""
     return any(p in answer.lower()[:120] for p in NEGATIVE_PHRASES)
 
 def render_message(role: str, content: str, docs=None, timestamp: str = ""):
+    """Renders a chat message with custom HTML/CSS for a native app feel."""
     avatar_emoji = "👤" if role == "user" else "👶"
     bubble_class = "user" if role == "user" else "ai"
     row_class    = "user" if role == "user" else "assistant"
@@ -512,7 +515,7 @@ def render_message(role: str, content: str, docs=None, timestamp: str = ""):
         unsafe_allow_html=True,
     )
 
-    # Sources (only for AI messages with docs)
+    # Sources expander (only for AI messages that successfully retrieved info)
     if role == "assistant" and docs and not has_no_info(content):
         seen, sources = set(), []
         for doc in docs:
@@ -529,22 +532,28 @@ def render_message(role: str, content: str, docs=None, timestamp: str = ""):
 
 
 # ─────────────────────────────────────────────
-# LOAD DB (cached)
+# LOAD STATE & BACKEND CLASSES (cached)
 # ─────────────────────────────────────────────
 @st.cache_resource
-def load_db():
-    return get_or_create_vectorstore()
+def load_backend():
+    """
+    Initializes the RAGChat class once per session.
+    This automatically loads/creates the VectorDB using the config settings.
+    """
+    # Since VectorDB initialization happens inside RAGChat.__init__,
+    # we just need to instantiate the bot class.
+    return RAGChat()
 
-vectorstore = load_db()
-
+# Initialize the RAG bot engine
+bot = load_backend()
 
 # ─────────────────────────────────────────────
-# SESSION STATE
+# SESSION STATE MANAGEMENT
 # ─────────────────────────────────────────────
 if "messages" not in st.session_state:
-    st.session_state.messages = []          # [{role, content, docs?}]
+    st.session_state.messages = []          # Format: [{"role": str, "content": str, "docs": list}]
 if "conversations" not in st.session_state:
-    st.session_state.conversations = []    # list of saved conversation snapshots
+    st.session_state.conversations = []     # List of saved conversation snapshots
 if "pending_suggestion" not in st.session_state:
     st.session_state.pending_suggestion = None
 
@@ -561,10 +570,10 @@ with st.sidebar:
     </div>
     """, unsafe_allow_html=True)
 
-    # New chat
+    # New chat button
     if st.button("✏️  New conversation"):
         if st.session_state.messages:
-            # Save snapshot of current conversation
+            # Save a snapshot of the current conversation
             first_msg = next(
                 (m["content"][:40] for m in st.session_state.messages if m["role"] == "user"),
                 "Conversation"
@@ -587,10 +596,10 @@ with st.sidebar:
 
     # Info chips
     st.markdown("---")
-    st.markdown("""
+    st.markdown(f"""
     <div style="padding:0 .6rem">
         <div style="font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:.5rem">System</div>
-        <span class="info-chip">🧠 Llama 3.1 · UC3M</span>
+        <span class="info-chip">🧠 {GenConfig.model_name}</span>
         <span class="info-chip">🔍 RAG · ChromaDB</span>
         <span class="info-chip" style="background:var(--accent-soft);color:var(--accent)">👩‍⚕️ Pediatric DB</span>
     </div>
@@ -599,7 +608,7 @@ with st.sidebar:
     </div>
     """, unsafe_allow_html=True)
 
-    # Status
+    # Status indicator
     st.markdown("""
     <div class="status-bar" style="margin-top:1rem">
         <span class="status-dot"></span> Model connected
@@ -610,7 +619,6 @@ with st.sidebar:
 # ─────────────────────────────────────────────
 # MAIN AREA
 # ─────────────────────────────────────────────
-
 SUGGESTIONS = [
     ("🤒", "My baby has a fever of 38.5°C. What should I do?"),
     ("🍼", "When can I start introducing solid foods?"),
@@ -620,7 +628,7 @@ SUGGESTIONS = [
     ("🌡️", "What are signs of dehydration in infants?"),
 ]
 
-# Welcome hero (only when no messages)
+# Display Welcome hero if chat is empty
 if not st.session_state.messages:
     st.markdown("""
     <div class="welcome-hero">
@@ -630,7 +638,7 @@ if not st.session_state.messages:
     </div>
     """, unsafe_allow_html=True)
 
-    # Suggestion buttons (only Streamlit-native — these are the ones that actually work)
+    # Render suggestion buttons
     cols = st.columns(2)
     for idx, (icon, text) in enumerate(SUGGESTIONS):
         with cols[idx % 2]:
@@ -639,7 +647,7 @@ if not st.session_state.messages:
                 st.session_state.pending_suggestion = text
                 st.rerun()
 else:
-    # Render conversation history
+    # Render the conversation history
     for msg in st.session_state.messages:
         render_message(
             role    = msg["role"],
@@ -649,29 +657,38 @@ else:
 
 
 # ─────────────────────────────────────────────
-# CHAT INPUT
+# CHAT INPUT & LOGIC
 # ─────────────────────────────────────────────
 prompt = st.chat_input("Ask me about your child's health…")
 
-# Handle suggestion click
+# Check if a suggestion button was clicked
 if st.session_state.pending_suggestion:
     prompt = st.session_state.pending_suggestion
     st.session_state.pending_suggestion = None
 
 if prompt:
-    # Save and immediately render the user message so it's visible during loading
+    # 1. Add and render the user's prompt immediately
     st.session_state.messages.append({"role": "user", "content": prompt})
     render_message(role="user", content=prompt)
 
-    # Show typing indicator while the LLM retrieves the answer
+    # 2. Query the backend while showing a spinner
     with st.spinner("🔍 Searching medical database…"):
         try:
-            answer, docs = get_ai_response(prompt, vectorstore)
+            # We use the internal methods of the RAGChat instance
+            lang = bot._detect_language(prompt)
+            answer, docs = bot._get_ai_response(prompt, lang)
+            
+        except ollama.ResponseError as e:
+            # Specific handling for API keys or connection refusals (e.g. 401 Unauthorized)
+            answer = f"⚠️ Ollama API Error: The server rejected the request. Details: {e.error}"
+            docs = []
+            
         except Exception as e:
-            answer = f"⚠️ Connection error: {e}"
-            docs   = []
+            # General fallback
+            answer = f"⚠️ Connection error: Please check your network or API keys. Details: {e}"
+            docs = []
 
-    # Save assistant message (with docs for source rendering)
+    # 3. Save and render the assistant's response
     st.session_state.messages.append({
         "role":    "assistant",
         "content": answer,

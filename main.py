@@ -1,21 +1,15 @@
-import os
-import sys
-from src.chunk_embed_store import get_or_create_vectorstore
-from src.chat import start_rag
+from utils import RAGChat
 
 def main():
     print("=== UC3M PEDIATRIC RAG SYSTEM ===")
-    
-    # 1. Aseguramos que el vectorstore existe, si no, lo crea una sola vez
-    # Esta función encapsula la lógica del 'chunk_embed_store.py'
-    try:
-        vectorstore = get_or_create_vectorstore()
-    except Exception as e:
-        print(f"Error cargando la base de datos: {e}")
-        sys.exit(1)
-    
 
-    start_rag(vectorstore)
+    print(f"[main] Starting Baby Chatty...")
+    # 1. We construct the RAG chat
+    baby_chatty = RAGChat()
+    
+    print(f"[main] Starting RAG loop...")
+    # 2. We start the RAG loop with the vector db ready
+    baby_chatty.start()
 
 
 if __name__ == "__main__":
