@@ -8,6 +8,7 @@ class GenConfig:
     root_dir    = Path(__file__).resolve().parent.parent    # proyect root directory
     data_dir    = root_dir / "data"             # directory for data files (e.g., parquet)
     chroma_dir  = root_dir / "chroma_db"        # directory for Chroma vector store (ignored in .gitignore)
+    reports_dir = root_dir / "reports"          # directory for analysis reports (e.g., corpus audit)
 
     # parquet with the infetion advice data (already processed and cleaned)
     parquet_file    = data_dir / "kidshealth_en_parents_infections.parquet"
@@ -55,4 +56,44 @@ class ScrapingConfig:
         'bronchitis', 'cold', 'colds', 'temperature', 'poison', 'poisonings', 'gastroenteritis', 
         'inflammation', 'meningitis', 'pneumonia', 'salmonella', 'sepsis', 'otitis',
         'contagious', 'diarrhea', 'conjunctivitis', 
+    ]
+
+class AnalysisConfig:
+    """ Configuration for the corpus analysis and auditing."""
+    # ── Analysis parameters ───────────────────────────────────────────────────
+    min_word_count = 80         # Minimum word count to consider a document valid (after extraction)
+    boilerplate_threshold = 0.5 # Threshold for considering a document as possible boilerplate
+    corpus_name = "parents_infections"  # name of the corpus to analyze (key in corpora dict)
+
+    # ── Analysis paths ────────────────────────────────────────────────────────
+    parquet_file = GenConfig.data_dir / "kidshealth_en_parents_infections_clean.parquet"  # parquet file to analyze
+    out_path = GenConfig.reports_dir / "corpus_comparison_summary.csv"  # where to save the cleaned parquet
+    corpus_quality_path = GenConfig.reports_dir / "final_corpus_quality_summary.csv"  # where to save the corpus quality metrics (one row per corpus)
+    corpus_rew_30 = GenConfig.reports_dir / "corpus_manual_review_sample.csv"  # where to save the manual review sample (30 random docs)
+    # ── Analysis extra constructs ─────────────────────────────────────────────
+    # dictionary of corpora to compare, can add more parquets here with a name as key
+    corpora = { "parents_infections": GenConfig.parquet_file } 
+
+    boilerplate_patterns = [
+        r"Reviewed by:",
+        r"Medically reviewed by:",
+        r"Nemours KidsHealth",
+        r"©",
+        r"for Parents",
+        r"for Kids",
+        r"for Teens",
+        r"Listen",
+        r"Print",
+        r"en español",
+        r"More on this topic",
+    ]
+
+    non_clinical_url_patterns = [
+        r"/about\.html$",
+        r"/all-categories\.html$",
+    ]
+
+    non_clinical_title_patterns = [
+        r"^About Nemours KidsHealth",
+        r"^Health Topics for Parents$",
     ]
