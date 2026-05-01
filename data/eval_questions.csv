@@ -1,0 +1,204 @@
+label,question
+1,What is the MMR vaccine and what diseases does it protect against?
+1,When should children receive the MMR vaccine?
+1,What are common side effects of the flu vaccine?
+1,Why is the flu vaccine needed every year?
+1,What is the HPV vaccine used for?
+1,At what age is the HPV vaccine recommended?
+1,What does the DTaP vaccine protect against?
+1,What is the difference between DTaP and Tdap?
+1,What is pneumococcal disease in children?
+1,How many doses of pneumococcal vaccine do infants need?
+1,Can vaccines cause autism?
+1,What should I do if my child has a fever after vaccination?
+1,When should a flu vaccine be delayed?
+1,What are symptoms of measles in children?
+1,How is mumps transmitted?
+1,What is rubella and why is it dangerous?
+1,What are the symptoms of chickenpox?
+1,How is chickenpox treated at home?
+1,What is rotavirus infection in children?
+1,What are the symptoms of gastroenteritis?
+1,How is strep throat diagnosed?
+1,What causes strep throat in kids?
+1,What are symptoms of tonsillitis?
+1,How is scarlet fever related to strep infection?
+1,What is meningitis in children?
+1,What are early signs of meningitis?
+1,What is RSV and who is at risk?
+1,How is RSV infection treated?
+1,What is bronchiolitis in infants?
+1,What causes pneumonia in children?
+1,What is walking pneumonia?
+1,What are symptoms of bronchitis?
+1,What is COVID-19 in children?
+1,Can children get long-term effects from COVID-19?
+1,What is MIS-C?
+1,How is COVID-19 transmitted?
+1,What is influenza and how does it spread?
+1,What are flu symptoms in kids?
+1,What is the common cold?
+1,How do you treat a cold in children?
+1,When should antibiotics be used?
+1,What happens if antibiotics are overused?
+1,What is an ear infection?
+1,What causes swimmer’s ear?
+1,How do you treat ear pain in children?
+1,What is conjunctivitis (pink eye)?
+1,How is pink eye treated?
+1,What causes styes in the eye?
+1,What is sinusitis?
+1,What are symptoms of sinus infection?
+1,What is appendicitis in children?
+1,What are signs of appendicitis?
+1,What is stomach pain in children usually caused by?
+1,What is food poisoning?
+1,What are symptoms of salmonella infection?
+1,What is E. coli infection?
+1,What is norovirus?
+1,How is norovirus transmitted?
+1,What is hepatitis A?
+1,What is hepatitis B?
+1,What is hepatitis C?
+1,What is HIV and how is it transmitted?
+1,What is AIDS?
+1,What is HPV infection?
+1,What are symptoms of genital warts?
+1,What is syphilis?
+1,What is chlamydia?
+1,What is gonorrhea?
+1,What is trichomoniasis?
+1,What is Lyme disease?
+1,What are symptoms of tick bites?
+1,How do you remove a tick safely?
+1,What is malaria?
+1,What is dengue fever?
+1,What is Zika virus?
+1,What is West Nile virus?
+1,What is rabies?
+1,What are symptoms of tetanus?
+1,What is diphtheria?
+1,What is pertussis (whooping cough)?
+1,What is scabies?
+1,What causes lice in children?
+1,How do you treat head lice?
+1,What is impetigo?
+1,What is cellulitis?
+1,What is MRSA infection?
+1,What is ringworm?
+1,What causes athlete’s foot?
+1,What is diaper rash?
+1,What is eczema?
+1,What is psoriasis in children?
+1,What is vitiligo?
+1,What is hives (urticaria)?
+1,What is allergic reaction in children?
+1,What is asthma in kids?
+1,What is cystic fibrosis?
+1,What is type 1 diabetes?
+1,What are symptoms of hypoglycemia?
+1,What is pediatric fever and when is it dangerous?
+1,When should parents call a doctor for a sick child?
+0,What is the capital of France?
+0,How do I cook pasta al dente?
+0,What is the weather like today in Madrid?
+0,Who won the last World Cup?
+0,How do I learn Python programming?
+0,What is artificial intelligence?
+0,How does blockchain technology work?
+0,What are the best tourist attractions in Italy?
+0,How do I fix a leaking faucet?
+0,What is the population of Japan?
+0,How do airplanes fly?
+0,What is the tallest mountain in the world?
+0,How do I bake a chocolate cake?
+0,What is the history of the Roman Empire?
+0,How do I start a small business?
+0,What is the stock market?
+0,How do I invest in cryptocurrency?
+0,What is machine learning?
+0,How do I build a website from scratch?
+0,What are the best books to read this year?
+0,How do I improve my public speaking skills?
+0,What is climate change?
+0,How do I train for a marathon?
+0,What is the difference between Java and JavaScript?
+0,How do I write a resume?
+0,What are the rules of chess?
+0,How do I play the guitar?
+0,What is the theory of relativity?
+0,How do I meditate properly?
+0,What are the most popular movies of all time?
+0,How do I lose weight quickly?
+0,What is the best way to learn a new language?
+0,How do I grow plants indoors?
+0,What is the capital of Australia?
+0,How do I create a mobile app?
+0,What is cloud computing?
+0,How do I edit videos professionally?
+0,What is the meaning of life?
+0,How do I prepare for a job interview?
+0,What is the difference between a laptop and a desktop?
+0,How do I make homemade pizza?
+0,What are the benefits of exercise?
+0,How do I manage my time better?
+0,What is digital marketing?
+0,How do I become a data scientist?
+0,What is the internet of things?
+0,How do I clean my house efficiently?
+0,What are the best programming languages to learn?
+0,How do I write a novel?
+0,What is virtual reality?
+0,How do I use Excel formulas?
+0,What are the top universities in the world?
+0,How do I create a budget?
+0,What is the difference between debit and credit cards?
+0,How do I start investing in stocks?
+0,What is renewable energy?
+0,How do I improve my memory?
+0,What are the best ways to save money?
+0,How do I learn photography?
+0,What is cybersecurity?
+0,How do I protect my online privacy?
+0,What is the difference between HTTP and HTTPS?
+0,How do I create a YouTube channel?
+0,What are the best travel tips?
+0,How do I pack for a trip?
+0,What is the capital of Canada?
+0,How do I design a logo?
+0,What is graphic design?
+0,How do I use Photoshop?
+0,What are NFTs?
+0,How do I cook rice properly?
+0,What is the best way to study for exams?
+0,How do I deal with stress?
+0,What is emotional intelligence?
+0,How do I build muscle?
+0,What is the keto diet?
+0,How do I learn to code fast?
+0,What are APIs?
+0,How do I use Git and GitHub?
+0,What is DevOps?
+0,How do I deploy a web app?
+0,What is a database?
+0,How do I write SQL queries?
+0,What is big data?
+0,How do I analyze data?
+0,What are neural networks?
+0,How do self-driving cars work?
+0,What is space exploration?
+0,How do rockets launch?
+0,What is the solar system?
+0,How do I learn astronomy?
+0,What is philosophy?
+0,How do I think critically?
+0,What are the best podcasts to listen to?
+0,How do I start a blog?
+0,What is content creation?
+0,How do influencers make money?
+0,What is e-commerce?
+0,How do I sell products online?
+0,What is dropshipping?
+0,How do I manage a team?
+0,What is leadership?
+0,How do I negotiate a salary?

@@ -56,7 +56,7 @@ def main():
 
     questions = load_random_questions(
         cfg.eval_questions,
-        n=2,
+        n=4,
         good_quest=1   # 0 for all non related, 1 for all related
     )
 
