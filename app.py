@@ -488,8 +488,11 @@ button[kind="primary"]:hover * {
 # ─────────────────────────────────────────────
 NEGATIVE_PHRASES = [
     "i don't know", "i dont know",
-    "no tengo información", "no lo sé",
-    "no encontré información",
+    "i do not know", "i don't have enough information",
+    "i do not have enough information", "not enough information",
+    "available documents", "no tengo información", "no tengo suficiente información",
+    "no dispongo de suficiente información", "no lo sé", 
+    "no encontré información", "documentos disponibles",
 ]
 
 def has_no_info(answer: str) -> bool:

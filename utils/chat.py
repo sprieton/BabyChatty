@@ -61,11 +61,19 @@ class RAGChat:
                 # ! This is a check of a negative answer
                 negative_phrases = [
                     "i don't know", 
-                    "i dont know", 
+                    "i dont know",
+                    "i do not know",
+                    "i don't have enough information",
+                    "i do not have enough information",
+                    "not enough information",
+                    "available documents",
                     "no tengo información", 
+                    "no tengo suficiente información",
+                    "no dispongo de suficiente información",
                     "no lo sé", 
                     "no encontré información",
-                ]            
+                    "documentos disponibles",
+                ]           
                 answer_start = answer.lower()[:100] 
                 has_no_info = any(phrase in answer_start for phrase in negative_phrases)
 
@@ -136,6 +144,12 @@ class RAGChat:
         If you don't know the answer, just say you don't know.
         If a different topic question is posed (example: "What is the weather today?", "What can I have for breakfast or for lunch?", "What is your favourite color?", etc.) you should answer that you don't have that information.
         Never invent any response; if there is not in the data, answer that you don't know.
+
+        Before answering, internally check whether the retrieved context contains enough evidence to answer the question.
+        Do not show this reasoning to the user.
+        Do not write step-by-step reasoning.
+        Only provide the final answer.
+        If the retrieved context is not sufficient to answer the question, say that you don't have enough information in the available documents.
 
         CRITICAL LANGUAGE RULE: The user is writing in {lang}.
         You MUST respond entirely in {lang}. No exceptions.
