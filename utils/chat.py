@@ -289,6 +289,12 @@ class RAGChat:
         If a different topic question is posed (example: "What is the weather today?", "What can I have for breakfast or for lunch?", "What is your favourite color?", etc.) you should answer that you don't have that information.
         Never invent any response; if there is not in the data, answer that you don't know.
 
+        Before answering, internally check whether the retrieved context contains enough evidence to answer the question.
+        Do not show this reasoning to the user.
+        Do not write step-by-step reasoning.
+        Only provide the final answer.
+        If the retrieved context is not sufficient to answer the question, say that you don't have enough information in the available documents.
+
         CRITICAL LANGUAGE RULE: The user is writing in {lang}.
         You MUST respond entirely in {lang}. No exceptions.
         Example: if {lang} is Spanish, write the full answer in Spanish.
