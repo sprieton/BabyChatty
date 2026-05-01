@@ -110,11 +110,8 @@ class RAGChat:
                 negative_phrase = self._is_a_negative_answer(answer, docs)
 
                 # 4. Evaluate turn with Ragas (only if the answer is not negative)
-                if not negative_phrase:
-                    # add the disclamer in the appropiate language
-                    print("\n"+cfg.disclamer_prompt[lang])
-                    if eval_mode:
-                        eval_results = self._evaluate_turn(user_input, answer, docs)
+                if not negative_phrase and eval_mode:
+                    eval_results = self._evaluate_turn(user_input, answer, docs)
 
                 # 5. Print the docs used for the answer (for traceability)
                 # ── Stamp docs coverage if we have docs ─────────────────────────────────────────────────
@@ -294,6 +291,12 @@ class RAGChat:
         You MUST respond entirely in {lang}. No exceptions.
         Example: if {lang} is Spanish, write the full answer in Spanish.
         Even the disclaimer at the end must be in {lang}.
+
+        DISCLAIMER RULE:
+        Only include a medical disclaimer if the answer is based on the provided context (i.e., you are confident the information comes from the retrieved data)
+        If the answer is "I don't know" or the information is not in the context, DO NOT include any disclaimer.
+        When required, the disclaimer must be a short sentence stating that the information is general and not a substitute for professional medical care.
+        (translated to {lang} if it is not English)
 
         Context: {context}
 

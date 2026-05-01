@@ -496,6 +496,44 @@ def has_no_info(answer: str) -> bool:
     """Checks if the LLM response contains a 'no info' disclaimer."""
     return any(p in answer.lower()[:120] for p in NEGATIVE_PHRASES)
 
+def ensure_disclaimer(answer: str, docs=None) -> str:
+    """
+    Adds a medical disclaimer ONLY if the answer is grounded in retrieved context.
+    This assumes that presence of docs implies contextual (higher-confidence) answer.
+    """
+
+    answer_lower = answer.lower()
+
+    # ❌ Never add disclaimer if model says it doesn't know
+    if has_no_info(answer):
+        return answer
+
+    # ❌ No context = no grounding = no disclaimer
+    if not docs:
+        return answer
+
+    # ❌ Avoid duplicate disclaimers
+    already_present = (
+        "consult your pediatrician" in answer_lower
+        or "not a substitute for professional medical care" in answer_lower
+        or "not medical advice" in answer_lower
+    )
+
+    if already_present:
+        return answer
+
+    # Check if response is actually based on context content
+    # (simple but more reliable than keyword heuristics)
+    context_used = len(docs) > 0
+
+    if context_used:
+        disclaimer = "\n\n This is not medical advice, please consult a pediatrician."
+        return answer + disclaimer
+
+    return answer 
+
+    return answer
+
 def render_message(role: str, content: str, docs=None, timestamp: str = ""):
     """Renders a chat message with custom HTML/CSS for a native app feel."""
     avatar_emoji = "👤" if role == "user" else "👶"
@@ -677,6 +715,7 @@ if prompt:
             # We use the internal methods of the RAGChat instance
             lang = bot._detect_language(prompt)
             answer, docs = bot._get_ai_response(prompt, lang)
+            answer = ensure_disclaimer(answer)
             
         except ollama.ResponseError as e:
             # Specific handling for API keys or connection refusals (e.g. 401 Unauthorized)

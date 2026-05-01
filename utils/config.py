@@ -57,17 +57,6 @@ class GenConfig:
         r"no (sé|tinc).{0,40}(informació)",
     ]
 
-    disclamer_prompt = {
-        "Spanish": "Esto no es un consejo médico, por favor consulte a un pediatra.",
-        "English": "This is not medical advice, please consult a pediatrician.",
-        "French": "Ceci n'est pas un avis médical, veuillez consulter un pédiatre.",
-        "German": "Dies ist keine medizinische Beratung, bitte konsultieren Sie einen Kinderarzt.",
-        "Italian": "Questo non è un consiglio medico, si prega di consultare un pediatra.",
-        "Portuguese": "Isto não é aconselhamento médico, por favor consulte um pediatra.",
-        "Catalan": "Això no és un consell mèdic, si us plau consulteu un pediatre."
-        }
-
-
 
 # ──────────────────────────────────────────────────────────────────────────────
 # ── Scrapping parameters ──────────────────────────────────────────────────────
