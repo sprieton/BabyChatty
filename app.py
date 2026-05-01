@@ -495,27 +495,42 @@ NEGATIVE_PHRASES = [
 def has_no_info(answer: str) -> bool:
     """Checks if the LLM response contains a 'no info' disclaimer."""
     return any(p in answer.lower()[:120] for p in NEGATIVE_PHRASES)
-DISCLAIMER_TEXT = "⚠️ This is general pediatric information and does not replace professional medical advice. Always consult your pediatrician."
 
-def ensure_disclaimer(answer: str) -> str:
+def ensure_disclaimer(answer: str, docs=None) -> str:
     """
-    Ensures a disclaimer is present when the answer contains advice.
+    Adds a medical disclaimer ONLY if the answer is grounded in retrieved context.
+    This assumes that presence of docs implies contextual (higher-confidence) answer.
     """
+
     answer_lower = answer.lower()
 
-    # Skip if model explicitly says it doesn't know
+    # ❌ Never add disclaimer if model says it doesn't know
     if has_no_info(answer):
         return answer
 
-    # Heuristic: detect advice-like language
-    advice_keywords = ["should", "recommend", "monitor", "give", "watch for", "seek"]
-    needs = any(k in answer_lower for k in advice_keywords)
+    # ❌ No context = no grounding = no disclaimer
+    if not docs:
+        return answer
 
-    # Check if disclaimer already exists
-    already_present = "consult" in answer_lower or "medical advice" in answer_lower
+    # ❌ Avoid duplicate disclaimers
+    already_present = (
+        "consult your pediatrician" in answer_lower
+        or "not a substitute for professional medical care" in answer_lower
+        or "not medical advice" in answer_lower
+    )
 
-    if needs and not already_present:
-        return answer + "\n\n" + DISCLAIMER_TEXT
+    if already_present:
+        return answer
+
+    # Check if response is actually based on context content
+    # (simple but more reliable than keyword heuristics)
+    context_used = len(docs) > 0
+
+    if context_used:
+        disclaimer = "\n\n This is not medical advice, please consult a pediatrician."
+        return answer + disclaimer
+
+    return answer 
 
     return answer
 

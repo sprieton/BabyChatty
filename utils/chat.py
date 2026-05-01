@@ -142,7 +142,10 @@ class RAGChat:
         Example: if {lang} is Spanish, write the full answer in Spanish.
         Even the disclaimer at the end must be in {lang}.
 
-        When providing medical advice or recommendations, include a brief disclaimer that this is general information and not a substitute for professional medical care. Do not include the disclaimer if you do not know the answer.
+        DISCLAIMER RULE:
+        Only include a medical disclaimer if the answer is based on the provided context (i.e., you are confident the information comes from the retrieved data)
+        If the answer is "I don't know" or the information is not in the context, DO NOT include any disclaimer.
+        When required, the disclaimer must be a short sentence stating that the information is general and not a substitute for professional medical care.
         (translated to {lang} if it is not English)
 
         Context: {context}
