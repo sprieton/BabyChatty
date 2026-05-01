@@ -48,7 +48,10 @@ class RAGChat:
         )
         logging.getLogger("ragas").setLevel(logging.ERROR)
 
-        self.embeddings_model = HuggingFaceEmbeddings(model_name=cfg.embedding_model)
+        self.embeddings_model = HuggingFaceEmbeddings(
+            model_name=cfg.embedding_model,
+            model_kwargs={'device': cfg.emb_device}
+            )
 
         # 3. get the vector database ready, if not provided, create it
         print(f"[RAGChat] Loading vector database from {cfg.chroma_dir}...")

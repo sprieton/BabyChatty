@@ -1,5 +1,6 @@
 # src/config.py
 from pathlib import Path
+from torch.cuda import is_available
 
 class GenConfig:
     """"General chat configuration"""
@@ -18,13 +19,14 @@ class GenConfig:
     # ── Model info ────────────────────────────────────────────────────────────
     model_name      = "llama3.1:8b"             # llama3.1:8b qwen3:8b gemma3:4b
     judge_name      = "qwen3:8b"                # LLM as a judge for Ragas
-    embedding_model = "all-MiniLM-L6-v2"  # "all-MiniLM-L6-v2"        # embedding model name (compatible with HuggingFaceEmbeddings)
+    embedding_model = "BAAI/bge-m3"             # multilingual embedding model name
     ollama_url      = "https://yiyuan.tsc.uc3m.es"     # URL of the Ollama server
 
     # ── Data parameters ───────────────────────────────────────────────────────
     chunk_size      = 1000          # number of characters per chunk
     chunk_overlap   = 150           # number of characters to overlap between chunks
     retrieval_num   = 5             # number of relevant chunks to retrieve for each query
+    emb_device      = "cuda" if is_available() else "cpu"
 
     # ── Chat parameters ───────────────────────────────────────────────────────    
     no_info_patterns = [
