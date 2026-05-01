@@ -23,7 +23,10 @@ class VectorDBFactory:
                  parquet_file: Path = cfg.parquet_file
                  ):
         # 1. define the embeddings model ready (we will use it in both cases)
-        self.embeddings_model = HuggingFaceEmbeddings(model_name=embeddings_model)
+        self.embeddings_model = HuggingFaceEmbeddings(
+            model_name=embeddings_model,
+            model_kwargs={'device': cfg.emb_device}
+        )
         self.chroma_dir = chroma_dir
         self.parquet_file = parquet_file
 
@@ -99,7 +102,7 @@ class VectorDBFactory:
             persist_directory=str(self.chroma_dir)   # to string some versions of Chroma prefer it that way
         )
         
-        print(f"¡Éxito! Base de datos vectorial guardada en: {self.chroma_dir}")
+        print(f"[VectorDBFactory] 🎁 Database created suscessfully in {self.chroma_dir}")
         return vectorstore
 
 
