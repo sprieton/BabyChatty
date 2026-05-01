@@ -6,7 +6,7 @@ baby_venv/
 
 # Database and database files
 chroma_db/
-chroma_db/chroma.sqlite3
+chroma_db/*
 data/
 
 # Python and VSCode
