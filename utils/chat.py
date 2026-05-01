@@ -1,6 +1,7 @@
 import os, sys, time, re, statistics
 import ollama
 import logging
+import numpy as np
 from tqdm import tqdm
 from dotenv import load_dotenv
 from langchain_community.vectorstores import Chroma
@@ -42,12 +43,12 @@ class RAGChat:
             api_key="fake-key",  # same API key in the headers of the client
             model=cfg.judge_name,
             default_headers={"X-API-KEY": os.getenv("OLLAMA_API_KEY")},
-            temperature=0       # for evaluation, we want deterministic responses
+            temperature=0,      # for evaluation, we want deterministic responses
+            timeout=120         # avoid timeouts
         )
         logging.getLogger("ragas").setLevel(logging.ERROR)
 
         self.embeddings_model = HuggingFaceEmbeddings(model_name=cfg.embedding_model)
-
 
         # 3. get the vector database ready, if not provided, create it
         print(f"[RAGChat] Loading vector database from {cfg.chroma_dir}...")
@@ -357,7 +358,13 @@ class RAGChat:
                 embeddings=self.embeddings_model,
                 show_progress= not eval_mode,   # disable progress bar
             )
-            print(f"\n[RAGChat] Evaluation results:\n{results}")
+            df = results.to_pandas()
+            print(f"\n[RAGChat] Evaluation results:\n\tQuestion: {question}")
+            print(f"""
+                  \t Faitfulness: {df['faithfulness'].iloc[0]:.3f}\t 
+                  Answer Relevancy: {df['answer_relevancy'].iloc[0]:.3f}
+                  \t Context Utilization:  {df["context_utilization"].iloc[0]:.3f}
+            """)
             return results
         except Exception as e:
             print(f"[_evaluate_turn]: Error in Ragas evaluation: {e}")
@@ -410,6 +417,7 @@ class RAGChat:
 
     def _stamp_eval_metrics(self, results_data, total_time, TP, FP, TN, FN):
         total = TP + FP + TN + FN
+
         accuracy = (TP + TN) / total if total > 0 else 0
         precision = TP / (TP + FP) if (TP + FP) > 0 else 0
         recall = TP / (TP + FN) if (TP + FN) > 0 else 0
@@ -418,21 +426,44 @@ class RAGChat:
             if (precision + recall) > 0 else 0
         )
 
+        def safe_mean(lst):
+            clean = []
+
+            for x in lst:
+                try:
+                    if hasattr(x, "iloc"):      # pandas Series
+                        x = x.iloc[0]
+                    x = float(x)
+                    if not np.isnan(x):
+                        clean.append(x)
+                except Exception:
+                    continue
+
+            return sum(clean) / len(clean) if len(clean) > 0 else 0.0
+
+        avg_time = total_time / max(total, 1)
+
+        faith = safe_mean(results_data.get("faithfulness", []))
+        rel = safe_mean(results_data.get("relevancy", []))
+        ctx = safe_mean(results_data.get("context_util", []))
+
+        # ─────────────────────────────────────────────
+        # 📊 GLOBAL METRICS
+        # ─────────────────────────────────────────────
         print("\n" + "═"*70)
         print("📊 BATCH EVALUATION SUMMARY".center(70))
         print("═"*70)
 
-        avg_time = total_time / max(total, 1)
+        print(f"{'Total questions':<35}: {total:>10}")
+        print(f"{'Avg time / question':<35}: {avg_time:>10.2f} s")
 
-        print(f"{'Total questions':<30}: {total:>10}")
-        print(f"{'Avg time / question':<30}: {avg_time:>10.2f} s")
+        print(f"{'Avg faithfulness (all)':<35}: {faith:>10.3f}")
+        print(f"{'Avg relevancy (all)':<35}: {rel:>10.3f}")
+        print(f"{'Avg context utilization (all)':<35}: {ctx:>10.3f}")
 
-        if results_data["faithfulness"]:
-            print(f"{'Avg faithfulness':<30}: {statistics.mean(results_data['faithfulness']):>10.3f}")
-            print(f"{'Avg relevancy':<30}: {statistics.mean(results_data['relevancy']):>10.3f}")
-            print(f"{'Avg context utilization':<30}: {statistics.mean(results_data['context_util']):>10.3f}")
-
-        # ── Confusion Matrix ───────────────────────────────────────────
+        # ─────────────────────────────────────────────
+        # 📉 CONFUSION MATRIX
+        # ─────────────────────────────────────────────
         print("\n" + "═"*70)
         print("📉 CONFUSION MATRIX".center(70))
         print("═"*70)
@@ -441,24 +472,63 @@ class RAGChat:
         print(f"{'Actual=1':<20} {TP:>10} {FN:>10}")
         print(f"{'Actual=0':<20} {FP:>10} {TN:>10}")
 
-        # ── Classification Metrics ─────────────────────────────────────
+        # ─────────────────────────────────────────────
+        # 📊 CLASSIFICATION METRICS
+        # ─────────────────────────────────────────────
         print("\n" + "═"*70)
         print("📊 CLASSIFICATION METRICS".center(70))
         print("═"*70)
 
-        print(f"{'Accuracy':<30}: {accuracy:>10.3f}")
-        print(f"{'Precision':<30}: {precision:>10.3f}")
-        print(f"{'Recall':<30}: {recall:>10.3f}")
-        print(f"{'F1 Score':<30}: {f1:>10.3f}")
+        print(f"{'Accuracy':<35}: {accuracy:>10.3f}")
+        print(f"{'Precision':<35}: {precision:>10.3f}")
+        print(f"{'Recall':<35}: {recall:>10.3f}")
+        print(f"{'F1 Score':<35}: {f1:>10.3f}")
 
-        # ── Extra insight (muy útil en RAG) ────────────────────────────
+        # ─────────────────────────────────────────────
+        # 🧠 RAG-SPECIFIC METRICS
+        # ─────────────────────────────────────────────
         hallucination_rate = FP / (FP + TN) if (FP + TN) > 0 else 0
+        miss_rate = FN / (TP + FN) if (TP + FN) > 0 else 0
 
         print("\n" + "═"*70)
         print("🧠 RAG-SPECIFIC METRICS".center(70))
         print("═"*70)
 
-        print(f"{'Hallucination rate':<30}: {hallucination_rate:>10.3f}")
-        print(f"{'Miss rate (FN)':<30}: {FN / (TP + FN) if (TP + FN) > 0 else 0:>10.3f}")
+        print(f"{'Hallucination rate':<35}: {hallucination_rate:>10.3f}")
+        print(f"{'Miss rate':<35}: {miss_rate:>10.3f}")
+
+        # ─────────────────────────────────────────────
+        # 🎯 RELEVANT QUESTIONS ONLY
+        # ─────────────────────────────────────────────
+        relevant = TP + FN
+
+        print("\n" + "═"*70)
+        print("🎯 RELEVANT QUESTIONS (label=1)".center(70))
+        print("═"*70)
+
+        print(f"{'Total relevant':<35}: {relevant:>10}")
+        print(f"{'Answered (TP)':<35}: {TP:>10}")
+        print(f"{'Missed (FN)':<35}: {FN:>10}")
+
+        print(f"{'Faithfulness (relevant)':<35}: {faith:>10.3f}")
+        print(f"{'Relevancy (relevant)':<35}: {rel:>10.3f}")
+        print(f"{'Context utilization (relevant)':<35}: {ctx:>10.3f}")
+
+        # ─────────────────────────────────────────────
+        # 🧪 ANSWER QUALITY
+        # ─────────────────────────────────────────────
+        answered = TP + FP
+
+        print("\n" + "═"*70)
+        print("🧪 ANSWER QUALITY (pred=1)".center(70))
+        print("═"*70)
+
+        print(f"{'Total answered':<35}: {answered:>10}")
+        print(f"{'Correct (TP)':<35}: {TP:>10}")
+        print(f"{'Hallucinated (FP)':<35}: {FP:>10}")
+
+        if answered > 0:
+            print(f"{'Answer accuracy':<35}: {(TP/answered):>10.3f}")
 
         print("═"*70)
+    

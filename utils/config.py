@@ -16,7 +16,7 @@ class GenConfig:
     env_file        = root_dir  / ".env"        # file for API key
 
     # ── Model info ────────────────────────────────────────────────────────────
-    model_name      = "llama3.1:8b"             # qwen3:8b gemma3:4b
+    model_name      = "llama3.1:8b"             # llama3.1:8b qwen3:8b gemma3:4b
     judge_name      = "qwen3:8b"                # LLM as a judge for Ragas
     embedding_model = "all-MiniLM-L6-v2"        # embedding model name (compatible with HuggingFaceEmbeddings)
     ollama_url      = "https://yiyuan.tsc.uc3m.es"     # URL of the Ollama server

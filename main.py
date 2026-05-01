@@ -56,11 +56,18 @@ def main():
 
     questions = load_random_questions(
         cfg.eval_questions,
-        n=4,
+        n=8,
         good_quest=0.5   # 0 for all non related, 1 for all related
     )
 
-    print(questions)
+    print(f"[main] Evaluating {len(questions)} questions:\n")
+
+    print(f"{'QUESTION':<60} | LABEL")
+    print("-" * 75)
+
+    for q in questions:
+        print(f"{q['question']:<60} | {q['label']}")
+        
     baby_chatty.eval_questions(questions)
 
 if __name__ == "__main__":
