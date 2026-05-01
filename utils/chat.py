@@ -145,13 +145,17 @@ class RAGChat:
                 print(f"\n[RAGChat] connection error: {e}")
     
 
-    def eval_questions(self, questions: list[str]):
+    def eval_questions(self, questions: dict):
         """
         Evaluate a batch of questions internally using the full RAG pipeline.
         
         --- 
         Attributes:
-            - questions: list of questions to evaluate.
+            - questions: dictionary of questions to evaluate with their label.
+
+        ---
+        Returns:
+            - results_data: dictionary with the results.
         """
 
         results_data = {
@@ -160,13 +164,16 @@ class RAGChat:
             "contexts": [],
             "faithfulness": [],
             "relevancy": [],
-            "context_util": []
+            "context_util": [],
         }
 
         total_time = 0
+        TP = FP = TN = FN = 0   # confusion matrix
 
-        for q in tqdm(questions, desc="Evaluating questions"):
+        for item in tqdm(questions, desc="Evaluating questions"):
             try:
+                q = item["question"]
+                label = item["label"]
                 start_time = time.time()
 
                 # 1. language detection
@@ -177,7 +184,17 @@ class RAGChat:
                 elapsed = time.time() - start_time
 
                 # 3. skip negatives
-                if self._is_a_negative_answer(answer, docs):
+                is_negative = self._is_a_negative_answer(answer, docs)
+                pred = 0 if is_negative else 1  # 0 = negative, 1 = positive
+                # update the confusion matrix
+                if label == 1:
+                    TP += 1 if pred == 1 else 0
+                    FN += 1 if pred == 0 else 0
+                else:
+                    FP += 1 if pred == 1 else 0
+                    TN += 1 if pred == 0 else 0
+                
+                if is_negative:
                     continue
 
                 # 4. evaluation
@@ -203,19 +220,12 @@ class RAGChat:
         # ── Final dataset ────────────────────────────────────────────────
         dataset = Dataset.from_dict(results_data)
 
-        # ── Summary ──────────────────────────────────────────────────────
-        print("\n" + "─"*70)
-        print("📊 BATCH EVALUATION SUMMARY")
-        print("─"*70)
-        print(f"Total questions evaluated: {len(results_data['question'])}")
-        print(f"Avg processing time per question: {total_time / max(len(results_data['question']),1):.2f}s")
-
-        if results_data["faithfulness"]:
-            print(f"Avg faithfulness: {statistics.mean(results_data['faithfulness']):.3f}")
-            print(f"Avg relevancy: {statistics.mean(results_data['relevancy']):.3f}")
-            print(f"Avg context utilization: {statistics.mean(results_data['context_util']):.3f}")
-
-        print("─"*70)
+        # ── Stamp summary ─────────────────────────────────────────────────────
+        self._stamp_eval_metrics(
+            dataset,            # eval metrics
+            total_time,         # total evaluation time
+            TP, FP, TN, FN,     # confusion matrix
+        )
 
         return dataset
 
@@ -359,7 +369,6 @@ class RAGChat:
         
         # ── Store the metrics in the history for the final report ─────────────
         self.metrics_history["response_times"].append(generation_time)
-        print(eval_results)
 
         if not negative_phrase and eval_results is not None:
             df = eval_results.to_pandas()
@@ -386,14 +395,70 @@ class RAGChat:
             current_rel = "N/A"
             current_context_util = "N/A"
 
-        print("─"*70)
-        print("|" + " "*28 + " 📊 METRICS " + " "*28 + "|")
-        print("─"*70)
-        print(f"\tMetric\t|\tCurrent\t|\tAverage'\t|")
+        print("─"*57)
+        print("|" + " "*22 + " 📊 METRICS " + " "*22 + "|")
+        print("─"*57)
+        print(f"|\tMetric             \t|\tCurrent\t|\tAverage'\t|")
 
-        print("─"*70)
-        print(f"|  ⏱️ Response time   \t|\t{generation_time:.3f}\t|\t{avg_time:.3f}\t")
-        print(f"|  ✅ Faithfulness    \t|\t{current_faith:.3f}\t|\t{avg_faith:.3f}\t")
-        print(f"|  🎯 Relevance       \t|\t{current_rel:.3f}\t|\t{avg_rel:.3f}\t")
-        print(f"|  📊 Context Precision\t|\t{current_context_util:.3f}\t|\t{avg_context_util:.3f}\t")
-        print("─"*70)
+        print("─"*57)
+        print(f"|  ⏱️ Response time   \t|\t{generation_time:.3f}\t|\t{avg_time:.3f}\t|")
+        print(f"|  ✅ Faithfulness    \t|\t{current_faith:.3f}\t|\t{avg_faith:.3f}\t|")
+        print(f"|  🎯 Relevance       \t|\t{current_rel:.3f}\t|\t{avg_rel:.3f}\t|")
+        print(f"|  📊 Context Precision\t|\t{current_context_util:.3f}\t|\t{avg_context_util:.3f}\t|")
+        print("─"*57)
+
+
+    def _stamp_eval_metrics(self, results_data, total_time, TP, FP, TN, FN):
+        total = TP + FP + TN + FN
+        accuracy = (TP + TN) / total if total > 0 else 0
+        precision = TP / (TP + FP) if (TP + FP) > 0 else 0
+        recall = TP / (TP + FN) if (TP + FN) > 0 else 0
+        f1 = (
+            2 * precision * recall / (precision + recall)
+            if (precision + recall) > 0 else 0
+        )
+
+        print("\n" + "═"*70)
+        print("📊 BATCH EVALUATION SUMMARY".center(70))
+        print("═"*70)
+
+        avg_time = total_time / max(total, 1)
+
+        print(f"{'Total questions':<30}: {total:>10}")
+        print(f"{'Avg time / question':<30}: {avg_time:>10.2f} s")
+
+        if results_data["faithfulness"]:
+            print(f"{'Avg faithfulness':<30}: {statistics.mean(results_data['faithfulness']):>10.3f}")
+            print(f"{'Avg relevancy':<30}: {statistics.mean(results_data['relevancy']):>10.3f}")
+            print(f"{'Avg context utilization':<30}: {statistics.mean(results_data['context_util']):>10.3f}")
+
+        # ── Confusion Matrix ───────────────────────────────────────────
+        print("\n" + "═"*70)
+        print("📉 CONFUSION MATRIX".center(70))
+        print("═"*70)
+
+        print(f"{'':<20} {'Pred=1':>10} {'Pred=0':>10}")
+        print(f"{'Actual=1':<20} {TP:>10} {FN:>10}")
+        print(f"{'Actual=0':<20} {FP:>10} {TN:>10}")
+
+        # ── Classification Metrics ─────────────────────────────────────
+        print("\n" + "═"*70)
+        print("📊 CLASSIFICATION METRICS".center(70))
+        print("═"*70)
+
+        print(f"{'Accuracy':<30}: {accuracy:>10.3f}")
+        print(f"{'Precision':<30}: {precision:>10.3f}")
+        print(f"{'Recall':<30}: {recall:>10.3f}")
+        print(f"{'F1 Score':<30}: {f1:>10.3f}")
+
+        # ── Extra insight (muy útil en RAG) ────────────────────────────
+        hallucination_rate = FP / (FP + TN) if (FP + TN) > 0 else 0
+
+        print("\n" + "═"*70)
+        print("🧠 RAG-SPECIFIC METRICS".center(70))
+        print("═"*70)
+
+        print(f"{'Hallucination rate':<30}: {hallucination_rate:>10.3f}")
+        print(f"{'Miss rate (FN)':<30}: {FN / (TP + FN) if (TP + FN) > 0 else 0:>10.3f}")
+
+        print("═"*70)

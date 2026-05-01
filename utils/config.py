@@ -12,7 +12,7 @@ class GenConfig:
 
     # parquet with the infetion advice data (already processed and cleaned)
     parquet_file    = data_dir / "kidshealth_en_parents_infections.parquet"
-    eval_questions  = data_dir / "eval_questions.txt"   # text file with the question to evaluate the RAG system (one question, can be used for quick tests)
+    eval_questions  = data_dir / "eval_questions.csv"   # text file with the question to evaluate the RAG system (one question, can be used for quick tests)
     env_file        = root_dir  / ".env"        # file for API key
 
     # ── Model info ────────────────────────────────────────────────────────────
