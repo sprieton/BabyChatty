@@ -142,7 +142,7 @@ class RAGChat:
         Example: if {lang} is Spanish, write the full answer in Spanish.
         Even the disclaimer at the end must be in {lang}.
 
-        Always add the disclaimer: 'This is not medical advice, please consult a pediatrician.'
+        When providing medical advice or recommendations, include a brief disclaimer that this is general information and not a substitute for professional medical care. Do not include the disclaimer if you do not know the answer.
         (translated to {lang} if it is not English)
 
         Context: {context}

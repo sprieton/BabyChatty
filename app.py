@@ -495,6 +495,29 @@ NEGATIVE_PHRASES = [
 def has_no_info(answer: str) -> bool:
     """Checks if the LLM response contains a 'no info' disclaimer."""
     return any(p in answer.lower()[:120] for p in NEGATIVE_PHRASES)
+DISCLAIMER_TEXT = "⚠️ This is general pediatric information and does not replace professional medical advice. Always consult your pediatrician."
+
+def ensure_disclaimer(answer: str) -> str:
+    """
+    Ensures a disclaimer is present when the answer contains advice.
+    """
+    answer_lower = answer.lower()
+
+    # Skip if model explicitly says it doesn't know
+    if has_no_info(answer):
+        return answer
+
+    # Heuristic: detect advice-like language
+    advice_keywords = ["should", "recommend", "monitor", "give", "watch for", "seek"]
+    needs = any(k in answer_lower for k in advice_keywords)
+
+    # Check if disclaimer already exists
+    already_present = "consult" in answer_lower or "medical advice" in answer_lower
+
+    if needs and not already_present:
+        return answer + "\n\n" + DISCLAIMER_TEXT
+
+    return answer
 
 def render_message(role: str, content: str, docs=None, timestamp: str = ""):
     """Renders a chat message with custom HTML/CSS for a native app feel."""
@@ -677,6 +700,7 @@ if prompt:
             # We use the internal methods of the RAGChat instance
             lang = bot._detect_language(prompt)
             answer, docs = bot._get_ai_response(prompt, lang)
+            answer = ensure_disclaimer(answer)
             
         except ollama.ResponseError as e:
             # Specific handling for API keys or connection refusals (e.g. 401 Unauthorized)
