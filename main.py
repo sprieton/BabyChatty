@@ -56,14 +56,14 @@ def main():
 
     questions = load_random_questions(
         cfg.eval_questions,
-        n=8,
-        good_quest=0.5   # 0 for all non related, 1 for all related
+        n=2,
+        good_quest=1   # 0 for all non related, 1 for all related
     )
 
     print(f"[main] Evaluating {len(questions)} questions:\n")
 
     print(f"{'QUESTION':<60} | LABEL")
-    print("-" * 75)
+    print("-" * 60+"+"+"-"*10)
 
     for q in questions:
         print(f"{q['question']:<60} | {q['label']}")

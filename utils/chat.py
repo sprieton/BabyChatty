@@ -218,16 +218,15 @@ class RAGChat:
             except Exception as e:
                 print(f"[eval_questions] Error processing question: {q}\n{e}")
 
-        # ── Final dataset ────────────────────────────────────────────────
-        dataset = Dataset.from_dict(results_data)
-
         # ── Stamp summary ─────────────────────────────────────────────────────
         self._stamp_eval_metrics(
-            dataset,            # eval metrics
+            results_data,       # eval metrics
             total_time,         # total evaluation time
             TP, FP, TN, FN,     # confusion matrix
         )
 
+        # ── Final dataset ────────────────────────────────────────────────
+        dataset = Dataset.from_dict(results_data)
         return dataset
 
 
@@ -372,10 +371,11 @@ class RAGChat:
 
 
     def _stamp_and_store_metrics(self, generation_time, eval_results, negative_phrase):
-        """Store and stamp the metrics of the turn"""
+        """Store and stamp the metrics of the turn matching the research criteria"""
         
-        # ── Store the metrics in the history for the final report ─────────────
+        # ── 1. Store the metrics in the history ─────────────
         self.metrics_history["response_times"].append(generation_time)
+        self.metrics_history["coverage"].append(0 if negative_phrase else 1)
 
         if not negative_phrase and eval_results is not None:
             df = eval_results.to_pandas()
@@ -383,152 +383,120 @@ class RAGChat:
             self.metrics_history["relevance"].append(df['answer_relevancy'].iloc[0])
             self.metrics_history["context_util"].append(df['context_utilization'].iloc[0])
 
-        
-
-        # ── Stamp the metrics ─────────────────────────────────────────────────
+        # ── 2. Calculate Averages ───────────────────────────
         h = self.metrics_history
         def safe_mean(lst):
             return statistics.mean(lst) if len(lst) > 0 else 0
+
         avg_time = safe_mean(h["response_times"])
+        avg_cov = safe_mean(h["coverage"]) * 100
+        
         avg_faith = safe_mean(h["faithfulness"])
         avg_rel = safe_mean(h["relevance"])
         avg_context_util = safe_mean(h["context_util"])
+        
+        # RAG System Quality (Average of the 3 underlying Ragas metrics)
+        if len(h["faithfulness"]) > 0:
+            avg_quality = safe_mean([f + r + c for f, r, c in zip(h["faithfulness"], h["relevance"], h["context_util"])]) / 3
+        else:
+            avg_quality = 0.0
+
+        # Current turn values
+        current_cov = 0 if negative_phrase else 100
         if not negative_phrase and len(h["faithfulness"]) > 0:
             current_faith = h["faithfulness"][-1]
             current_rel = h["relevance"][-1]
             current_context_util = h["context_util"][-1]
+            current_quality = (current_faith + current_rel + current_context_util) / 3
         else:
-            current_faith = "N/A"
-            current_rel = "N/A"
-            current_context_util = "N/A"
+            current_faith = current_rel = current_context_util = current_quality = "N/A"
 
-        print("─"*57)
-        print("|" + " "*22 + " 📊 METRICS " + " "*22 + "|")
-        print("─"*57)
-        print(f"|\tMetric             \t|\tCurrent\t|\tAverage'\t|")
-
-        print("─"*57)
-        print(f"|  ⏱️ Response time   \t|\t{generation_time:.3f}\t|\t{avg_time:.3f}\t|")
-        print(f"|  ✅ Faithfulness    \t|\t{current_faith:.3f}\t|\t{avg_faith:.3f}\t|")
-        print(f"|  🎯 Relevance       \t|\t{current_rel:.3f}\t|\t{avg_rel:.3f}\t|")
-        print(f"|  📊 Context Precision\t|\t{current_context_util:.3f}\t|\t{avg_context_util:.3f}\t|")
-        print("─"*57)
+        # ── 3. Stamp the metrics (Table Format) ─────────────
+        print("\n" + "─"*80)
+        print("|" + " "*24 + " 📊 REAL-TIME METRICS " + " "*24 + "|")
+        print("─"*80)
+        print(f"| {'Research Criterion':<25} | {'Current Turn':<22} | {'Session Average':<23} |")
+        print("─"*80)
+        
+        # Response Time
+        print(f"| {'⏱️ Response Time':<25} | {generation_time:>18.3f} s | {avg_time:>21.3f} s |")
+        
+        # Document Coverage
+        print(f"| {'📚 Document Coverage':<25} | {current_cov:>19.1f} % | {avg_cov:>21.1f} % |")
+        
+        # RAG System Quality
+        if isinstance(current_quality, str):
+            print(f"| {'🧠 RAG System Quality':<25} | {current_quality:>20} | {avg_quality:>21.3f}   |")
+        else:
+            print(f"| {'🧠 RAG System Quality':<25} | {current_quality:>20.3f}   | {avg_quality:>21.3f}   |")
+            print(f"|   ├─ Faithfulness           | {current_faith:>20.3f}   | {avg_faith:>21.3f}   |")
+            print(f"|   ├─ Answer Relevancy       | {current_rel:>20.3f}   | {avg_rel:>21.3f}   |")
+            print(f"|   └─ Context Utilization    | {current_context_util:>20.3f}   | {avg_context_util:>21.3f}   |")
+        print("─"*80)
 
 
     def _stamp_eval_metrics(self, results_data, total_time, TP, FP, TN, FN):
+        """Stamps the final evaluation metrics for batch testing."""
         total = TP + FP + TN + FN
-
-        accuracy = (TP + TN) / total if total > 0 else 0
-        precision = TP / (TP + FP) if (TP + FP) > 0 else 0
-        recall = TP / (TP + FN) if (TP + FN) > 0 else 0
-        f1 = (
-            2 * precision * recall / (precision + recall)
-            if (precision + recall) > 0 else 0
-        )
+        answered = TP + FP  # Questions the model attempted to answer (didn't trigger negative phrase)
 
         def safe_mean(lst):
             clean = []
-
             for x in lst:
                 try:
-                    if hasattr(x, "iloc"):      # pandas Series
-                        x = x.iloc[0]
+                    if hasattr(x, "iloc"): x = x.iloc[0]
                     x = float(x)
-                    if not np.isnan(x):
-                        clean.append(x)
+                    if not np.isnan(x): clean.append(x)
                 except Exception:
                     continue
-
             return sum(clean) / len(clean) if len(clean) > 0 else 0.0
 
+        # Calculate Table Metrics
         avg_time = total_time / max(total, 1)
-
+        coverage_pct = (answered / total) * 100 if total > 0 else 0
+        
         faith = safe_mean(results_data.get("faithfulness", []))
         rel = safe_mean(results_data.get("relevancy", []))
         ctx = safe_mean(results_data.get("context_util", []))
+        sys_quality = (faith + rel + ctx) / 3
 
         # ─────────────────────────────────────────────
-        # 📊 GLOBAL METRICS
-        # ─────────────────────────────────────────────
-        print("\n" + "═"*70)
-        print("📊 BATCH EVALUATION SUMMARY".center(70))
-        print("═"*70)
-
-        print(f"{'Total questions':<35}: {total:>10}")
-        print(f"{'Avg time / question':<35}: {avg_time:>10.2f} s")
-
-        print(f"{'Avg faithfulness (all)':<35}: {faith:>10.3f}")
-        print(f"{'Avg relevancy (all)':<35}: {rel:>10.3f}")
-        print(f"{'Avg context utilization (all)':<35}: {ctx:>10.3f}")
-
-        # ─────────────────────────────────────────────
-        # 📉 CONFUSION MATRIX
+        # 📊 RESEARCH CRITERIA SUMMARY (Main Table)
         # ─────────────────────────────────────────────
         print("\n" + "═"*70)
-        print("📉 CONFUSION MATRIX".center(70))
+        print("📊 RESEARCH CRITERIA: RAG EVALUATION SUMMARY".center(70))
         print("═"*70)
-
-        print(f"{'':<20} {'Pred=1':>10} {'Pred=0':>10}")
-        print(f"{'Actual=1':<20} {TP:>10} {FN:>10}")
-        print(f"{'Actual=0':<20} {FP:>10} {TN:>10}")
-
-        # ─────────────────────────────────────────────
-        # 📊 CLASSIFICATION METRICS
-        # ─────────────────────────────────────────────
-        print("\n" + "═"*70)
-        print("📊 CLASSIFICATION METRICS".center(70))
-        print("═"*70)
-
-        print(f"{'Accuracy':<35}: {accuracy:>10.3f}")
-        print(f"{'Precision':<35}: {precision:>10.3f}")
-        print(f"{'Recall':<35}: {recall:>10.3f}")
-        print(f"{'F1 Score':<35}: {f1:>10.3f}")
+        
+        print(f"{'⏱️  Response Time (Speed)':<35}: {avg_time:>10.3f} s / query")
+        print(f"{'📚 Document Coverage':<35}: {coverage_pct:>10.1f} % ({answered}/{total} answered)")
+        print(f"{'🧠 RAG System Quality (Overall)':<35}: {sys_quality:>10.3f} / 1.000")
+        print(f"   ├─ Faithfulness (Accuracy):      {faith:>10.3f}")
+        print(f"   ├─ Answer Relevancy (Utility):   {rel:>10.3f}")
+        print(f"   └─ Context Util. (Coherence):    {ctx:>10.3f}")
 
         # ─────────────────────────────────────────────
-        # 🧠 RAG-SPECIFIC METRICS
+        # 📉 CLASSIFICATION & CONFUSION MATRIX
         # ─────────────────────────────────────────────
+        accuracy = (TP + TN) / total if total > 0 else 0
+        precision = TP / (TP + FP) if (TP + FP) > 0 else 0
+        recall = TP / (TP + FN) if (TP + FN) > 0 else 0
+        f1 = (2 * precision * recall / (precision + recall)) if (precision + recall) > 0 else 0
+        
         hallucination_rate = FP / (FP + TN) if (FP + TN) > 0 else 0
         miss_rate = FN / (TP + FN) if (TP + FN) > 0 else 0
 
         print("\n" + "═"*70)
-        print("🧠 RAG-SPECIFIC METRICS".center(70))
+        print("📉 EXTENDED CLASSIFICATION METRICS".center(70))
         print("═"*70)
-
-        print(f"{'Hallucination rate':<35}: {hallucination_rate:>10.3f}")
-        print(f"{'Miss rate':<35}: {miss_rate:>10.3f}")
-
-        # ─────────────────────────────────────────────
-        # 🎯 RELEVANT QUESTIONS ONLY
-        # ─────────────────────────────────────────────
-        relevant = TP + FN
-
-        print("\n" + "═"*70)
-        print("🎯 RELEVANT QUESTIONS (label=1)".center(70))
+        
+        print(f"{'':<20} {'Pred=1 (Answered)':>18} {'Pred=0 (Refused)':>18}")
+        print(f"{'Actual=1 (In DB)':<20} {TP:>18} {FN:>18}")
+        print(f"{'Actual=0 (Not in DB)':<20} {FP:>18} {TN:>18}")
+        
+        print(f"\n{'Accuracy':<35}: {accuracy:>10.3f}")
+        print(f"{'Precision':<35}: {precision:>10.3f}")
+        print(f"{'Recall':<35}: {recall:>10.3f}")
+        print(f"{'F1 Score':<35}: {f1:>10.3f}")
+        print(f"{'Hallucination rate (FP)':<35}: {hallucination_rate:>10.3f}")
+        print(f"{'Miss rate (FN)':<35}: {miss_rate:>10.3f}")
         print("═"*70)
-
-        print(f"{'Total relevant':<35}: {relevant:>10}")
-        print(f"{'Answered (TP)':<35}: {TP:>10}")
-        print(f"{'Missed (FN)':<35}: {FN:>10}")
-
-        print(f"{'Faithfulness (relevant)':<35}: {faith:>10.3f}")
-        print(f"{'Relevancy (relevant)':<35}: {rel:>10.3f}")
-        print(f"{'Context utilization (relevant)':<35}: {ctx:>10.3f}")
-
-        # ─────────────────────────────────────────────
-        # 🧪 ANSWER QUALITY
-        # ─────────────────────────────────────────────
-        answered = TP + FP
-
-        print("\n" + "═"*70)
-        print("🧪 ANSWER QUALITY (pred=1)".center(70))
-        print("═"*70)
-
-        print(f"{'Total answered':<35}: {answered:>10}")
-        print(f"{'Correct (TP)':<35}: {TP:>10}")
-        print(f"{'Hallucinated (FP)':<35}: {FP:>10}")
-
-        if answered > 0:
-            print(f"{'Answer accuracy':<35}: {(TP/answered):>10.3f}")
-
-        print("═"*70)
-    
