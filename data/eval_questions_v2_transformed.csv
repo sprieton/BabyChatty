@@ -1,0 +1,141 @@
+id,question,language,category,label
+Q001,What is the MMR vaccine and what diseases does it protect against?,English,answerable,1
+Q002,When should children receive the MMR vaccine?,English,answerable,1
+Q003,What are common side effects of the flu vaccine?,English,answerable,1
+Q004,Why is the flu vaccine needed every year?,English,answerable,1
+Q005,What is the HPV vaccine used for?,English,answerable,1
+Q006,At what age is the HPV vaccine recommended?,English,answerable,1
+Q007,What does the DTaP vaccine protect against?,English,answerable,1
+Q008,What is the difference between DTaP and Tdap?,English,answerable,1
+Q009,What is pneumococcal disease in children?,English,answerable,1
+Q010,How many doses of pneumococcal vaccine do infants need?,English,answerable,1
+Q011,Can vaccines cause autism?,English,answerable,1
+Q012,What should I do if my child has a fever after vaccination?,English,answerable,1
+Q013,What are symptoms of measles in children?,English,answerable,1
+Q014,How is mumps transmitted?,English,answerable,1
+Q015,What are the symptoms of chickenpox?,English,answerable,1
+Q016,How is chickenpox treated at home?,English,answerable,1
+Q017,What is rotavirus infection in children?,English,answerable,1
+Q018,What are the symptoms of gastroenteritis?,English,answerable,1
+Q019,How is strep throat diagnosed?,English,answerable,1
+Q020,What is meningitis in children?,English,answerable,1
+Q021,What are early signs of meningitis?,English,answerable,1
+Q022,What is RSV and who is at risk?,English,answerable,1
+Q023,What is bronchiolitis in infants?,English,answerable,1
+Q024,What causes pneumonia in children?,English,answerable,1
+Q025,What are flu symptoms in kids?,English,answerable,1
+Q026,What is the common cold?,English,answerable,1
+Q027,How do you treat a cold in children?,English,answerable,1
+Q028,When should antibiotics be used?,English,answerable,1
+Q029,What happens if antibiotics are overused?,English,answerable,1
+Q030,What is an ear infection?,English,answerable,1
+Q031,What is conjunctivitis (pink eye)?,English,answerable,1
+Q032,How is pink eye treated?,English,answerable,1
+Q033,What is sinusitis?,English,answerable,1
+Q034,What is food poisoning?,English,answerable,1
+Q035,What are symptoms of salmonella infection?,English,answerable,1
+Q036,What is norovirus?,English,answerable,1
+Q037,What is Lyme disease?,English,answerable,1
+Q038,What causes lice in children?,English,answerable,1
+Q039,How do you treat head lice?,English,answerable,1
+Q040,What is impetigo?,English,answerable,1
+Q041,What is MRSA infection?,English,answerable,1
+Q042,What is diaper rash?,English,answerable,1
+Q043,What is hives (urticaria)?,English,answerable,1
+Q044,What is allergic reaction in children?,English,answerable,1
+Q045,What is pediatric fever and when is it dangerous?,English,answerable,1
+Q046,When should parents call a doctor for a sick child?,English,answerable,1
+Q047,What is pertussis (whooping cough)?,English,answerable,1
+Q048,What is ringworm?,English,answerable,1
+Q049,What is scarlet fever?,English,answerable,1
+Q050,What are symptoms of bronchitis in children?,English,answerable,1
+Q051,?Que es la fiebre en bebes y cuando es peligrosa?,Spanish,answerable,1
+Q052,?Cuales son los sintomas de la meningitis en ninos?,Spanish,answerable,1
+Q053,?Que es la varicela y como se trata?,Spanish,answerable,1
+Q054,?Cuando debo llevar a mi hijo al medico por una infeccion?,Spanish,answerable,1
+Q055,?Que es el virus RSV y quien tiene mas riesgo?,Spanish,answerable,1
+Q056,?Como se trata una otitis en ninos?,Spanish,answerable,1
+Q057,?Que son los antibioticos y cuando deben usarse?,Spanish,answerable,1
+Q058,?Que es la gastroenteritis en bebes?,Spanish,answerable,1
+Q059,?Como se contagia la gripe en ninos?,Spanish,answerable,1
+Q060,?Que es la conjuntivitis y como se trata?,Spanish,answerable,1
+Q061,?Que es el sarampion y como se previene?,Spanish,answerable,1
+Q062,?Cuales son los sintomas de la escarlatina?,Spanish,answerable,1
+Q063,?Que hacer si mi bebe tiene fiebre alta?,Spanish,answerable,1
+Q064,?Que es la bronquiolitis en lactantes?,Spanish,answerable,1
+Q065,?Cuando empiezan las vacunas en recien nacidos?,Spanish,answerable,1
+Q066,Quels sont les symptomes de la varicelle chez l'enfant?,French,answerable,1
+Q067,Comment traiter une otite chez un bebe?,French,answerable,1
+Q068,Quand faut-il consulter un medecin pour de la fievre chez l'enfant?,French,answerable,1
+Q069,Qu'est-ce que la meningite et quels sont ses signes?,French,answerable,1
+Q070,Comment prevenir la grippe chez les enfants?,French,answerable,1
+Q071,A quel age commencer la vaccination contre la rougeole?,French,answerable,1
+Q072,Quels sont les symptomes d'une infection a streptocoque?,French,answerable,1
+Q073,Comment traiter la gastro-enterite chez le nourrisson?,French,answerable,1
+Q074,Welche Impfungen braucht ein Neugeborenes?,German,answerable,1
+Q075,Was sind die Symptome einer Mittelohrentzundung bei Kindern?,German,answerable,1
+Q076,Wie behandelt man Fieber bei Sauglingen?,German,answerable,1
+Q077,Was ist RSV und welche Kinder sind gefahrdet?,German,answerable,1
+Q078,Welche Anzeichen deuten auf Meningitis bei Kindern hin?,German,answerable,1
+Q079,Wie wird eine Bronchiolitis bei Babys behandelt?,German,answerable,1
+Q080,Was sind die Symptome von Windpocken?,German,answerable,1
+Q081,Quali sono i sintomi dell'otite nei bambini?,Italian,answerable,1
+Q082,Come si tratta la varicella nei bambini?,Italian,answerable,1
+Q083,Quando bisogna portare un bambino dal medico per la febbre?,Italian,answerable,1
+Q084,Cos'e la meningite batterica nei bambini?,Italian,answerable,1
+Q085,Come si previene l'influenza nei neonati?,Italian,answerable,1
+Q086,Quali sono i segni di disidratazione nei lattanti?,Italian,answerable,1
+Q087,Cos'e la bronchiolite nei neonati?,Italian,answerable,1
+Q088,Quais sao os sintomas da varicela em criancas?,Portuguese,answerable,1
+Q089,Como tratar uma otite em bebes?,Portuguese,answerable,1
+Q090,Quando devo levar meu filho ao medico por febre?,Portuguese,answerable,1
+Q091,O que e meningite em criancas?,Portuguese,answerable,1
+Q092,Como prevenir a gripe em recem-nascidos?,Portuguese,answerable,1
+Q093,Quais sao os sinais de desidratacao em bebes?,Portuguese,answerable,1
+Q094,O que e bronquiolite em lactentes?,Portuguese,answerable,1
+Q095,Quins son els simptomes de la varicella en nens?,Catalan,answerable,1
+Q096,Com es tracta una otitis en un bebe?,Catalan,answerable,1
+Q097,Quan cal anar al metge per febre en un infant?,Catalan,answerable,1
+Q098,Que es la meningitis en nens i quins signes te?,Catalan,answerable,1
+Q099,Com es preve la grip en nadons?,Catalan,answerable,1
+Q100,Quins son els signes de deshidratacio en lactants?,Catalan,answerable,1
+Q101,What is the capital of France?,English,not_answerable,0
+Q102,How do I cook pasta al dente?,English,not_answerable,0
+Q103,What is the weather like today in Madrid?,English,not_answerable,0
+Q104,Who won the last World Cup?,English,not_answerable,0
+Q105,How do I learn Python programming?,English,not_answerable,0
+Q106,What is artificial intelligence?,English,not_answerable,0
+Q107,How does blockchain technology work?,English,not_answerable,0
+Q108,How do I fix a leaking faucet?,English,not_answerable,0
+Q109,What is the theory of relativity?,English,not_answerable,0
+Q110,How do I bake a chocolate cake?,English,not_answerable,0
+Q111,?Cual es la capital de Espana?,Spanish,not_answerable,0
+Q112,?Como se prepara una tortilla de patatas?,Spanish,not_answerable,0
+Q113,?Cual es el mejor equipo de futbol del mundo?,Spanish,not_answerable,0
+Q114,?Como puedo aprender a tocar la guitarra?,Spanish,not_answerable,0
+Q115,?Que es el cambio climatico?,Spanish,not_answerable,0
+Q116,Quelle est la capitale de l'Allemagne?,French,not_answerable,0
+Q117,Comment faire une bonne baguette?,French,not_answerable,0
+Q118,Qui a gagne la derniere Coupe du Monde?,French,not_answerable,0
+Q119,Comment apprendre a jouer de la guitare?,French,not_answerable,0
+Q120,Qu'est-ce que l'intelligence artificielle?,French,not_answerable,0
+Q121,Was ist die Hauptstadt von Italien?,German,not_answerable,0
+Q122,Wie macht man einen guten Kuchen?,German,not_answerable,0
+Q123,Wer hat die letzte Weltmeisterschaft gewonnen?,German,not_answerable,0
+Q124,Wie lernt man Gitarre spielen?,German,not_answerable,0
+Q125,Was ist der Klimawandel?,German,not_answerable,0
+Q126,Qual e la capitale della Francia?,Italian,not_answerable,0
+Q127,Come si prepara la pasta al pomodoro?,Italian,not_answerable,0
+Q128,Chi ha vinto l'ultimo Campionato del Mondo?,Italian,not_answerable,0
+Q129,Come si impara a suonare la chitarra?,Italian,not_answerable,0
+Q130,Cos'e il cambiamento climatico?,Italian,not_answerable,0
+Q131,Qual e a capital do Brasil?,Portuguese,not_answerable,0
+Q132,Como se faz uma boa feijoada?,Portuguese,not_answerable,0
+Q133,Quem ganhou a ultima Copa do Mundo?,Portuguese,not_answerable,0
+Q134,Como aprender a tocar guitarra?,Portuguese,not_answerable,0
+Q135,O que e inteligencia artificial?,Portuguese,not_answerable,0
+Q136,Quina es la capital de Franca?,Catalan,not_answerable,0
+Q137,Com es fa una paella?,Catalan,not_answerable,0
+Q138,Qui va guanyar l'ultim Mundial de futbol?,Catalan,not_answerable,0
+Q139,Com s'apren a tocar la guitarra?,Catalan,not_answerable,0
+Q140,Que es el canvi climatic?,Catalan,not_answerable,0
