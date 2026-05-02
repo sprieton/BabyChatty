@@ -478,7 +478,7 @@ if prompt:
             lang = bot._detect_language(prompt)
             reasoning, answer, docs = bot._get_ai_response(prompt, lang)
             if not bot._is_a_negative_answer(answer, docs):
-                answer += "\n" + cfg.disclamer_prompt[lang]
+                answer += "\n\n" + cfg.disclamer_prompt[lang]
 
         except ollama.ResponseError as e:
             reasoning = ""

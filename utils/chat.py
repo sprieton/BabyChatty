@@ -9,6 +9,7 @@ from tqdm import tqdm
 from dotenv import load_dotenv
 from langchain_community.vectorstores import Chroma
 from langdetect import detect, LangDetectException
+from deep_translator import GoogleTranslator
 from ragas import evaluate
 from ragas.metrics import (
     faithfulness,       # checks if the answer is supported by the retrieved context
@@ -147,7 +148,9 @@ class RAGChat:
 
                 # 4. Evaluate turn with Ragas (only if the answer is not negative)
                 if not negative_phrase:
-                    answer += "\n\n"+cfg.disclamer_prompt[lang]
+                    answer += f"""
+                    \n\n{cfg.disclamer_prompt[lang]} \nSummary:\n {self.summarize_docs(docs)}
+                    """
                     if eval_mode:
                         eval_results = self._evaluate_turn(user_input, answer, docs)
 
@@ -171,35 +174,7 @@ class RAGChat:
                 print(f"\n[RAGChat] Ollama response error: {e.error}")
             except Exception as e:
                 print(f"\n[RAGChat] connection error: {e}")
-    
-    
-    #def _enrich_query(self, text: str) -> str:
-    #    """Add pediatric context only to health-related queries."""
-    #    
-    #    pediatric_kw = ['baby','infant','toddler','child','children','newborn',
-    #                    'bebé','niño','niña','lactante','pediatr']
-    #    
-    #    health_kw = [
-    #        'fever','pain','symptom','vaccine','infection','disease','sick',
-    #        'treatment','medication','doctor','hospital','rash','cough','cold',
-    #        'fiebre','dolor','síntoma','vacuna','infección','enfermedad','médico',
-    #        'tos','resfriado','erupción','diarrea','vómito','vomit','antibiotic',
-    #        'virus','bacteria','allerg','asthma','flu','gripe','otitis','meningitis'
-    #    ]
-    #    
-    #    text_lower = text.lower()
-    #    
-    #    # Already has pediatric context → no enrichment needed
-    #    if any(kw in text_lower for kw in pediatric_kw):
-    #        return text
-    #    
-    #    # Has health keywords → add pediatric context
-    #    if any(kw in text_lower for kw in health_kw):
-    #        return f'baby infant child pediatric: {text}'
-    #    
-    #    # No health keywords → return original, let the prompt guardrail handle it
-    #    return text
-    
+
 
     def eval_questions(self, questions: dict):
         """
@@ -329,9 +304,11 @@ class RAGChat:
             indep_quest: bool = False) -> tuple[str, str, list]:
         """
         Implement the loop of RAG.
-        1. Retrieve relevant chunks from the vectorDB
-        2. Construct the prompt with the retrieved context and the user question
-        3. Call the Ollama API with the constructed prompt and return the response
+        1. Translation to english the query
+        2. Retrieval        
+        3. Build a CoT prompt
+        4. Call model
+        5. Parse structured output
 
         ---
         Attributes:
@@ -343,10 +320,14 @@ class RAGChat:
             (reasoning, answer, docs)
         """
 
-        # 1. Retrieval
+        # 1. Translation to english the query
+        if lang != "English":
+            user_input = GoogleTranslator(source='auto', target='en').translate(user_input)
+
+        # 2. Retrieval
         docs = self.retriever.invoke(user_input)
 
-        # 1.1 Add source info to the context for better traceability:
+        # 2.1 Add source info to the context for better traceability:
         context_parts = []
         for i, doc in enumerate(docs, 1):
             title = doc.metadata.get("title", "Unknown")
@@ -354,31 +335,30 @@ class RAGChat:
             context_parts.append(f"[Source {i}: {title} | {source}]\n{doc.page_content}")
         context = "\n\n".join(context_parts)
 
-        # 1.2 Add the context of previous conversation turns
+        # 2.2 Add the context of previous conversation turns
         if not indep_quest:
             prev_conversation = ""
             for q, a in zip(self.chat_history['questions'], self.chat_history['answers']):
                     prev_conversation += f"Parent: {q}\nAI: {a}\n\n"
             context = f"Previous conversation: {prev_conversation}\n\n" + context
 
-        # 2. Build CoT prompt
+        # 3. Build CoT prompt
         final_prompt = cfg.prompt_template.format(
             lang=lang,
             context=context,
             question=user_input
         )
 
-        # 3. Call model
+        # 4. Call model
         response = self.client.chat(
             model=cfg.model_name,
-            messages=[{"role": "user", "content": final_prompt}]
+            messages=[{"role": "user", "content": final_prompt}],
+            options={"temperature": cfg.temperature}
         )
         raw = response["message"]["content"]
-        # 4. Parse structured output
+        # 5. Parse structured output
         parsed = _parse_cot_response(raw)
         return parsed["reasoning"], parsed["answer"], docs
-        
-        return response['message']['content'], docs
     
     
     def _detect_language(self, text: str) -> str:
@@ -491,6 +471,53 @@ class RAGChat:
         summary.sort(key=lambda x: x["avg_faithfulness"] or 0, reverse=True)
         return summary
     
+
+    def summarize_docs(self, docs, lang: str = "English") -> str:
+        """
+        Synthesizes information from multiple retrieved documents into a single coherent summary.
+        """
+        if not docs:
+            return "No relevant information found in the database."
+        
+        # 1. Prepare the combined content for the model
+        context_to_summarize = ""
+        for i, doc in enumerate(docs, 1):
+            title = doc.metadata.get("title", "Document")
+            context_to_summarize += f"--- Source {i}: {title} ---\n{doc.page_content}\n\n"
+            
+        # 2. Specialized synthesis prompt
+        # We ask the model to act as an expert medical librarian
+        prompt = f"""
+        You are an expert medical librarian. Synthesize the following technical fragments 
+        into a single, coherent summary of approximately 5 lines.
+        
+        Focus strictly on: 
+        1. The core pediatric infection or condition discussed.
+        2. Key symptoms or vaccines mentioned across all sources.
+        3. The most important clinical takeaway or warning.
+
+        The summary MUST be written entirely in {lang}. 
+        Do not mention "Source 1 says..." or "Document 2 mentions...", create a unified flow.
+        
+        Context:
+        {context_to_summarize}
+        
+        Summary:"""
+
+        try:
+            response = self.client.generate(
+                model=cfg.model_name,
+                prompt=prompt,
+                options={
+                    "num_predict": 250, 
+                    "temperature": cfg.temperature,
+                    "top_p": 0.9
+                }
+            )
+            return response['response'].strip()
+        except Exception as e:
+            return f"Error generating summary: {str(e)}"
+        
     
     # ──────────────────────────────────────────────────────────────────────────
     # ── Display functions ─────────────────────────────────────────────────────

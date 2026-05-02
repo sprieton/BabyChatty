@@ -19,8 +19,9 @@ class GenConfig:
     # ── Model info ────────────────────────────────────────────────────────────
     model_name      = "llama3.1:8b"             # llama3.1:8b qwen3:8b gemma3:4b
     judge_name      = "qwen3:8b"                # LLM as a judge for Ragas
-    embedding_model = "BAAI/bge-m3"             # multilingual embedding model name ("BAAI/bge-m3", intfloat/multilingual-e5-small, BAAI/bge-small-en-v1.5)
-    re_rank_model   = "BAAI/bge-reranker-v2-m3"  # re-rank model  ("BAAI/bge-reranker-v2-m3", BAAI/bge-reranker-base)
+    embedding_model = "BAAI/bge-large-en-v1.5"  # multilingual embedding model name ("BAAI/bge-m3", intfloat/multilingual-e5-small, BAAI/bge-small-en-v1.5)
+    re_rank_model   = "BAAI/bge-reranker-large" # re-rank model  ("BAAI/bge-reranker-v2-m3", BAAI/bge-reranker-base)
+    temperature     = 0.3                       # temperature for the model
     ollama_url      = "https://yiyuan.tsc.uc3m.es"      # URL of the Ollama server
 
     # ── Data parameters ───────────────────────────────────────────────────────
@@ -29,7 +30,7 @@ class GenConfig:
     retrieval_num   = 5             # number of chunks to finally retrieve
     max_ret_num     = 20            # min number of relevant chunks to retrieve for each query
     ret_threshold   = 0.45          # threshold to consider a chunk relevant (% of similarity)
-    emb_device      = 'cpu'              # "cuda" if is_available() else "cpu"
+    emb_device      = 'cpu'         # "cuda" if is_available() else "cpu"
 
     # ── Chat parameters ───────────────────────────────────────────────────────    
     no_info_patterns = [
@@ -120,37 +121,41 @@ class GenConfig:
         }
     
     prompt_template = """
-    You are a professional Pediatric Assistant.
-    Use the following pieces of retrieved context to answer the question.
+        You are a professional Pediatric Assistant.
+        Use the following pieces of retrieved context to answer the question.
     
-    Your response MUST be a valid JSON object with EXACTLY two fields:
-    - "reasoning": a single plain string with your step-by-step chain-of-thought.
-        Cover these four points in that one string (do NOT use nested keys or arrays):
-        1. Whether the context contains enough evidence
-        2. The most relevant pieces of information found
-        3. Any gaps or uncertainties
-        4. Whether the question is in-scope (pediatric / health-related)
-    - "answer": a single plain string with the final clean answer for the parent.
-        If the answer lists several items, write them inside the string separated by commas or newlines.
-        Do NOT use JSON arrays or nested objects.
+        Your response MUST be a valid JSON object with EXACTLY two fields:
+        - "reasoning": a single plain string with your step-by-step chain-of-thought.
+            Cover these four points in that one string (do NOT use nested keys or arrays):
+            1. Whether the context contains enough evidence
+            2. The most relevant pieces of information found
+            3. Any gaps or uncertainties
+            4. Whether the question is in-scope (pediatric / health-related)
+        - "answer": a complete, informative answer for the parent written in full sentences.
+            - Minimum 3-4 sentences.
+            - Always explain WHAT each item is, not just its name.
+            - If listing vaccines, medications or symptoms, briefly describe each one.
+            - Do NOT just list names — always provide context and explanation.
+            - Do NOT use JSON arrays or nested objects. Write everything as plain text.
     
-    IMPORTANT — value types:
-    ✅ {{"reasoning": "step 1 … step 2 … step 3 …", "answer": "DTaP, Hib, IPV, PCV"}}
-    ❌ {{"reasoning": {{"assess": "…"}}, "answer": ["DTaP", "Hib"]}}   ← NEVER do this
+        IMPORTANT — value types:
+        ✅ {{"reasoning": "step 1 … step 2 … step 3 …", "answer": "At 12 months your baby needs several vaccines. DTaP protects against diphtheria, tetanus and pertussis (whooping cough). Hib protects against Haemophilus influenzae type b, a bacteria that can cause meningitis. IPV is the inactivated polio vaccine. PCV protects against pneumococcal disease which can cause ear infections and pneumonia."}}
+        ❌ {{"reasoning": {{"assess": "…"}}, "answer": ["DTaP", "Hib"]}}   ← NEVER do this
+        ❌ {{"reasoning": "…", "answer": "DTaP, Hib, IPV, PCV"}}           ← NEVER do this, always explain
     
-    If you don't know the answer or lack evidence, set "answer" to a clear "I don't know" statement.
-    If the question is off-topic, say so in "answer".
-    Never invent facts.
+        If you don't know the answer or lack evidence, set "answer" to a clear "I don't know" statement.
+        If the question is off-topic, say so in "answer".
+        Never invent facts.
     
-    CRITICAL LANGUAGE RULE: The user is writing in {lang}.
-    Both "reasoning" and "answer" MUST be written entirely in {lang}. No exceptions.
+        CRITICAL LANGUAGE RULE: The user is writing in {lang}.
+        Both "reasoning" and "answer" MUST be written entirely in {lang}. No exceptions.
     
-    Context:
-    {context}
+        Context:
+        {context}
     
-    Question: {question}
+        Question: {question}
     
-    Respond ONLY with a JSON object. No preamble, no markdown fences, no extra text.
+        Respond ONLY with a JSON object. No preamble, no markdown fences, no extra text.
     """
 
 
