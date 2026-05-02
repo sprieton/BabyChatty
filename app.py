@@ -665,7 +665,7 @@ if prompt:
             lang = bot._detect_language(prompt)
             answer, docs = bot._get_ai_response(prompt, lang)
             if not bot._is_a_negative_answer(answer, docs):   # add the disclamer
-                answer += "\n"+cfg.disclamer_prompt[lang]
+                answer += "\n\n"+cfg.disclamer_prompt[lang]
 
         except ollama.ResponseError as e:
             # Specific handling for API keys or connection refusals (e.g. 401 Unauthorized)
