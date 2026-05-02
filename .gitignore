@@ -7,14 +7,17 @@ baby_venv/
 # Database and database files
 chroma_db/
 chroma_db/*
-data/
+# data/
 
 # Python and VSCode
 */__pycache__/
 __pycache__/
 .vscode/
+reports/
 
 # my enviroment
 .gitignore
 /notebooks/prompting_rag_dspy.ipynb
 title_printer.py
+logs_distintos_embed.txt
+app_improve.py

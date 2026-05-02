@@ -1,104 +1,109 @@
 label,question
-1,What is the MMR vaccine and what diseases does it protect against?
-1,When should children receive the MMR vaccine?
-1,What are common side effects of the flu vaccine?
-1,Why is the flu vaccine needed every year?
-1,What is the HPV vaccine used for?
-1,At what age is the HPV vaccine recommended?
-1,What does the DTaP vaccine protect against?
-1,What is the difference between DTaP and Tdap?
-1,What is pneumococcal disease in children?
-1,How many doses of pneumococcal vaccine do infants need?
-1,Can vaccines cause autism?
-1,What should I do if my child has a fever after vaccination?
-1,When should a flu vaccine be delayed?
-1,What are symptoms of measles in children?
-1,How is mumps transmitted?
-1,What is rubella and why is it dangerous?
-1,What are the symptoms of chickenpox?
-1,How is chickenpox treated at home?
-1,What is rotavirus infection in children?
-1,What are the symptoms of gastroenteritis?
-1,How is strep throat diagnosed?
-1,What causes strep throat in kids?
-1,What are symptoms of tonsillitis?
-1,How is scarlet fever related to strep infection?
-1,What is meningitis in children?
-1,What are early signs of meningitis?
-1,What is RSV and who is at risk?
-1,How is RSV infection treated?
+1,What is measles in children and how does it spread?
+1,What are symptoms of mumps in children?
+1,What is rubella and why is it dangerous in kids?
+1,What are the symptoms of chickenpox in children?
+1,How is rotavirus infection treated in infants?
+1,What causes gastroenteritis in children?
+1,What are symptoms of pneumonia in children?
 1,What is bronchiolitis in infants?
-1,What causes pneumonia in children?
-1,What is walking pneumonia?
-1,What are symptoms of bronchitis?
-1,What is COVID-19 in children?
-1,Can children get long-term effects from COVID-19?
-1,What is MIS-C?
-1,How is COVID-19 transmitted?
-1,What is influenza and how does it spread?
-1,What are flu symptoms in kids?
-1,What is the common cold?
-1,How do you treat a cold in children?
-1,When should antibiotics be used?
-1,What happens if antibiotics are overused?
-1,What is an ear infection?
-1,What causes swimmer’s ear?
-1,How do you treat ear pain in children?
-1,What is conjunctivitis (pink eye)?
-1,How is pink eye treated?
-1,What causes styes in the eye?
-1,What is sinusitis?
-1,What are symptoms of sinus infection?
-1,What is appendicitis in children?
-1,What are signs of appendicitis?
-1,What is stomach pain in children usually caused by?
-1,What is food poisoning?
-1,What are symptoms of salmonella infection?
-1,What is E. coli infection?
-1,What is norovirus?
-1,How is norovirus transmitted?
-1,What is hepatitis A?
-1,What is hepatitis B?
-1,What is hepatitis C?
-1,What is HIV and how is it transmitted?
-1,What is AIDS?
-1,What is HPV infection?
-1,What are symptoms of genital warts?
-1,What is syphilis?
-1,What is chlamydia?
-1,What is gonorrhea?
-1,What is trichomoniasis?
-1,What is Lyme disease?
-1,What are symptoms of tick bites?
-1,How do you remove a tick safely?
-1,What is malaria?
-1,What is dengue fever?
-1,What is Zika virus?
-1,What is West Nile virus?
-1,What is rabies?
-1,What are symptoms of tetanus?
-1,What is diphtheria?
-1,What is pertussis (whooping cough)?
-1,What is scabies?
-1,What causes lice in children?
-1,How do you treat head lice?
-1,What is impetigo?
-1,What is cellulitis?
-1,What is MRSA infection?
-1,What is ringworm?
-1,What causes athlete’s foot?
-1,What is diaper rash?
-1,What is eczema?
-1,What is psoriasis in children?
-1,What is vitiligo?
-1,What is hives (urticaria)?
-1,What is allergic reaction in children?
-1,What is asthma in kids?
-1,What is cystic fibrosis?
-1,What is type 1 diabetes?
-1,What are symptoms of hypoglycemia?
-1,What is pediatric fever and when is it dangerous?
-1,When should parents call a doctor for a sick child?
+1,What causes ear infections (otitis) in children?
+1,What is conjunctivitis in children?
+1,What is meningitis and how does it affect children?
+1,What is RSV infection in infants?
+1,What are symptoms of strep throat in children?
+1,What causes scarlet fever in kids?
+1,What is impetigo in children?
+1,What is cellulitis in children?
+1,What is ringworm infection in kids?
+1,What causes head lice in children?
+1,What is scabies infection?
+1,What are symptoms of norovirus in children?
+
+1,¿Qué es el sarampión en niños y cómo se transmite?
+1,¿Cuáles son los síntomas de las paperas en niños?
+1,¿Qué es la rubéola y por qué es peligrosa en niños?
+1,¿Cuáles son los síntomas de la varicela en niños?
+1,¿Cómo se trata la infección por rotavirus en bebés?
+1,¿Qué causa la gastroenteritis en niños?
+1,¿Cuáles son los síntomas de la neumonía en niños?
+1,¿Qué es la bronquiolitis en bebés?
+1,¿Qué causa la otitis en niños?
+1,¿Qué es la conjuntivitis en niños?
+1,¿Qué es la meningitis y cómo afecta a los niños?
+1,¿Qué es la infección por RSV en bebés?
+1,¿Cuáles son los síntomas de la faringitis estreptocócica en niños?
+1,¿Qué causa la escarlatina en niños?
+1,¿Qué es el impétigo en niños?
+1,¿Qué es la celulitis en niños?
+1,¿Qué es la tiña en niños?
+1,¿Qué causa los piojos en niños?
+1,¿Qué es la sarna?
+1,¿Cuáles son los síntomas del norovirus en niños?
+
+1,Qu’est-ce que la rougeole chez les enfants et comment se transmet-elle ?
+1,Quels sont les symptômes des oreillons chez les enfants ?
+1,Qu’est-ce que la rubéole et pourquoi est-elle dangereuse chez les enfants ?
+1,Quels sont les symptômes de la varicelle chez les enfants ?
+1,Comment traiter l’infection à rotavirus chez les nourrissons ?
+1,Quelles sont les causes de la gastro-entérite chez les enfants ?
+1,Quels sont les symptômes de la pneumonie chez les enfants ?
+1,Qu’est-ce que la bronchiolite chez les nourrissons ?
+1,Qu’est-ce qui cause l’otite chez les enfants ?
+1,Qu’est-ce que la conjonctivite chez les enfants ?
+1,Qu’est-ce que la méningite et comment affecte-t-elle les enfants ?
+1,Qu’est-ce que l’infection RSV chez les nourrissons ?
+1,Quels sont les symptômes de l’angine streptococcique chez les enfants ?
+1,Qu’est-ce qui cause la scarlatine chez les enfants ?
+1,Qu’est-ce que l’impétigo chez les enfants ?
+1,Qu’est-ce que la cellulite chez les enfants ?
+1,Qu’est-ce que la teigne chez les enfants ?
+1,Qu’est-ce qui cause les poux chez les enfants ?
+1,Qu’est-ce que la gale ?
+1,Quels sont les symptômes du norovirus chez les enfants ?
+
+1,Was ist Masern bei Kindern und wie werden sie übertragen?
+1,Was sind Symptome von Mumps bei Kindern?
+1,Was ist Röteln und warum ist es bei Kindern gefährlich?
+1,Was sind die Symptome von Windpocken bei Kindern?
+1,Wie wird eine Rotavirus-Infektion bei Säuglingen behandelt?
+1,Was verursacht Gastroenteritis bei Kindern?
+1,Was sind die Symptome einer Lungenentzündung bei Kindern?
+1,Was ist Bronchiolitis bei Säuglingen?
+1,Was verursacht eine Ohrenentzündung bei Kindern?
+1,Was ist Bindehautentzündung bei Kindern?
+1,Was ist Meningitis und wie betrifft sie Kinder?
+1,Was ist eine RSV-Infektion bei Säuglingen?
+1,Was sind Symptome einer Streptokokken-Angina bei Kindern?
+1,Was verursacht Scharlach bei Kindern?
+1,Was ist Impetigo bei Kindern?
+1,Was ist Cellulitis bei Kindern?
+1,Was ist Ringelflechte bei Kindern?
+1,Was verursacht Läuse bei Kindern?
+1,Was ist Krätze?
+1,Was sind die Symptome von Norovirus bei Kindern?
+
+1,O que é sarampo em crianças e como é transmitido?
+1,Quais são os sintomas da caxumba em crianças?
+1,O que é rubéola e por que é perigosa em crianças?
+1,Quais são os sintomas da catapora em crianças?
+1,Como tratar a infecção por rotavírus em bebês?
+1,O que causa gastroenterite em crianças?
+1,Quais são os sintomas de pneumonia em crianças?
+1,O que é bronquiolite em bebês?
+1,O que causa otite em crianças?
+1,O que é conjuntivite em crianças?
+1,O que é meningite e como afeta crianças?
+1,O que é infecção por RSV em bebês?
+1,Quais são os sintomas de faringite estreptocócica em crianças?
+1,O que causa escarlatina em crianças?
+1,O que é impetigo em crianças?
+1,O que é celulite em crianças?
+1,O que é micose (tinha) em crianças?
+1,O que causa piolhos em crianças?
+1,O que é sarna?
+1,Quais são os sintomas de norovírus em crianças?
+
 0,What is the capital of France?
 0,How do I cook pasta al dente?
 0,What is the weather like today in Madrid?
@@ -119,86 +124,87 @@ label,question
 0,What is machine learning?
 0,How do I build a website from scratch?
 0,What are the best books to read this year?
-0,How do I improve my public speaking skills?
-0,What is climate change?
-0,How do I train for a marathon?
-0,What is the difference between Java and JavaScript?
-0,How do I write a resume?
-0,What are the rules of chess?
-0,How do I play the guitar?
-0,What is the theory of relativity?
-0,How do I meditate properly?
-0,What are the most popular movies of all time?
-0,How do I lose weight quickly?
-0,What is the best way to learn a new language?
-0,How do I grow plants indoors?
-0,What is the capital of Australia?
-0,How do I create a mobile app?
-0,What is cloud computing?
-0,How do I edit videos professionally?
-0,What is the meaning of life?
-0,How do I prepare for a job interview?
-0,What is the difference between a laptop and a desktop?
-0,How do I make homemade pizza?
-0,What are the benefits of exercise?
-0,How do I manage my time better?
-0,What is digital marketing?
-0,How do I become a data scientist?
-0,What is the internet of things?
-0,How do I clean my house efficiently?
-0,What are the best programming languages to learn?
-0,How do I write a novel?
-0,What is virtual reality?
-0,How do I use Excel formulas?
-0,What are the top universities in the world?
-0,How do I create a budget?
-0,What is the difference between debit and credit cards?
-0,How do I start investing in stocks?
-0,What is renewable energy?
-0,How do I improve my memory?
-0,What are the best ways to save money?
-0,How do I learn photography?
-0,What is cybersecurity?
-0,How do I protect my online privacy?
-0,What is the difference between HTTP and HTTPS?
-0,How do I create a YouTube channel?
-0,What are the best travel tips?
-0,How do I pack for a trip?
-0,What is the capital of Canada?
-0,How do I design a logo?
-0,What is graphic design?
-0,How do I use Photoshop?
-0,What are NFTs?
-0,How do I cook rice properly?
-0,What is the best way to study for exams?
-0,How do I deal with stress?
-0,What is emotional intelligence?
-0,How do I build muscle?
-0,What is the keto diet?
-0,How do I learn to code fast?
-0,What are APIs?
-0,How do I use Git and GitHub?
-0,What is DevOps?
-0,How do I deploy a web app?
-0,What is a database?
-0,How do I write SQL queries?
-0,What is big data?
-0,How do I analyze data?
-0,What are neural networks?
-0,How do self-driving cars work?
-0,What is space exploration?
-0,How do rockets launch?
-0,What is the solar system?
-0,How do I learn astronomy?
-0,What is philosophy?
-0,How do I think critically?
-0,What are the best podcasts to listen to?
-0,How do I start a blog?
-0,What is content creation?
-0,How do influencers make money?
-0,What is e-commerce?
-0,How do I sell products online?
-0,What is dropshipping?
-0,How do I manage a team?
-0,What is leadership?
-0,How do I negotiate a salary?
+
+0,¿Cuál es la capital de Francia?
+0,¿Cómo cocino pasta al dente?
+0,¿Cómo está el clima hoy en Madrid?
+0,¿Quién ganó la última Copa del Mundo?
+0,¿Cómo aprendo programación en Python?
+0,¿Qué es la inteligencia artificial?
+0,¿Cómo funciona la tecnología blockchain?
+0,¿Cuáles son las mejores atracciones turísticas en Italia?
+0,¿Cómo arreglo un grifo que gotea?
+0,¿Cuál es la población de Japón?
+0,¿Cómo vuelan los aviones?
+0,¿Cuál es la montaña más alta del mundo?
+0,¿Cómo hago un pastel de chocolate?
+0,¿Cuál es la historia del Imperio Romano?
+0,¿Cómo inicio un pequeño negocio?
+0,¿Qué es el mercado de valores?
+0,¿Cómo invierto en criptomonedas?
+0,¿Qué es el aprendizaje automático?
+0,¿Cómo construyo un sitio web desde cero?
+0,¿Cuáles son los mejores libros para leer este año?
+
+0,Quelle est la capitale de la France ?
+0,Comment cuisiner des pâtes al dente ?
+0,Quel temps fait-il aujourd’hui à Madrid ?
+0,Qui a gagné la dernière Coupe du Monde ?
+0,Comment apprendre la programmation Python ?
+0,Qu’est-ce que l’intelligence artificielle ?
+0,Comment fonctionne la technologie blockchain ?
+0,Quelles sont les meilleures attractions touristiques en Italie ?
+0,Comment réparer un robinet qui fuit ?
+0,Quelle est la population du Japon ?
+0,Comment les avions volent-ils ?
+0,Quelle est la plus haute montagne du monde ?
+0,Comment faire un gâteau au chocolat ?
+0,Quelle est l’histoire de l’Empire romain ?
+0,Comment démarrer une petite entreprise ?
+0,Qu’est-ce que le marché boursier ?
+0,Comment investir dans les cryptomonnaies ?
+0,Qu’est-ce que l’apprentissage automatique ?
+0,Comment créer un site web à partir de zéro ?
+0,Quels sont les meilleurs livres à lire cette année ?
+
+0,Was ist die Hauptstadt von Frankreich?
+0,Wie koche ich Pasta al dente?
+0,Wie ist das Wetter heute in Madrid?
+0,Wer hat die letzte Weltmeisterschaft gewonnen?
+0,Wie lerne ich Python-Programmierung?
+0,Was ist künstliche Intelligenz?
+0,Wie funktioniert Blockchain-Technologie?
+0,Was sind die besten Touristenattraktionen in Italien?
+0,Wie repariere ich einen tropfenden Wasserhahn?
+0,Wie groß ist die Bevölkerung Japans?
+0,Wie fliegen Flugzeuge?
+0,Was ist der höchste Berg der Welt?
+0,Wie backe ich einen Schokoladenkuchen?
+0,Was ist die Geschichte des Römischen Reiches?
+0,Wie starte ich ein kleines Unternehmen?
+0,Was ist der Aktienmarkt?
+0,Wie investiere ich in Kryptowährungen?
+0,Was ist maschinelles Lernen?
+0,Wie baue ich eine Website von Grund auf?
+0,Welche Bücher sollte man dieses Jahr lesen?
+
+0,Qual é a capital da França?
+0,Como cozinhar macarrão al dente?
+0,Como está o clima hoje em Madrid?
+0,Quem ganhou a última Copa do Mundo?
+0,Como aprender programação em Python?
+0,O que é inteligência artificial?
+0,Como funciona a tecnologia blockchain?
+0,Quais são as melhores atrações turísticas na Itália?
+0,Como consertar uma torneira com vazamento?
+0,Qual é a população do Japão?
+0,Como os aviões voam?
+0,Qual é a montanha mais alta do mundo?
+0,Como fazer um bolo de chocolate?
+0,Qual é a história do Império Romano?
+0,Como iniciar um pequeno negócio?
+0,O que é o mercado de ações?
+0,Como investir em criptomoedas?
+0,O que é aprendizado de máquina?
+0,Como criar um site do zero?
+0,Quais são os melhores livros para ler este ano?
