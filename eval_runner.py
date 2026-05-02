@@ -135,7 +135,7 @@ def main():
     random.seed(42)
     questions = load_random_questions(
         cfg.eval_questions,
-        n=10,
+        n=50,
         good_quest=0.75,   # 75 % related, 25 % off-topic
     )
  
