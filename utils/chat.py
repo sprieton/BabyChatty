@@ -1,6 +1,9 @@
 import os, sys, time, re, statistics
 import ollama
 import logging
+from typing import Sequence, Optional
+import torch
+from transformers import pipeline
 import numpy as np
 from tqdm import tqdm
 from dotenv import load_dotenv
@@ -15,6 +18,11 @@ from ragas.metrics import (
 from datasets import Dataset
 from langchain_openai import ChatOpenAI
 from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_classic.retrievers.contextual_compression import ContextualCompressionRetriever
+from langchain_classic.retrievers.document_compressors import CrossEncoderReranker
+from langchain_community.cross_encoders import HuggingFaceCrossEncoder
+from langchain_core.documents import Document
+from langchain_core.callbacks import Callbacks
 
 from utils import GenConfig as cfg
 from utils import VectorDBFactory
@@ -48,22 +56,50 @@ class RAGChat:
         )
         logging.getLogger("ragas").setLevel(logging.ERROR)
 
-        self.embeddings_model = HuggingFaceEmbeddings(
-            model_name=cfg.embedding_model,
-            model_kwargs={'device': cfg.emb_device}
-            )
-
         # 3. get the vector database ready, if not provided, create it
         print(f"[RAGChat] Loading vector database from {cfg.chroma_dir}...")
         try:
-            vectorDB = VectorDBFactory(cfg.chroma_dir).get_vectorDB()
+            self.vectorDB = VectorDBFactory(cfg.chroma_dir).get_vectorDB()
         except Exception as e:
             print(f"[RagChat] Error loading database: {e}")
             sys.exit(1)
         print(f"[RAGChat] Vector database done...")
-        
 
-        self.vectorDB = vectorDB
+        # 4. define the embeddings model and the reranker
+        # important to use models capable of multilingual embeddings
+        if cfg.emb_device == "cuda":
+            torch.cuda.empty_cache()
+        self.embeddings_model = HuggingFaceEmbeddings(
+            model_name=cfg.embedding_model,
+            model_kwargs={'device': cfg.emb_device},
+            encode_kwargs={"batch_size": 1}
+            )
+        # 4.1 First pull of retrieval with threshold
+        base_retriever = self.vectorDB.as_retriever(
+            search_type="similarity_score_threshold",
+            search_kwargs={
+                "score_threshold": cfg.ret_threshold,
+                "k": cfg.max_ret_num    # max num of chunks to retrieve
+            }
+        )
+
+        # 4.2 Reranker the retrieved chunks to the best 5
+        compressor = CustomCrossEncoderReranker(
+            model=HuggingFaceCrossEncoder(
+                model_name=cfg.re_rank_model,
+                model_kwargs={'device': cfg.emb_device} # same device as embeddings
+                ),
+            top_n=cfg.retrieval_num)
+        self.retriever = ContextualCompressionRetriever(
+            base_compressor=compressor, 
+            base_retriever=base_retriever
+        )
+
+        # 5. define the translator of queries
+        self.translator = pipeline(
+            "translation", 
+            model=cfg.translator, device=cfg.emb_device
+            )
 
         # to store the conversation for coherence in the conversation
         self.chat_history = {
@@ -121,16 +157,7 @@ class RAGChat:
                 # 5. Print the docs used for the answer (for traceability)
                 # ── Stamp docs coverage if we have docs ─────────────────────────────────────────────────
                 if not negative_phrase and docs:
-                    print(f"[RAGChat]: Chunks recovered: {len(docs)}")
-                    print(f"\n📄 Sources used:")
-                    seen = set()
-                    for doc in docs:
-                        url = doc.metadata.get("source", "unknown")
-                        title = doc.metadata.get("title", "unknown")
-                        if url not in seen:
-                            print(f"  - {title}: {url}")
-                            seen.add(url)
-
+                    self._stamp_context_docs(docs)
 
                 # 6. Show and store the metrics
                 if eval_mode:
@@ -197,7 +224,9 @@ class RAGChat:
                     FP += 1 if pred == 1 else 0
                     TN += 1 if pred == 0 else 0
                 
+                print(f"\tQuestion: {q}")
                 if is_negative:
+                    print("[RAGChat] Negative answer, skipping evaluation")
                     continue
 
                 # 4. evaluation
@@ -256,9 +285,10 @@ class RAGChat:
             self, user_input, lang: str = "English", indep_quest: bool = False):
         """
         Implement the loop of RAG.
-        1. Retrieve relevant chunks from the vectorDB
-        2. Construct the prompt with the retrieved context and the user question
-        3. Call the Ollama API with the constructed prompt and return the response
+        1. Translate the question to english
+        2. Retrieve relevant chunks from the vectorDB
+        3. Construct the prompt with the retrieved context and the user question
+        4. Call the Ollama API with the constructed prompt and return the response
 
         ---
         Attributes:
@@ -267,10 +297,14 @@ class RAGChat:
             - indep_quest: if True, the question is treated as independent
         """
 
-        # 1. Retrieval
-        docs = self.vectorDB.similarity_search(user_input, k=cfg.retrieval_num)  # n best chunks
+        # 1. Translate the question to english
+        if lang != "English":
+            user_input = self.translator(user_input)
 
-        # 1.1 Add source info to the context for better traceability:
+        # 2. Retrieval
+        docs = self.retriever.invoke(user_input)
+
+        # 2.1 Add source info to the context for better traceability:
         context_parts = []
         for i, doc in enumerate(docs, 1):
             title = doc.metadata.get("title", "Unknown")
@@ -278,14 +312,14 @@ class RAGChat:
             context_parts.append(f"[Source {i}: {title} | {source}]\n{doc.page_content}")
         context = "\n\n".join(context_parts)
 
-        # 1.2 Add the context of previous conversation turns
+        # 2.2 Add the context of previous conversation turns
         if not indep_quest:
             prev_conversation = ""
             for q, a in zip(self.chat_history['questions'], self.chat_history['answers']):
                     prev_conversation += f"Parent: {q}\nAI: {a}\n\n"
             context = f"Previous conversation: {prev_conversation}\n\n" + context
 
-        # 2. Build the prompt for the model, we include instructions and context
+        # 3. Build the prompt for the model, we include instructions and context
         final_prompt = f"""You are a professional Pediatric Assistant. 
         Use the following pieces of retrieved context to answer the question. 
         If you don't know the answer, just say you don't know.
@@ -308,7 +342,7 @@ class RAGChat:
         Question: {user_input}
         Helpful Answer in {lang}:"""
 
-        # 3. call the model for a response
+        # 4. call the model for a response
         response = self.client.chat(
             model=cfg.model_name,
             messages=[{
@@ -319,7 +353,7 @@ class RAGChat:
         
         return response['message']['content'], docs
     
-
+        
     # ──────────────────────────────────────────────────────────────────────────
     # ── Auxiliar functions ────────────────────────────────────────────────────
     # ──────────────────────────────────────────────────────────────────────────
@@ -339,7 +373,7 @@ class RAGChat:
         # check for negative patterns in the answer
         has_no_info = any(re.search(pattern, answer_lower) for pattern in cfg.no_info_patterns)
         return has_no_info
-
+    
 
     def _evaluate_turn(self, question, answer, docs, eval_mode=False):
         """Evaluate answer with Ragas, return the evaluation results."""
@@ -366,16 +400,53 @@ class RAGChat:
                 show_progress= not eval_mode,   # disable progress bar
             )
             df = results.to_pandas()
-            print(f"\n[RAGChat] Evaluation results:\n\tQuestion: {question}")
+            print(f"\n[RAGChat] Evaluation results:\n")
             print(f"""
                   \t Faitfulness: {df['faithfulness'].iloc[0]:.3f}\t 
                   Answer Relevancy: {df['answer_relevancy'].iloc[0]:.3f}
                   \t Context Utilization:  {df["context_utilization"].iloc[0]:.3f}
             """)
+            self._stamp_context_docs(docs)
             return results
         except Exception as e:
             print(f"[_evaluate_turn]: Error in Ragas evaluation: {e}")
             return None
+
+
+    def _stamp_context_docs(self, docs):
+        print(f"\n[RAGChat] 🎯 Chunks retrieved: {len(docs)}")
+        print("📄 Sources used (Ordered by semantic relevance):")
+        
+        # We use a dictionary to group by URL
+        seen_sources = {}
+        
+        for doc in docs:
+            url = doc.metadata.get("source", "unknown")
+            title = doc.metadata.get("title", "unknown")
+            score = doc.metadata.get("relevance_score", 0.0)
+            
+            if url not in seen_sources:
+                # Since the 'docs' are already sorted from highest to lowest by the re-ranker,
+                # the first chunk we read from a URL has its maximum 'score'.
+                seen_sources[url] = {
+                    "title": title,
+                    "max_score": score,
+                    "chunk_count": 1
+                }
+            else:
+                # If we have already seen this URL, we just add to the chunk counter
+                seen_sources[url]["chunk_count"] += 1
+
+        # Print the formatted summary
+        for url, info in seen_sources.items():
+            # We format the score to 3 decimals to keep it clean
+            score_str = f"{info['max_score']:.3f}"
+            
+            # Dynamic text for singular/plural
+            chunks_str = f"{info['chunk_count']} chunks" if info['chunk_count'] > 1 else "1 chunk"
+            
+            print(f"  ▪ [Score: {score_str}] {info['title']} ({chunks_str})")
+            print(f"    🔗 {url}")
 
 
     def _stamp_and_store_metrics(self, generation_time, eval_results, negative_phrase):
@@ -508,3 +579,38 @@ class RAGChat:
         print(f"{'Hallucination rate (FP)':<35}: {hallucination_rate:>10.3f}")
         print(f"{'Miss rate (FN)':<35}: {miss_rate:>10.3f}")
         print("═"*70)
+
+
+#───────────────────────────────────────────────────────────────────────────────
+#───────────────────────────   AUXILIARY FUNCTIONS   ───────────────────────────
+#───────────────────────────────────────────────────────────────────────────────
+
+class CustomCrossEncoderReranker(CrossEncoderReranker):
+    """We override the LangChain compressor so it saves the metrics."""
+    def compress_documents(
+        self,
+        documents: Sequence[Document],
+        query: str,
+        callbacks: Optional[Callbacks] = None,
+    ) -> Sequence[Document]:
+        if not documents:
+            return []
+        
+        # 1. The model calculates the actual scores
+        scores = self.model.score([(query, doc.page_content) for doc in documents])
+        docs_with_scores = list(zip(documents, scores))
+        
+        # 2. Sort from highest to lowest
+        docs_with_scores.sort(key=lambda x: x[1], reverse=True)
+        
+        # 3. Keep the top_n and SAVE the score in the metadata
+        results = []
+        for doc, score in docs_with_scores[:self.top_n]:
+            new_doc = Document(
+                page_content=doc.page_content,
+                # Explicitly inject the score here
+                metadata={**doc.metadata, "relevance_score": float(score)} 
+            )
+            results.append(new_doc)
+            
+        return results

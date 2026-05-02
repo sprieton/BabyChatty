@@ -56,8 +56,8 @@ def main():
 
     questions = load_random_questions(
         cfg.eval_questions,
-        n=4,
-        good_quest=1   # 0 for all non related, 1 for all related
+        n=30,
+        good_quest=0.75   # 0 for all non related, 1 for all related
     )
 
     print(f"[main] Evaluating {len(questions)} questions:\n")

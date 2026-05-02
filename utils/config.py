@@ -13,50 +13,101 @@ class GenConfig:
 
     # parquet with the infetion advice data (already processed and cleaned)
     parquet_file    = data_dir / "kidshealth_en_parents_infections.parquet"
-    eval_questions  = data_dir / "dummy_eval.csv"   # text file with the question to evaluate the RAG system (one question, can be used for quick tests)
+    eval_questions  = data_dir / "eval_questions.csv"   # text file with the question to evaluate the RAG system (one question, can be used for quick tests)
     env_file        = root_dir  / ".env"        # file for API key
 
     # ── Model info ────────────────────────────────────────────────────────────
     model_name      = "llama3.1:8b"             # llama3.1:8b qwen3:8b gemma3:4b
     judge_name      = "qwen3:8b"                # LLM as a judge for Ragas
-    embedding_model = "BAAI/bge-m3"             # multilingual embedding model name
-    ollama_url      = "https://yiyuan.tsc.uc3m.es"     # URL of the Ollama server
+    translator      = "Helsinki-NLP/opus-mt-mul-en"     # translator model
+    embedding_model = "BAAI/bge-m3"  # multilingual embedding model name ("BAAI/bge-m3", intfloat/multilingual-e5-small, BAAI/bge-small-en-v1.5)
+    re_rank_model   = "BAAI/bge-reranker-base"  # re-rank model  ("BAAI/bge-reranker-v2-m3")
+    ollama_url      = "https://yiyuan.tsc.uc3m.es"      # URL of the Ollama server
 
     # ── Data parameters ───────────────────────────────────────────────────────
     chunk_size      = 1000          # number of characters per chunk
     chunk_overlap   = 150           # number of characters to overlap between chunks
-    retrieval_num   = 5             # number of relevant chunks to retrieve for each query
+    retrieval_num   = 5             # number of chunks to finally retrieve
+    max_ret_num     = 20            # min number of relevant chunks to retrieve for each query
+    ret_threshold   = 0.55          # threshold to consider a chunk relevant (% of similarity)
     emb_device      = "cuda" if is_available() else "cpu"
 
     # ── Chat parameters ───────────────────────────────────────────────────────    
     no_info_patterns = [
-        # Spanish
-        r"no (tengo|dispongo de|cuento con).{0,50}información",
-        r"no (puedo|podría) (responder|determinar|ayudar)",
-        r"no (hay|existe).{0,40}información",
+        # ---------------- SPANISH ----------------
+        r"no (tengo|dispongo de|cuento con).{0,60}informaci[oó]n",
+        r"no (tengo|cuento con).{0,40}datos",
+        r"no (puedo|podr[ií]a) (responder|determinar|ayudar|proporcionar)",
+        r"no (es posible|puedo).{0,40}(determinar|saber)",
+        r"no (hay|existe).{0,50}informaci[oó]n",
+        r"no tengo suficiente.{0,40}informaci[oó]n",
+        r"no dispongo de suficiente.{0,40}informaci[oó]n",
+        r"no puedo encontrar.{0,40}informaci[oó]n",
+        r"lo siento.{0,40}no (tengo|dispongo)",
+        r"desconozco (esa|la) informaci[oó]n",
+        r"no est[aá] claro",
+        r"no puedo confirmar",
 
-        # English
-        r"(i do not|i don't).{0,40}(know|have|possess).{0,40}(information|details)?",
-        r"(not enough|no).{0,40}information",
-        r"unable to (answer|determine)",
-        r"cannot (answer|determine|help)",
-        r"this (is) not a (medical)? question",
-        
-        # French
-        r"je ne (sais|dispose).{0,40}(pas|d'information)",
-        
-        # German
-        r"ich (weiß|weiss).{0,20}nicht",
-        r"keine.{0,20}information",
-        
-        # Italian
-        r"non (so|dispongo).{0,40}(informazioni)?",
-        
-        # Portuguese
-        r"não (sei|tenho).{0,40}(informação|informações)",
-        
-        # Catalan
-        r"no (sé|tinc).{0,40}(informació)",
+        # ---------------- ENGLISH ----------------
+        r"(i do not|i don't).{0,60}(know|have|possess).{0,40}(information|details|data)?",
+        r"(i do not|i don't).{0,40}(have enough|have sufficient).{0,40}(information|data)",
+        r"not enough.{0,40}(information|data)",
+        r"no (relevant|available).{0,40}(information|data)",
+        r"unable to (answer|determine|find|provide)",
+        r"cannot (answer|determine|help|find)",
+        r"i am not sure",
+        r"i'm not sure",
+        r"unclear from (the|this)",
+        r"there is no.{0,40}information",
+        r"i couldn't find.{0,40}information",
+        r"insufficient.{0,40}information",
+        r"this is not a (medical)? ?question",
+
+        # ---------------- FRENCH ----------------
+        r"je ne (sais|dispose|trouve).{0,40}(pas|d['’]information)",
+        r"je n['’]ai pas.{0,40}information",
+        r"pas assez.{0,40}information",
+        r"aucune.{0,40}information",
+        r"impossible de (r[eé]pondre|d[eé]terminer|trouver)",
+        r"je ne peux pas (r[eé]pondre|aider|d[eé]terminer)",
+        r"je ne suis pas s[uû]r",
+        r"ce n['’]est pas clair",
+
+        # ---------------- GERMAN ----------------
+        r"ich (weiß|weiss).{0,30}nicht",
+        r"ich habe.{0,40}keine.{0,40}(information|daten)",
+        r"keine.{0,40}(information|daten)",
+        r"nicht genug.{0,40}(information|daten)",
+        r"ich kann (nicht).{0,40}(beantworten|bestimmen|helfen)",
+        r"unm[oö]glich zu (bestimmen|sagen)",
+        r"ich bin mir nicht sicher",
+        r"unklar",
+
+        # ---------------- ITALIAN ----------------
+        r"non (so|dispongo|ho).{0,40}(informazioni|dati)?",
+        r"non ho abbastanza.{0,40}(informazioni|dati)",
+        r"nessuna.{0,40}(informazione|dato)",
+        r"impossibile (determinare|rispondere|trovare)",
+        r"non posso (rispondere|determinare|aiutare)",
+        r"non sono sicuro",
+
+        # ---------------- PORTUGUESE ----------------
+        r"n[aã]o (sei|tenho|possuo).{0,40}(informa[cç][aã]o|dados)",
+        r"n[aã]o tenho informa[cç][aã]o suficiente",
+        r"sem.{0,40}(informa[cç][aã]o|dados)",
+        r"imposs[ií]vel (determinar|responder|saber)",
+        r"n[aã]o posso (responder|ajudar|determinar)",
+        r"n[aã]o est[aá] claro",
+        r"n[aã]o tenho certeza",
+
+        # ---------------- CATALAN ----------------
+        r"no (s[eé]|tinc|disposo).{0,40}(informaci[oó]|dades)",
+        r"no tinc prou.{0,40}(informaci[oó]|dades)",
+        r"cap.{0,40}(informaci[oó]|dada)",
+        r"impossible (determinar|respondre|saber)",
+        r"no puc (respondre|ajudar|determinar)",
+        r"no est[aà] clar",
+        r"no estic segur",
     ]
 
     disclamer_prompt = {
