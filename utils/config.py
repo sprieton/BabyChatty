@@ -13,19 +13,20 @@ class GenConfig:
 
     # parquet with the infetion advice data (already processed and cleaned)
     parquet_file    = data_dir / "kidshealth_en_parents_infections.parquet"
-    eval_questions  = data_dir / "dummy_eval.csv"   # text file with the question to evaluate the RAG system (one question, can be used for quick tests)
+    eval_questions  = data_dir / "eval_questions_v2.csv"   # text file with the question to evaluate the RAG system (one question, can be used for quick tests)
     env_file        = root_dir  / ".env"        # file for API key
 
     # ── Model info ────────────────────────────────────────────────────────────
     model_name      = "llama3.1:8b"             # llama3.1:8b qwen3:8b gemma3:4b
     judge_name      = "qwen3:8b"                # LLM as a judge for Ragas
-    embedding_model = "BAAI/bge-m3"             # multilingual embedding model name
+    embedding_model = "BAAI/bge-m3"             # multilingual embedding model name.
     ollama_url      = "https://yiyuan.tsc.uc3m.es"     # URL of the Ollama server
 
     # ── Data parameters ───────────────────────────────────────────────────────
     chunk_size      = 1000          # number of characters per chunk
     chunk_overlap   = 150           # number of characters to overlap between chunks
     retrieval_num   = 5             # number of relevant chunks to retrieve for each query
+    temperature     = 0.3            # deterministic, justified by evaluation notebook
     emb_device      = "cuda" if is_available() else "cpu"
 
     # ── Chat parameters ───────────────────────────────────────────────────────    

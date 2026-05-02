@@ -1,4 +1,5 @@
 import os, sys, time, re, statistics
+from matplotlib.pyplot import text
 import ollama
 import logging
 import numpy as np
@@ -114,7 +115,7 @@ class RAGChat:
 
                 # 4. Evaluate turn with Ragas (only if the answer is not negative)
                 if not negative_phrase:
-                    answer += "\n"+cfg.disclamer_prompt[lang]
+                    answer += "\n\n"+cfg.disclamer_prompt[lang]
                     if eval_mode:
                         eval_results = self._evaluate_turn(user_input, answer, docs)
 
@@ -146,6 +147,34 @@ class RAGChat:
                 print(f"\n[RAGChat] Ollama response error: {e.error}")
             except Exception as e:
                 print(f"\n[RAGChat] connection error: {e}")
+    
+    
+    #def _enrich_query(self, text: str) -> str:
+    #    """Add pediatric context only to health-related queries."""
+    #    
+    #    pediatric_kw = ['baby','infant','toddler','child','children','newborn',
+    #                    'bebé','niño','niña','lactante','pediatr']
+    #    
+    #    health_kw = [
+    #        'fever','pain','symptom','vaccine','infection','disease','sick',
+    #        'treatment','medication','doctor','hospital','rash','cough','cold',
+    #        'fiebre','dolor','síntoma','vacuna','infección','enfermedad','médico',
+    #        'tos','resfriado','erupción','diarrea','vómito','vomit','antibiotic',
+    #        'virus','bacteria','allerg','asthma','flu','gripe','otitis','meningitis'
+    #    ]
+    #    
+    #    text_lower = text.lower()
+    #    
+    #    # Already has pediatric context → no enrichment needed
+    #    if any(kw in text_lower for kw in pediatric_kw):
+    #        return text
+    #    
+    #    # Has health keywords → add pediatric context
+    #    if any(kw in text_lower for kw in health_kw):
+    #        return f'baby infant child pediatric: {text}'
+    #    
+    #    # No health keywords → return original, let the prompt guardrail handle it
+    #    return text
     
 
     def eval_questions(self, questions: dict):
@@ -266,6 +295,9 @@ class RAGChat:
             - lang: the language of the user input
             - indep_quest: if True, the question is treated as independent
         """
+         # 0. Enrich query for retrieval only (NEW)
+        #retrieval_query = self._enrich_query(user_input)
+        #docs = self.vectorDB.similarity_search(retrieval_query, k=cfg.retrieval_num)
 
         # 1. Retrieval
         docs = self.vectorDB.similarity_search(user_input, k=cfg.retrieval_num)  # n best chunks
@@ -314,7 +346,10 @@ class RAGChat:
             messages=[{
                 "role": "user",
                 "content": final_prompt,
-            }]
+            }],
+            options={
+                "temperature": cfg.temperature,   
+            },   
         )
         
         return response['message']['content'], docs
