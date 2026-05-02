@@ -19,9 +19,8 @@ class GenConfig:
     # ── Model info ────────────────────────────────────────────────────────────
     model_name      = "llama3.1:8b"             # llama3.1:8b qwen3:8b gemma3:4b
     judge_name      = "qwen3:8b"                # LLM as a judge for Ragas
-    translator      = "Helsinki-NLP/opus-mt-mul-en"     # translator model
-    embedding_model = "BAAI/bge-m3"  # multilingual embedding model name ("BAAI/bge-m3", intfloat/multilingual-e5-small, BAAI/bge-small-en-v1.5)
-    re_rank_model   = "BAAI/bge-reranker-base"  # re-rank model  ("BAAI/bge-reranker-v2-m3")
+    embedding_model = "BAAI/bge-m3"             # multilingual embedding model name ("BAAI/bge-m3", intfloat/multilingual-e5-small, BAAI/bge-small-en-v1.5)
+    re_rank_model   = "BAAI/bge-reranker-v2-m3"  # re-rank model  ("BAAI/bge-reranker-v2-m3", BAAI/bge-reranker-base)
     ollama_url      = "https://yiyuan.tsc.uc3m.es"      # URL of the Ollama server
 
     # ── Data parameters ───────────────────────────────────────────────────────
@@ -29,8 +28,8 @@ class GenConfig:
     chunk_overlap   = 150           # number of characters to overlap between chunks
     retrieval_num   = 5             # number of chunks to finally retrieve
     max_ret_num     = 20            # min number of relevant chunks to retrieve for each query
-    ret_threshold   = 0.55          # threshold to consider a chunk relevant (% of similarity)
-    emb_device      = "cuda" if is_available() else "cpu"
+    ret_threshold   = 0.45          # threshold to consider a chunk relevant (% of similarity)
+    emb_device      = 'cpu'              # "cuda" if is_available() else "cpu"
 
     # ── Chat parameters ───────────────────────────────────────────────────────    
     no_info_patterns = [
@@ -119,7 +118,40 @@ class GenConfig:
         "Portuguese": "Isto não é aconselhamento médico, por favor consulte um pediatra.",
         "Catalan": "Això no és un consell mèdic, si us plau consulteu un pediatre."
         }
-
+    
+    prompt_template = """
+    You are a professional Pediatric Assistant.
+    Use the following pieces of retrieved context to answer the question.
+    
+    Your response MUST be a valid JSON object with EXACTLY two fields:
+    - "reasoning": a single plain string with your step-by-step chain-of-thought.
+        Cover these four points in that one string (do NOT use nested keys or arrays):
+        1. Whether the context contains enough evidence
+        2. The most relevant pieces of information found
+        3. Any gaps or uncertainties
+        4. Whether the question is in-scope (pediatric / health-related)
+    - "answer": a single plain string with the final clean answer for the parent.
+        If the answer lists several items, write them inside the string separated by commas or newlines.
+        Do NOT use JSON arrays or nested objects.
+    
+    IMPORTANT — value types:
+    ✅ {{"reasoning": "step 1 … step 2 … step 3 …", "answer": "DTaP, Hib, IPV, PCV"}}
+    ❌ {{"reasoning": {{"assess": "…"}}, "answer": ["DTaP", "Hib"]}}   ← NEVER do this
+    
+    If you don't know the answer or lack evidence, set "answer" to a clear "I don't know" statement.
+    If the question is off-topic, say so in "answer".
+    Never invent facts.
+    
+    CRITICAL LANGUAGE RULE: The user is writing in {lang}.
+    Both "reasoning" and "answer" MUST be written entirely in {lang}. No exceptions.
+    
+    Context:
+    {context}
+    
+    Question: {question}
+    
+    Respond ONLY with a JSON object. No preamble, no markdown fences, no extra text.
+    """
 
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -146,14 +178,32 @@ class ScrapingConfig:
     # they are related to pediatric infections
     # They are very common words in pediatric texts → not a very restrictive filter.
     keywords = [
-        'child', 'children', 'kid', 'kids', 'baby', 'infant',
-        'fever', 'disease', 'symptom', 'treatment', 'infection', 'infections', 'ache', 'cough',
-        'health', 'doctor', 'hospital', 'pain', 'vaccine', 
-        'bacteria', 'bacterial', 'virus', 'viral', 'antibiotic', 'antibiotics', 'flu',
-        'bronchitis', 'cold', 'colds', 'temperature', 'poison', 'poisonings', 'gastroenteritis', 
-        'inflammation', 'meningitis', 'pneumonia', 'salmonella', 'sepsis', 'otitis',
-        'contagious', 'diarrhea', 'conjunctivitis', 
-    ]
+    # pediatric context
+    'child', 'children', 'kid', 'kids', 'baby', 'infant', 'infants',
+
+    # infecction
+    'infection', 'infections', 'infectious',
+    'contagious', 'outbreak', 'pathogen',
+    'virus', 'viral', 'bacteria', 'bacterial',
+    'fungus', 'fungal', 'parasite', 'parasitic',
+
+    # specific treatment
+    'vaccine', 'vaccination', 'immunization', 'immunizations',
+    'antibiotic', 'antibiotics', 'antiviral',
+
+    # sintomatology
+    'fever', 'cough', 'diarrhea', 'ache', 'cold', 'colds', 'flu',
+
+    # frecuent diseases in childs
+    'bronchitis', 'bronchiolitis', 'pneumonia', 'meningitis',
+    'gastroenteritis', 'salmonella', 'sepsis', 'otitis',
+    'conjunctivitis', 'strep', 'scarlet fever', 'rotavirus',
+    'rsv', 'measles', 'mumps', 'rubella', 'chickenpox', 'varicella',
+    'impetigo', 'cellulitis', 'mrsa', 'ringworm', 'scabies', 'lice',
+    'hepatitis', 'hiv', 'aids', 'hpv', 'whooping cough', 'pertussis',
+    'malaria', 'dengue', 'zika', 'west nile', 'rabies', 'tetanus',
+    'diphtheria', 'norovirus', 'ecoli', 'e. coli',
+]
 
 class AnalysisConfig:
     """ Configuration for the corpus analysis and auditing."""
