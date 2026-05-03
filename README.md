@@ -69,11 +69,11 @@ Frontend: A Streamlit interface is currently under development to replace the CL
 
 - app.py: The web interface development.
 
-- src/config.py: Centralizes all directory paths and model names to keep the project organized and easy to maintain.
+- utils/config.py: Centralizes all directory paths and model names to keep the project organized and easy to maintain.
 
-- src/chunk_embed_store.py: Handles data loading, recursive chunking, and the creation or loading of the Chroma vector database.
+- utils/chunk_embed_store.py: Handles data loading, recursive chunking, and the creation or loading of the Chroma vector database.
 
-- src/chat.py: Contains the RAG logic, performs context retrieval, and manages the conversation with the Llama 3.1 model.
+- utils/chat.py: Contains the RAG logic, performs context retrieval, and manages the conversation with the Llama 3.1 model.
 
 - data/: The folder where your raw scraped data is stored in .parquet and .jsonl formats.
 
@@ -94,4 +94,12 @@ The project includes a user-friendly web interface built with **Streamlit**. Thi
 
 ```bash
 streamlit run app.py
+```
+
+## Reproducibility
+
+To reproduce our experiment with all the metrics you can execute the following script.
+
+```bash
+python eval_runner.py
 ```
