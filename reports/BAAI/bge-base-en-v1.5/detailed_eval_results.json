@@ -1,0 +1,1805 @@
+{
+  "metadata": {
+    "timestamp": "20260503_140044",
+    "model": "llama3.1:8b"
+  },
+  "results": [
+    {
+      "question": "Qu’est-ce que l’intelligence artificielle ?",
+      "language": "French",
+      "label": 0,
+      "reasoning": "Le contexte fourni ne contient pas d'informations pertinentes pour répondre à la question. La question est sur l'intelligence artificielle, qui n'est pas liée aux enfants ou à la santé. Il n'y a donc pas de preuves suffisantes pour fournir une réponse précise.",
+      "final_answer": "Je suis désolé, mais je ne peux pas répondre à votre question car elle est hors du domaine des soins pédiatriques.",
+      "retrieved_docs": [],
+      "is_negative": true,
+      "faithfulness": null,
+      "answer_relevancy": null,
+      "context_utilization": null,
+      "elapsed_s": 2.629
+    },
+    {
+      "question": "Qu’est-ce qui cause la scarlatine chez les enfants ?",
+      "language": "French",
+      "label": 1,
+      "reasoning": "Le contexte fournit suffisamment d'informations sur la cause de la scarlatine chez les enfants. Les informations les plus pertinentes sont que la scarlatine est causée par une infection bactérienne à streptococcus, qui se propage généralement à travers la toux et le sneezing. Il y a quelques lacunes dans l'information sur la prévention de la maladie, mais les signes et symptômes sont bien décrits. La question est en rapport avec la santé des enfants, donc elle est dans le champ d'application.",
+      "final_answer": "La scarlatine chez les enfants est causée par une infection bactérienne à streptococcus qui se propage généralement à travers la toux et le sneezing. Les enfants peuvent également contracter la maladie si leur peau est infectée par des bactéries de type strep, comme l'impétigo ou une coupure qui s'infecte.",
+      "retrieved_docs": [
+        {
+          "source": "https://kidshealth.org/en/parents/scarlet-fever.html",
+          "title": "Scarlet Fever | Nemours KidsHealth",
+          "relevance_score": 0.9988177418708801,
+          "content": "Scarlet Fever\nWhat Is Scarlet Fever?\nScarlet fever is an illness that can happen in kids, usually 5–15 years old, who also have strep throat or strep skin infections. The strep bacteria make a toxin (poison) that causes a bright red, bumpy rash.\nThe rash spreads over most of the body and is what gives scarlet fever (also known as scarlatina) its name. It often looks like a bad sunburn with fine bumps that may feel rough like sandpaper, and it can itch. It usually starts to go away after about 1 "
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/scarlet-fever.html",
+          "title": "Scarlet Fever | Nemours KidsHealth",
+          "relevance_score": 0.9969293475151062,
+          "content": "How Can Parents Help?\nEating can be painful for kids with severe strep throat, so serving soft foods or a liquid diet may be best. Include soothing teas and warm nutritious soups, or cool drinks, popsicles, or slushies. Help your child drinks plenty of fluids. You can give acetaminophen or ibuprofen for fever or throat pain.\nIf the rash itches, make sure that your child's fingernails are trimmed short so skin isn't damaged through scratching. Try an over-the-counter anti-itch medicine to help re"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/scarlet-fever.html",
+          "title": "Scarlet Fever | Nemours KidsHealth",
+          "relevance_score": 0.9737452864646912,
+          "content": "In rare cases, scarlet fever may develop from a streptococcal skin infection like impetigo or a cut that gets infected. In these cases, the child may not get a sore throat.\nHow Is Scarlet Fever Diagnosed?\nTo confirm whether a child has scarlet fever, doctors usually order a rapid strep test or throat culture (a painless swab of the throat) to check for the strep bacteria.\nHow Is Scarlet Fever Treated?\nIf a strep infection is confirmed, the doctor will prescribe an antibiotic for a child to take "
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/scarlet-fever.html",
+          "title": "Scarlet Fever | Nemours KidsHealth",
+          "relevance_score": 0.9246671199798584,
+          "content": "What Are the Signs & Symptoms of Scarlet Fever?\nThe telltale rash is the main sign of scarlet fever. It usually starts on the neck, face, or chest, then spreads to the trunk, arms, and legs. The face is red, often with a clear area around the mouth. In body creases — especially around the underarms, elbows, and groin — the rash often is a brighter red and forms red streaks.\nOther symptoms of scarlet fever usually include:\n- a red, sore throat\n- a fever\n- swollen glands in the neck\nAlso, the tons"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/labtest11.html",
+          "title": "Strep Test: Throat Culture | Nemours KidsHealth",
+          "relevance_score": 0.9022373557090759,
+          "content": "Strep Test: Throat Culture\nWhat Is a Throat Culture?\nA throat culture or strep test is done by using a throat swab to detect the presence of group A streptococcus bacteria, the most common cause of strep throat. These bacteria also can cause other infections (including scarlet fever, abscesses, and pneumonia).\nA sample swabbed from the back of the throat is put on a special plate (culture) that enables bacteria to grow in the lab. If bacteria don't grow, the culture is negative and the person do"
+        }
+      ],
+      "is_negative": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.6020229731587124,
+      "context_utilization": 0.94999999997625,
+      "elapsed_s": 4.712
+    },
+    {
+      "question": "Qu’est-ce que l’impétigo chez les enfants ?",
+      "language": "French",
+      "label": 1,
+      "reasoning": "Le contexte fournit suffisamment d'informations sur l'impétigo, une infection bactérienne courante chez les enfants. Les informations clés sont que l'impétigo est causé par deux types de bactéries : Staphylococcus aureus et group A streptococcus, et qu'il peut être prévenu en gardant la peau propre et en évitant les irritations cutanées.",
+      "final_answer": "L'impétigo est une infection bactérienne très courante chez les enfants, qui peut causer des boutons ou des éruptions cutanées. Elle n'est généralement pas grave et s'améliore avec un traitement antibiotique. Les enfants peuvent développer l'impétigo lorsque leur peau est irritée par une autre maladie, comme l'éczéma, les piqûres d'insectes ou les coupures.",
+      "retrieved_docs": [
+        {
+          "source": "https://kidshealth.org/en/parents/impetigo.html",
+          "title": "Impetigo | Nemours KidsHealth",
+          "relevance_score": 0.9988664388656616,
+          "content": "Impetigo\nWhat Is Impetigo?\nImpetigo (im-peh-TY-go) is a very common bacterial skin infection among kids, especially preschoolers and school-age kids. It can cause blisters or sores, is not usually serious, and improves with antibiotic treatment.\nWhat Causes Impetigo?\nTwo types of bacteria — Staphylococcus aureus and group A streptococcus (which also causes strep throat) — usually cause impetigo. Methicillin-resistant Staphylococcus aureus (MRSA) is also becoming an important cause of impetigo."
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/impetigo.html",
+          "title": "Impetigo | Nemours KidsHealth",
+          "relevance_score": 0.2877825200557709,
+          "content": "The three types of impetigo are non-bullous (crusted), bullous (large blisters), and ecthyma (ulcers):\n- Non-bullous or crusted impetigo is most common. It begins as tiny blisters that eventually burst and leave small wet patches of red skin that may weep fluid. Gradually, a yellowish-brown or tan crust covers the area, making it look like it has been coated with honey or brown sugar.\n- Bullous impetigo causes larger fluid-containing blisters that look clear, then cloudy. These blisters are more"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/impetigo.html",
+          "title": "Impetigo | Nemours KidsHealth",
+          "relevance_score": 0.24760869145393372,
+          "content": "Kids can be more likely to develop impetigo when their skin is already irritated by another problem, such as eczema, poison ivy, insect bites, and cuts or scrapes. Bacteria that usually live harmlessly on the skin can get into the body through the area of broken skin, leading to symptoms of impetigo. Scratching a sore or a rash is a common cause — for example, poison ivy can get infected and turn into impetigo. It also happens more often in warm, humid environments. Making sure that kids wash th"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/impetigo.html",
+          "title": "Impetigo | Nemours KidsHealth",
+          "relevance_score": 0.055105309933423996,
+          "content": "How Is Impetigo Diagnosed?\nIn most cases, doctors can diagnose impetigo based on how the rash looks. Occasionally, they may need to take a sample of fluid from blisters for testing.\nHow Is Impetigo Treated?\nImpetigo is typically treated with antibiotics, either as a cream/ointment to put on skin or a medicine taken by mouth:\n- When it just affects a small area of the skin (and especially if it's the non-bullous form), impetigo is treated with antibiotic ointment for 5 days.\n- If the infection ha"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/impetigo.html",
+          "title": "Impetigo | Nemours KidsHealth",
+          "relevance_score": 0.045574575662612915,
+          "content": "Children can usually return to school or daycare 24 hours after starting treatment.\nCan Impetigo Be Prevented?\nKeeping skin clean can help prevent impetigo. Kids should wash their hands well and often and take baths or showers regularly. Pay special attention to skin injuries (cuts, scrapes, bug bites, etc.), areas of eczema, and rashes such as poison ivy. Keep these areas clean and covered.\nAnyone in your family with impetigo should keep their fingernails cut short and the impetigo sores covere"
+        }
+      ],
+      "is_negative": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.6370141694078045,
+      "context_utilization": 0.8055555555287036,
+      "elapsed_s": 2.345
+    },
+    {
+      "question": "Quais são os sintomas de pneumonia em crianças?",
+      "language": "Portuguese",
+      "label": 1,
+      "reasoning": "O contexto contém informações suficientes para responder à pergunta. As principais características dos sintomas de pneumonia em crianças incluem febre, tosse, respiração rápida ou difícil, calafrios e dor no peito. Alguns sintomas mais graves podem incluir dificuldade para respirar, azulzinho nos lábios ou dedos, perda de apetite (em crianças maiores) ou alimentação ruim (em bebês). É importante notar que esses sintomas podem variar dependendo da causa e localização do infeccção.",
+      "final_answer": "Os principais sintomas de pneumonia em crianças incluem febre, tosse, respiração rápida ou difícil, calafrios e dor no peito. Alguns sintomas mais graves podem incluir dificuldade para respirar, azulzinho nos lábios ou dedos, perda de apetite (em crianças maiores) ou alimentação ruim (em bebês). É importante buscar atendimento médico imediatamente se o seu filho apresentar esses sintomas.",
+      "retrieved_docs": [
+        {
+          "source": "https://kidshealth.org/en/parents/pneumonia.html",
+          "title": "Pneumonia in Kids | Nemours KidsHealth",
+          "relevance_score": 0.9993597865104675,
+          "content": "Pneumonia in Kids\nOverview\nWhat Is Pneumonia?\nPneumonia (nu-MOH-nyuh) is a kind of lung infection. Normally, the small sacs in the lungs are filled with air. If someone has pneumonia, the air sacs fill up with pus and other fluid. This makes it hard to breathe normally.\nTop Things to Know\n- Pneumonia is a common lung infection that can make it tough for kids to breathe normally.\n- Common symptoms include fever, cough, fast or hard breathing, and chills.\n- Treatment depends on the cause and may i"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/pneumonia.html",
+          "title": "Pneumonia in Kids | Nemours KidsHealth",
+          "relevance_score": 0.9883028864860535,
+          "content": "- breathing with grunting or wheezing sounds\n- working hard to breathe\n- vomiting\n- chest pain\n- belly pain\n- being less active\n- loss of appetite (in older kids) or poor feeding (in babies)\nWhen Should I Go to the ER?\nGo to a hospital emergency room (ER) right away if your child has:\n- chest pain or trouble breathing\n- lips or fingers that look blue\nCauses & Prevention\nWhat Causes Pneumonia?\nViruses\nPneumonia is often caused by viruses, like the influenza virus (flu) and adenovirus. Other virus"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/pneumomediastinum.html",
+          "title": "Pneumomediastinum | Nemours KidsHealth",
+          "relevance_score": 0.9772400259971619,
+          "content": "- It can happen after things like strong coughing, vomiting, or an asthma flare-up.\nSigns & Symptoms\nWhat Are the Symptoms?\nSometimes kids don’t have any symptoms of pneumomediastinum, but when they do happen, they may include:\n- chest pain that may spread to the arms or neck\n- trouble breathing or shortness of breath (not being able to breathe in enough air)\n- strong coughing or fast, shallow breathing\n- a crackling feeling under the skin of the neck or chest (called subcutaneous emphysema) due"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/walking-pneumonia.html",
+          "title": "Walking Pneumonia in Kids: Signs, Diagnosis & Treatment | Nemours KidsHealth",
+          "relevance_score": 0.9631634950637817,
+          "content": "Walking Pneumonia in Kids: Signs, Diagnosis & Treatment\nAlso called: Atypical Pneumonia\nWhat Is Walking Pneumonia?\nWalking pneumonia is a less serious form of the lung infection pneumonia. It's often caused by bacteria called Mycoplasma pneumoniae, but other bacteria or viruses can also cause it.\nMost kids with this type of pneumonia (nuh-MOH-nyuh) don't feel sick enough to stay home — hence, the name \"walking\" pneumonia. But even a child who feels fine should stay home for a few days until anti"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/walking-pneumonia.html",
+          "title": "Walking Pneumonia in Kids: Signs, Diagnosis & Treatment | Nemours KidsHealth",
+          "relevance_score": 0.9319396615028381,
+          "content": "Walking pneumonia symptoms to look for:\n- a fever of 101°F (38.5°C) or below\n- a cough that can last for weeks to months\n- fatigue (feeling very tired)\n- headache, chills, sore throat, and other cold or flu-like symptoms\n- ear pain\n- chest pain or stomach pain\n- malaise (feeling of discomfort)\n- vomiting\n- loss of appetite (in older kids) or poor feeding (in infants)\n- rash\n- joint pain\n- fast breathing or breathing with grunting or wheezing sounds\n- retractions, which are a sign that someone is"
+        }
+      ],
+      "is_negative": false,
+      "faithfulness": NaN,
+      "answer_relevancy": 0.7436383005633351,
+      "context_utilization": 0.8666666666377778,
+      "elapsed_s": 4.886
+    },
+    {
+      "question": "Wie wird eine Rotavirus-Infektion bei Säuglingen behandelt?",
+      "language": "German",
+      "label": 1,
+      "reasoning": "Der Kontext enthält ausreichend Beweise für die Behandlung einer Rotavireninfektion bei Säuglingen. Die relevantesten Informationen sind die Behandlung von Dehydrierung durch intravenöse Flüssigkeitszufuhr, die Empfehlung der Einnahme von oralen Rehydrationslösungen wie Pedialyte und die Bedeutung des Stillens oder der Formulabereitung bei Säuglingen. Es gibt jedoch einige Unsicherheiten hinsichtlich der Dosis und Häufigkeit der oralen Rehydrationslösung. Die Frage ist in den Bereich der Pädiatrie und Gesundheit verwiesen.",
+      "final_answer": "Bei einer Rotavireninfektion bei Säuglingen wird die Behandlung von Dehydrierung durch intravenöse Flüssigkeitszufuhr umgesetzt. Es ist auch empfohlen, oralen Rehydrationslösungen wie Pedialyte zu geben, um den Wasserverlust auszugleichen. Säuglinge sollten weiterhin gestillt oder mit Formulabereitung versorgt werden, solange sie nicht stark erbrechen. Wenn das Kind sich besser fühlt, kann die Menge an oralen Rehydrationslösung reduziert und die Menge an normaler Nahrung und Flüssigkeit erhöht werden.",
+      "retrieved_docs": [
+        {
+          "source": "https://kidshealth.org/en/parents/rotavirus.html",
+          "title": "Rotavirus | Nemours KidsHealth",
+          "relevance_score": 0.9914401769638062,
+          "content": "How Is Rotavirus Diagnosed?\nDoctors usually can tell if someone has stomach flu by hearing about the symptoms. Usually, no tests are needed. If a child is very sick or has blood or mucus in their poop, doctors might order a stool (poop) test to check for rotavirus and other germs that cause diarrhea. The doctor may also order a urine (pee) test or blood test to check for dehydration.\nHow Is Rotavirus Treated?\nBabies and toddlers who are dehydrated may need treatment in a hospital. They'll get in"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/rsv.html",
+          "title": "Respiratory Syncytial Virus (RSV) | Nemours KidsHealth",
+          "relevance_score": 0.9901902675628662,
+          "content": "RSV infection can be more serious in babies and toddlers, though. Some might need treatment in a hospital where they can be watched closely and get supportive treatment for any breathing problems or dehydration.\nHome Care\nAt home:\n- Make your child as comfortable as possible.\n- Allow time for recovery.\n- Provide plenty of fluids. Babies may not feel like drinking, so offer fluids in small amounts often.\nAvoid hot-water and steam humidifiers, which can be hazardous and can scald skin. If you use "
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/rotavirus.html",
+          "title": "Rotavirus | Nemours KidsHealth",
+          "relevance_score": 0.8577045798301697,
+          "content": "Washing hands well and often, especially after using the bathroom and before preparing or eating food, is the best way to prevent rotavirus infection. Kids with rotavirus should stay home from childcare until the diarrhea is gone.\nWhen Should I Call the Doctor?\nCall the doctor if you think child may have of a rotavirus infection. Call right away if your child:\n- can’t drink for several hours\n- is peeing less often than usual\n- has signs of dehydration, such as crying with few or no tears, having"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/rotavirus.html",
+          "title": "Rotavirus | Nemours KidsHealth",
+          "relevance_score": 0.6391300559043884,
+          "content": "Rotavirus\nWhat Is Rotavirus?\nRotavirus is a common cause of gastroenteritis, often called stomach flu. The virus infects the stomach and intestines. It causes vomiting and diarrhea, especially in babies and young children. Infections are common during the winter and spring months, especially in childcare centers.\nThe rotavirus immunization is recommended for most infants. It can help prevent rotavirus infections.\nWhat Are the Signs & Symptoms of Rotavirus?\nKids with a rotavirus (ROE-tuh-vy-rus) "
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/rotavirus.html",
+          "title": "Rotavirus | Nemours KidsHealth",
+          "relevance_score": 0.6102335453033447,
+          "content": "- Drink small amounts of an oral rehydration solution (such are Pedialyte, Enfalyte, or a store brand) often. It has the right amount of water, sugar, and salt to help with dehydration. You can buy it without a prescription at drugstores or supermarkets.\n- Avoid full-strength (undiluted) fruit juices, soda, and sports drinks, which can make diarrhea worse.\n- Continue to breastfeed or take formula, as long as they are not vomiting a lot.\nAs your child starts to feel better, you can give less oral"
+        }
+      ],
+      "is_negative": false,
+      "faithfulness": NaN,
+      "answer_relevancy": 0.71087101724234,
+      "context_utilization": 0.9999999999,
+      "elapsed_s": 18.324
+    },
+    {
+      "question": "Comment créer un site web à partir de zéro ?",
+      "language": "French",
+      "label": 0,
+      "reasoning": "Le contexte fourni ne contient pas d'informations pertinentes pour répondre à la question de création d'un site web depuis zéro. Il n'y a aucune mention de développement web, de conception de sites ou de technologies associées. La question est donc hors sujet.",
+      "final_answer": "Je suis désolé, mais je ne peux pas vous aider avec cette question car elle est en dehors du domaine de la pédiatrie et des soins de santé.",
+      "retrieved_docs": [],
+      "is_negative": true,
+      "faithfulness": null,
+      "answer_relevancy": null,
+      "context_utilization": null,
+      "elapsed_s": 2.141
+    },
+    {
+      "question": "What is impetigo in children?",
+      "language": "English",
+      "label": 1,
+      "reasoning": "The context contains enough evidence as it provides detailed information about impetigo from reputable sources like Nemours KidsHealth. The most relevant pieces of information found are that impetigo is a common bacterial skin infection among kids, especially preschoolers and school-age kids, caused by Staphylococcus aureus and group A streptococcus bacteria. It can cause blisters or sores, is not usually serious, and improves with antibiotic treatment. However, there are gaps in the information regarding specific symptoms and treatment options for each type of impetigo. The question is in-scope as it pertains to pediatric health.",
+      "final_answer": "Impetigo is a common bacterial skin infection among children, especially preschoolers and school-age kids. It can cause blisters or sores on the skin, which are usually not serious and can be treated with antibiotics. Impetigo can affect any part of the body but is most commonly found around the nose and mouth, hands, and forearms in young children. The infection can spread through direct contact with an infected person's skin or items that have come into contact with their skin.",
+      "retrieved_docs": [
+        {
+          "source": "https://kidshealth.org/en/parents/impetigo.html",
+          "title": "Impetigo | Nemours KidsHealth",
+          "relevance_score": 0.9988664388656616,
+          "content": "Impetigo\nWhat Is Impetigo?\nImpetigo (im-peh-TY-go) is a very common bacterial skin infection among kids, especially preschoolers and school-age kids. It can cause blisters or sores, is not usually serious, and improves with antibiotic treatment.\nWhat Causes Impetigo?\nTwo types of bacteria — Staphylococcus aureus and group A streptococcus (which also causes strep throat) — usually cause impetigo. Methicillin-resistant Staphylococcus aureus (MRSA) is also becoming an important cause of impetigo."
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/impetigo.html",
+          "title": "Impetigo | Nemours KidsHealth",
+          "relevance_score": 0.2877825200557709,
+          "content": "The three types of impetigo are non-bullous (crusted), bullous (large blisters), and ecthyma (ulcers):\n- Non-bullous or crusted impetigo is most common. It begins as tiny blisters that eventually burst and leave small wet patches of red skin that may weep fluid. Gradually, a yellowish-brown or tan crust covers the area, making it look like it has been coated with honey or brown sugar.\n- Bullous impetigo causes larger fluid-containing blisters that look clear, then cloudy. These blisters are more"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/impetigo.html",
+          "title": "Impetigo | Nemours KidsHealth",
+          "relevance_score": 0.24760869145393372,
+          "content": "Kids can be more likely to develop impetigo when their skin is already irritated by another problem, such as eczema, poison ivy, insect bites, and cuts or scrapes. Bacteria that usually live harmlessly on the skin can get into the body through the area of broken skin, leading to symptoms of impetigo. Scratching a sore or a rash is a common cause — for example, poison ivy can get infected and turn into impetigo. It also happens more often in warm, humid environments. Making sure that kids wash th"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/impetigo.html",
+          "title": "Impetigo | Nemours KidsHealth",
+          "relevance_score": 0.055105309933423996,
+          "content": "How Is Impetigo Diagnosed?\nIn most cases, doctors can diagnose impetigo based on how the rash looks. Occasionally, they may need to take a sample of fluid from blisters for testing.\nHow Is Impetigo Treated?\nImpetigo is typically treated with antibiotics, either as a cream/ointment to put on skin or a medicine taken by mouth:\n- When it just affects a small area of the skin (and especially if it's the non-bullous form), impetigo is treated with antibiotic ointment for 5 days.\n- If the infection ha"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/impetigo.html",
+          "title": "Impetigo | Nemours KidsHealth",
+          "relevance_score": 0.045574575662612915,
+          "content": "Children can usually return to school or daycare 24 hours after starting treatment.\nCan Impetigo Be Prevented?\nKeeping skin clean can help prevent impetigo. Kids should wash their hands well and often and take baths or showers regularly. Pay special attention to skin injuries (cuts, scrapes, bug bites, etc.), areas of eczema, and rashes such as poison ivy. Keep these areas clean and covered.\nAnyone in your family with impetigo should keep their fingernails cut short and the impetigo sores covere"
+        }
+      ],
+      "is_negative": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.888423834628813,
+      "context_utilization": 0.9999999999666667,
+      "elapsed_s": 5.955
+    },
+    {
+      "question": "Quais são os sintomas da caxumba em crianças?",
+      "language": "Portuguese",
+      "label": 1,
+      "reasoning": "O contexto contém evidências suficientes sobre os sintomas da mumps em crianças. As informações mais relevantes encontradas incluem a inflamação das glândulas parótidas, dor e dificuldade para engolir, falar ou mastigar. Alguns casos raros podem causar problemas graves como encefalite, meningite, orchitis ou ooforite. O contexto também menciona que os sintomas podem variar de leves a graves e que alguns indivíduos vacinados ainda podem desenvolver mumps com sintomas mais brandos.",
+      "final_answer": "Os sintomas da mumps em crianças incluem inflamação das glândulas parótidas, dor e dificuldade para engolir, falar ou mastigar. Em casos raros, a doença pode causar problemas graves como encefalite, meningite, orchitis ou ooforite. É importante notar que os sintomas podem variar de leves a graves e que alguns indivíduos vacinados ainda podem desenvolver mumps com sintomas mais brandos.",
+      "retrieved_docs": [
+        {
+          "source": "https://kidshealth.org/en/parents/mumps.html",
+          "title": "Mumps | Nemours KidsHealth",
+          "relevance_score": 0.9985201954841614,
+          "content": "Mumps\nWhat Is Mumps?\nMumps is an infection caused by a virus. It can infect many parts of the body, but is best known for causing swelling of the parotid glands. These glands, which make saliva (spit), are in front of the ear, around the jaw.\nMumps used to be a common childhood illness in the United States, especially in kids 5 to 9 years old. It's much rarer now, thanks to the mumps vaccine.\nWhat Are the Signs & Symptoms of Mumps?\nMany kids have no symptoms, or very mild symptoms that feel like"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/cough-sheet.html",
+          "title": "Cough: Treatment & Care | Nemours KidsHealth",
+          "relevance_score": 0.9892023205757141,
+          "content": "- is younger than 4 months old\n- has a blue or pale color in the lips, face, or tongue during or after coughing\n- is weak, cranky, or irritable\n- is dehydrated (signs include dizziness, drowsiness, a dry or sticky mouth, sunken eyes, crying with little or no tears, or peeing less often)is breathing fast or working hard to breathe\n- has severe cough spasms or attacks, stridor (a high-pitched sound when breathing in), wheezing, or a “whooping” sound when breathing in after coughing\n- is coughing u"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/adenovirus.html",
+          "title": "Adenovirus Infections | Nemours KidsHealth",
+          "relevance_score": 0.8122646808624268,
+          "content": "- has a high fever or one that lasts more than a few days\n- has breathing problems\n- is under 3 months old or has a weak immune system\n- has red eyes, eye pain, or a change in vision\n- has severe diarrhea, vomiting, or signs of dehydration, such as peeing less or having fewer wet diapers, a dry mouth, sunken eyes, or acting tired and listless\nYou know your child best. If your child seems very ill, call your doctor right away."
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/mumps.html",
+          "title": "Mumps | Nemours KidsHealth",
+          "relevance_score": 0.7638865113258362,
+          "content": "Sometimes people who have been vaccinated still get mumps. But their symptoms will be much milder than if they had not gotten the vaccine.\nDuring a mumps outbreak, doctors may recommend more shots of the MMR vaccine for some people who are more likely to get mumps. Your doctor will have the most current information.\nWhen Should I Call the Doctor?\nMumps can sometimes cause rare but severe problems. Call the doctor right away if your child has mumps and:\n- gets a severe headache\n- has a stiff neck"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/mumps.html",
+          "title": "Mumps | Nemours KidsHealth",
+          "relevance_score": 0.6003093123435974,
+          "content": "- Soothe swollen parotid glands with either warm or cool compresses (whichever feels better).\n- Help your child get plenty of rest.\n- Kids with mumps should stay home for 5 days from the start of parotid gland swelling. Ask your doctor about when your child can return to school or childcare.\nMumps is caused by a virus, so it can't be treated with antibiotics. Antibiotics work only against bacteria.\nHow Long Does Mumps Last?\nMost children with mumps recover fully in about 2 weeks.\nCan Mumps Be Pr"
+        }
+      ],
+      "is_negative": false,
+      "faithfulness": 0.8181818181818182,
+      "answer_relevancy": 0.5235372017556171,
+      "context_utilization": 0.9999999999,
+      "elapsed_s": 4.807
+    },
+    {
+      "question": "O que causa piolhos em crianças?",
+      "language": "Portuguese",
+      "label": 1,
+      "reasoning": "O contexto contém informações suficientes sobre os piolhos capilares em crianças. Os principais pontos relevantes são que os piolhos são insetos pequenos que vivem nos cabelos e se alimentam de sangue da pele do couro cabeludo, e que eles não são um sinal de higiene ruim ou doença contagiosa. Além disso, a falta de evidências sobre causas específicas de infecção por piolhos capilares é uma lacuna importante. O questionamento está dentro do escopo da saúde infantil.",
+      "final_answer": "Os piolhos capilares em crianças são causados pela presença desses insetos nos cabelos, que se alimentam de sangue da pele do couro cabeludo e podem causar coceira e irritação. Eles não são um sinal de higiene ruim ou doença contagiosa, mas sim uma infecção comum em crianças. É importante tratar os piolhos o mais rápido possível para evitar que eles se espalhem.",
+      "retrieved_docs": [
+        {
+          "source": "https://kidshealth.org/en/parents/head-lice.html",
+          "title": "Head Lice | Nemours KidsHealth",
+          "relevance_score": 0.9643986821174622,
+          "content": "Head Lice: Signs & Treatment\nWhat Are Head Lice?\nHead lice are tiny wingless insects. They live among human hairs and feed on blood from the scalp.\nHead lice are a common problem, especially for kids. They spread easily from person to person, and sometimes are tough to get rid of. Their bites can make a child's scalp itchy and irritated, and scratching can lead to infection.\nHead lice are annoying, but they're not dangerous and they don't spread disease. They're not a sign of poor hygiene — head"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/head-lice.html",
+          "title": "Head Lice | Nemours KidsHealth",
+          "relevance_score": 0.8999930024147034,
+          "content": "- Small red bumps or sores from scratching. Some kids have mild irritation from scratching, while others may get a bothersome rash. Scratching a lot can lead to a bacterial infection. Watch for swollen lymph nodes (glands) on the back or front of the neck, and red, tender skin that might have crusting and oozing. Doctors can treat a skin infection with an antibiotic.\nHow Can I Check My Child for Head Lice?\nLook for lice and nits on the scalp, behind the ears, and around the nape of the neck. It'"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/head-lice.html",
+          "title": "Head Lice | Nemours KidsHealth",
+          "relevance_score": 0.8901317715644836,
+          "content": "Will They Ever Be Gone?\nAs many parents know, fighting head lice can be an ongoing battle. There's no doubt that they can be hard bugs to get rid of.\nIf you've tried everything and your child still has lice, it could be because:\n- some nits were left behind (if you see nits far from the scalp — more than ½ inch (1 cm) — and no live lice, these are probably dead and treatment likely isn't needed)\n- your child is still around someone who has lice\n- the treatment you're using isn't effective\nIf you"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/head-lice.html",
+          "title": "Head Lice | Nemours KidsHealth",
+          "relevance_score": 0.8583894968032837,
+          "content": "What Else Should I Know?\nRemind your child that while having lice can be embarrassing, anyone can get them. Having head lice is not a sign of dirtiness or poor hygiene. The pesky little bugs can be a problem no matter how often kids do — or don't — wash their hair or bathe.\nDealing with head lice can be frustrating, but be patient. Follow the treatments and prevention tips from your doctor, and soon your family will be lice-free."
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/head-lice-sheet.html",
+          "title": "Head Lice: First Aid | Nemours KidsHealth",
+          "relevance_score": 0.7140034437179565,
+          "content": "How to Handle Head Lice\nHead lice are tiny, wingless insects that can attach to a person's hair, where they feed on tiny amounts of blood drawn from the scalp. Head lice, while annoying, aren't dangerous and they don't spread disease.\nWhat Are the Signs & Symptoms of Head Lice?\nSigns of head lice can include:\n- an itchy scalp\n- nits (lice eggs that look like tiny grey or yellow-white oval speck) on the hair shaft close to the scalp\n- lice (gray or reddish brown tiny insects) on the hair shaft\n- "
+        }
+      ],
+      "is_negative": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.924421299588829,
+      "context_utilization": 0.7555555555303703,
+      "elapsed_s": 2.539
+    },
+    {
+      "question": "O que é impetigo em crianças?",
+      "language": "Portuguese",
+      "label": 1,
+      "reasoning": "O contexto contém evidências suficientes sobre a doença impetigo em crianças. As informações mais relevantes encontradas incluem que o impetigo é uma infecção bacteriana comum entre crianças, especialmente na idade pré-escolar e escolar, causada por bactérias como Staphylococcus aureus e grupo A streptococcus. Os sintomas incluem bolhas ou úlceras, e a doença pode ser tratada com antibióticos. Existem algumas lacunas na informação sobre as formas de prevenção e o tempo necessário para que os bebês possam retornar à escola após o início do tratamento.",
+      "final_answer": "O impetigo é uma infecção bacteriana muito comum entre crianças, especialmente na idade pré-escolar e escolar. Ela pode causar bolhas ou úlceras no corpo, mas geralmente não é grave e melhora com o tratamento antibiótico. É importante manter a pele limpa para prevenir a doença, e os bebês podem retornar à escola 24 horas após iniciar o tratamento.",
+      "retrieved_docs": [
+        {
+          "source": "https://kidshealth.org/en/parents/impetigo.html",
+          "title": "Impetigo | Nemours KidsHealth",
+          "relevance_score": 0.9988664388656616,
+          "content": "Impetigo\nWhat Is Impetigo?\nImpetigo (im-peh-TY-go) is a very common bacterial skin infection among kids, especially preschoolers and school-age kids. It can cause blisters or sores, is not usually serious, and improves with antibiotic treatment.\nWhat Causes Impetigo?\nTwo types of bacteria — Staphylococcus aureus and group A streptococcus (which also causes strep throat) — usually cause impetigo. Methicillin-resistant Staphylococcus aureus (MRSA) is also becoming an important cause of impetigo."
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/impetigo.html",
+          "title": "Impetigo | Nemours KidsHealth",
+          "relevance_score": 0.2877825200557709,
+          "content": "The three types of impetigo are non-bullous (crusted), bullous (large blisters), and ecthyma (ulcers):\n- Non-bullous or crusted impetigo is most common. It begins as tiny blisters that eventually burst and leave small wet patches of red skin that may weep fluid. Gradually, a yellowish-brown or tan crust covers the area, making it look like it has been coated with honey or brown sugar.\n- Bullous impetigo causes larger fluid-containing blisters that look clear, then cloudy. These blisters are more"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/impetigo.html",
+          "title": "Impetigo | Nemours KidsHealth",
+          "relevance_score": 0.24760869145393372,
+          "content": "Kids can be more likely to develop impetigo when their skin is already irritated by another problem, such as eczema, poison ivy, insect bites, and cuts or scrapes. Bacteria that usually live harmlessly on the skin can get into the body through the area of broken skin, leading to symptoms of impetigo. Scratching a sore or a rash is a common cause — for example, poison ivy can get infected and turn into impetigo. It also happens more often in warm, humid environments. Making sure that kids wash th"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/impetigo.html",
+          "title": "Impetigo | Nemours KidsHealth",
+          "relevance_score": 0.055105309933423996,
+          "content": "How Is Impetigo Diagnosed?\nIn most cases, doctors can diagnose impetigo based on how the rash looks. Occasionally, they may need to take a sample of fluid from blisters for testing.\nHow Is Impetigo Treated?\nImpetigo is typically treated with antibiotics, either as a cream/ointment to put on skin or a medicine taken by mouth:\n- When it just affects a small area of the skin (and especially if it's the non-bullous form), impetigo is treated with antibiotic ointment for 5 days.\n- If the infection ha"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/impetigo.html",
+          "title": "Impetigo | Nemours KidsHealth",
+          "relevance_score": 0.045574575662612915,
+          "content": "Children can usually return to school or daycare 24 hours after starting treatment.\nCan Impetigo Be Prevented?\nKeeping skin clean can help prevent impetigo. Kids should wash their hands well and often and take baths or showers regularly. Pay special attention to skin injuries (cuts, scrapes, bug bites, etc.), areas of eczema, and rashes such as poison ivy. Keep these areas clean and covered.\nAnyone in your family with impetigo should keep their fingernails cut short and the impetigo sores covere"
+        }
+      ],
+      "is_negative": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.6321903623039753,
+      "context_utilization": 0.94999999997625,
+      "elapsed_s": 2.655
+    },
+    {
+      "question": "Was ist eine RSV-Infektion bei Säuglingen?",
+      "language": "German",
+      "label": 1,
+      "reasoning": "Das Kontext enthält ausreichend Beweise für die Beantwortung der Frage. Die relevantesten Informationen sind die Symptome von RSV, wie z.B. Husten, Fieber und Atemnot. Es gibt jedoch einige Lücken in der Information über spezifische Behandlungen oder Tests für RSV. Die Frage ist jedoch im Bereich der Kinderheilkunde und Gesundheit relevant.",
+      "final_answer": "RSV-Erkrankung bei Säuglingen ist eine häufige Atemwegserkrankung, die durch das Respiratory Syncytial Virus (RSV) verursacht wird. Die Symptome können mild sein, wie ein gewöhnlicher Husten oder Fieber, aber in manchen Fällen kann es zu schwereren Atemnotproblemen führen, insbesondere bei Frühgeborenen oder Babys unter einem Jahr alt. In den meisten Fällen wird die RSV-Erkrankung nicht durch eine spezifische Behandlung behandelt, da Antibiotika gegen Viren nicht wirken. Die Behandlung besteht hauptsächlich aus der Unterstützung des Säuglings bei der Atemnot und der Vermeidung von Dehydration.",
+      "retrieved_docs": [
+        {
+          "source": "https://kidshealth.org/en/parents/rsv.html",
+          "title": "Respiratory Syncytial Virus (RSV) | Nemours KidsHealth",
+          "relevance_score": 0.9883996248245239,
+          "content": "Respiratory Syncytial Virus (RSV)\nOverview\nWhat Is Respiratory Syncytial Virus (RSV)?\nRespiratory syncytial (sin-SISH-ul) virus (RSV) is a major cause of respiratory illness in children. The virus usually causes a common cold. But sometimes it infects the lungs and breathing passages and can cause breathing problems in babies and young children.\nSigns & Symptoms\nWhat Are the Signs & Symptoms of Respiratory Syncytial Virus (RSV)?\nKids with RSV might have cold symptoms, such as:\n- a stuffy or runn"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/flu-vs-cold.html",
+          "title": "Is It a Cold, the Flu, an RSV Infection, or COVID-19? | Nemours KidsHealth",
+          "relevance_score": 0.9342578649520874,
+          "content": "RSV Infection\nSymptoms\nRSV — respiratory syncytial (sin-SISH-ul) virus — is caused by the RSV virus and usually causes cold symptoms. But in some infants and young children, it can lead to a more serious infection, such as bronchiolitis or pneumonia. Those with an RSV infection might have fever, cough, wheezing, and trouble breathing. They might breathe very fast, grunt with the effort, or have retractions (when the skin between and below the ribs pulls in during breathing). They might feed poor"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/bronchiolitis.html",
+          "title": "Bronchiolitis | Nemours KidsHealth",
+          "relevance_score": 0.8875964283943176,
+          "content": "Respiratory syncytial virus (RSV) is the most common cause of bronchiolitis. Sometimes, the common cold and the flu also can cause it.\nBronchiolitis:\n- most often affects infants and young children because their small airways can easily get blocked\n- is most common during the first 2 years of life, and especially among babies\n- is more common in premature babies, children with lung or heart problems, and kids with weak immune systems\nKids who are around secondhand smoke have a higher risk for br"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/bronchiolitis.html",
+          "title": "Bronchiolitis | Nemours KidsHealth",
+          "relevance_score": 0.8312769532203674,
+          "content": "Call your health care provider if your child:\n- develops a new or high fever\n- has a cough or other symptoms that get worse\n- is wheezing (a whistling sound heard with breathing)\nGet medical care right away if your child:\n- has trouble breathing. This may look like:\n- fast, shallow breathing, when you see the belly moving up and down quickly\n- your child is working hard to get breaths in. You may see the areas below the ribs, between the ribs, and/or in the neck sinking in with breathing.\n- flar"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/rsv.html",
+          "title": "Respiratory Syncytial Virus (RSV) | Nemours KidsHealth",
+          "relevance_score": 0.6864411234855652,
+          "content": "In kids, other respiratory viruses such as flu and COVID-19 can cause symptoms similar to those from RSV. Talk to the doctor to make sure your child is up to date on recommended vaccines.\nHow Is Respiratory Syncytial Virus (RSV) Diagnosed?\nHealth care providers usually diagnose a respiratory virus by taking a medical history and doing an exam. In many kids, they don't need to distinguish RSV infection from a common cold.\nBut if a child has other health conditions or more serious symptoms, doctor"
+        }
+      ],
+      "is_negative": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.7172023997693668,
+      "context_utilization": 0.99999999998,
+      "elapsed_s": 4.869
+    },
+    {
+      "question": "Was ist Bindehautentzündung bei Kindern?",
+      "language": "German",
+      "label": 1,
+      "reasoning": "Das Kontext enthält ausreichend Beweise über das Thema Conjunktivitis bei Kindern. Die wichtigsten Informationen sind die Beschreibung der Krankheit als Entzündung der Konjunktiva und die Symptome wie rote oder rosa Augen, Schmerzen im Auge, Ausfluss und geschwollene Lidern. Es gibt auch Hinweise auf die Übertragbarkeit der Krankheit durch Bakterien und Viren sowie auf mögliche Ursachen wie allergische Reaktionen und Irritationen. Einige Lücken oder Unsicherheiten bestehen darin, dass nicht alle Arten von Conjunktivitis gleich behandelt werden müssen. Die Frage ist in den Bereich der Kinderheilkunde und Gesundheit verwurzelt.",
+      "final_answer": "Conjunktivitis bei Kindern ist eine Entzündung der Konjunktiva, die das Weiße des Auges und die Innenseiten der Augenlider umgibt. Die Symptome können rote oder rosa Augen, Schmerzen im Auge, Ausfluss und geschwollene Lidern umfassen. Es ist wichtig, dass Kinder mit Conjunktivitis von einem Arzt behandelt werden, da einige Arten der Krankheit nicht auf eigene Faust heilen, sondern medizinische Hilfe benötigen.",
+      "retrieved_docs": [
+        {
+          "source": "https://kidshealth.org/en/parents/conjunctivitis.html",
+          "title": "Conjunctivitis (Pinkeye) In Kids | Nemours KidsHealth",
+          "relevance_score": 0.883115291595459,
+          "content": "Conjunctivitis (Pinkeye) In Kids\nWhat Is Pinkeye?\nThe eye infection conjunctivitis (kun-junk-tih-VY-tus) — often called pinkeye — is common in young kids. It's usually contagious, and breakouts can sweep through preschools and playgrounds. But even teens and adults can get pinkeye.\nPinkeye is an inflammation of the conjunctiva, the white part of the eye and the inner eyelids. It's a minor infection and although it might look bad, usually isn't serious.\nStill, if your child shows signs of pinkeye"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/conjunctivitis.html",
+          "title": "Conjunctivitis (Pinkeye) In Kids | Nemours KidsHealth",
+          "relevance_score": 0.07703627645969391,
+          "content": "What Are the Signs & Symptoms of Pinkeye?\nBesides the telltale red or pink color that gives pinkeye its name, eye discomfort is a common symptom. Kids might say that it feels like there's sand in the eye. Often, there's some discharge from the eye, and pain and swelling of the conjunctiva. Some kids have swollen eyelids or sensitivity to bright light. Pinkeye can affect one or both eyes.\nIn cases of allergic conjunctivitis, itchiness and watery eyes are common symptoms.\nIs Pinkeye Contagious?\nPi"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/conjunctivitis.html",
+          "title": "Conjunctivitis (Pinkeye) In Kids | Nemours KidsHealth",
+          "relevance_score": 0.019175104796886444,
+          "content": "Doctors usually recommend keeping kids with contagious conjunctivitis out of school, childcare, or summer camp for a short time.\nCan Pinkeye Be Prevented?\nInfectious conjunctivitis is highly contagious, so teach kids to wash their hands well and often with warm water and soap. They also should not share eye drops, tissues, eye makeup, washcloths, towels, or pillowcases.\nBe sure to wash your own hands well after touching an infected child's eyes, and throw away items like gauze or cotton balls af"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/conjunctivitis.html",
+          "title": "Conjunctivitis (Pinkeye) In Kids | Nemours KidsHealth",
+          "relevance_score": 0.011032160371541977,
+          "content": "Some kinds of pinkeye are noninfectious, such as:\n- allergic conjunctivitis, which happens more often in kids with other allergic conditions, like hay fever. Triggers include grass, ragweed pollen, animal dander, and dust mites.\n- irritant conjunctivitis, caused by anything that irritates the eyes, such as air pollution or chlorine in pools\nPinkeye in Newborns\nNewborns are at risk for pinkeye and can develop serious health problems if it's not treated. If a pregnant woman has an STD, during deli"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/conjunctivitis.html",
+          "title": "Conjunctivitis (Pinkeye) In Kids | Nemours KidsHealth",
+          "relevance_score": 0.00718700373545289,
+          "content": "If your child has allergic conjunctivitis, your doctor may prescribe anti-allergy medicine, either as pills, liquid, or eye drops.\nYou also can give acetaminophen or ibuprofen to relieve discomfort (check instructions for correct amount).\nHow Can Parents Help?\nUsing cool or warm compresses on the eyes may make your child more comfortable. Clean the edges of the infected eye carefully with warm water and gauze or cotton balls. This can also remove the crusts of dried discharge that make the eyeli"
+        }
+      ],
+      "is_negative": false,
+      "faithfulness": 0.8888888888888888,
+      "answer_relevancy": 0.49861281507847743,
+      "context_utilization": 0.9166666666361111,
+      "elapsed_s": 5.358
+    },
+    {
+      "question": "What is artificial intelligence?",
+      "language": "English",
+      "label": 0,
+      "reasoning": "The context does not contain enough evidence to answer the question as it is unrelated to pediatric care or health-related topics. The most relevant information found is none, as there are no relevant pieces of information provided. There are gaps and uncertainties in answering a question about artificial intelligence without any context or relation to pediatrics. This question is out-of-scope for a pediatric assistant.",
+      "final_answer": "I don't know the answer to your question as it is not related to pediatric care or health-related topics.",
+      "retrieved_docs": [],
+      "is_negative": true,
+      "faithfulness": null,
+      "answer_relevancy": null,
+      "context_utilization": null,
+      "elapsed_s": 2.655
+    },
+    {
+      "question": "Was sind die Symptome von Norovirus bei Kindern?",
+      "language": "German",
+      "label": 1,
+      "reasoning": "Das bereitgestellte Kontext enthält ausreichend Beweise, um die Symptome von Noroviren bei Kindern zu beschreiben. Die relevantesten Informationen sind die Beschreibungen der Symptome in den verschiedenen Quellen, wie z.B. Nausea und Erbrechen, wässriges Durchfall und Bauchschmerzen. Es gibt jedoch einige Lücken oder Unsicherheiten, da die Frage nicht explizit nach einer Behandlung oder Prävention fragt. Die Frage ist jedoch in den Bereich der Kinderkrankheiten und Gesundheit gehören.",
+      "final_answer": "Die Symptome von Noroviren bei Kindern können Nausea und Erbrechen, wässriges Durchfall und Bauchschmerzen umfassen. Einige Kinder mögen auch Fieber, Schüttelfrost, Kopfschmerzen oder Muskelschmerzen haben. Es ist wichtig zu beachten, dass Noroviren leicht ansteckend sind und sich schnell verbreiten können, daher sollten Kinder regelmäßig ihre Hände waschen und oft duschen.",
+      "retrieved_docs": [
+        {
+          "source": "https://kidshealth.org/en/parents/norovirus.html",
+          "title": "Norovirus | Nemours KidsHealth",
+          "relevance_score": 0.9984110593795776,
+          "content": "Norovirus\nWhat Is Norovirus?\nNorovirus is a virus that causes diarrhea and vomiting. It’s sometimes called the stomach flu or stomach bug, but norovirus (NOR-uh-vy-ris) isn’t related to the flu.\nWhat Are the Signs & Symptoms of Norovirus Infection?\nAbout a day or two after contact with norovirus, a person may have symptoms such as:\n- nausea and vomiting\n- watery diarrhea\n- belly pain\nSome people might also have a fever, chills, headache, or muscle aches. Sometimes norovirus causes no symptoms, b"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/norovirus.html",
+          "title": "Norovirus | Nemours KidsHealth",
+          "relevance_score": 0.9177270531654358,
+          "content": "- Make sure your child washes their hands well and often to prevent the virus from spreading.\n- When your child’s vomiting stops, offer small amounts of foods. A child who isn’t throwing up can eat a regular diet if they feel up to it. It may take time for them to feel like eating. There's no need to avoid dairy products unless they make the vomiting or diarrhea worse. Your child may need to avoid greasy or fried foods until they feel better.\nHow Long Does Norovirus Last?\nSymptoms of norovirus i"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/norovirus.html",
+          "title": "Norovirus | Nemours KidsHealth",
+          "relevance_score": 0.8962492346763611,
+          "content": "How Is Norovirus Diagnosed?\nHealth care providers usually diagnose a norovirus infection based on symptoms, rather than a test.\nIf a child’s symptoms are severe, the provider may test the blood, poop, or pee.\nHow Is Norovirus Treated?\nMost norovirus infections get better on their own. As your child recovers at home:\n- They should get plenty of rest.\n- Give lots of fluids to help your child stay hydrated.\n- Give an oral rehydration solution (such as Pedialyte, Enfalyte, or a store brand) to repla"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/norovirus.html",
+          "title": "Norovirus | Nemours KidsHealth",
+          "relevance_score": 0.8214899897575378,
+          "content": "Kids with other health problems may have more severe symptoms.\nIs Norovirus Contagious?\nYes. Norovirus spreads easily, even before someone has symptoms. Sometimes an infected person can spread it for weeks after they feel better. Anyone can get a norovirus infection, especially if they spend time where many people gather, like at childcare centers and schools and on cruise ships.\nThe virus is in the poop or vomit of infected people. It can get on an object or surface, especially when someone doe"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/rotavirus.html",
+          "title": "Rotavirus | Nemours KidsHealth",
+          "relevance_score": 0.752346396446228,
+          "content": "Rotavirus\nWhat Is Rotavirus?\nRotavirus is a common cause of gastroenteritis, often called stomach flu. The virus infects the stomach and intestines. It causes vomiting and diarrhea, especially in babies and young children. Infections are common during the winter and spring months, especially in childcare centers.\nThe rotavirus immunization is recommended for most infants. It can help prevent rotavirus infections.\nWhat Are the Signs & Symptoms of Rotavirus?\nKids with a rotavirus (ROE-tuh-vy-rus) "
+        }
+      ],
+      "is_negative": false,
+      "faithfulness": 0.8,
+      "answer_relevancy": 0.8358533984590428,
+      "context_utilization": 0.9999999999,
+      "elapsed_s": 7.578
+    },
+    {
+      "question": "O que causa otite em crianças?",
+      "language": "Portuguese",
+      "label": 1,
+      "reasoning": "O contexto contém evidências suficientes para responder à pergunta. As principais razões pelas quais os bebês desenvolvem infecções do ouvido incluem a anatomia dos tubos eustáquianos, que são mais curtos e horizontais, permitindo que bactérias e vírus entrem facilmente no meio-ouvido. Além disso, as amígdalas maiores nos bebês podem interferir com a abertura dos tubos eustáquianos. Outros fatores de risco incluem o tabagismo passivo, alimentação em biberão e exposição a outros bebês em creches.",
+      "final_answer": "As infecções do ouvido nos bebês são causadas principalmente pela anatomia dos tubos eustáquianos, que são mais curtos e horizontais, permitindo que bactérias e vírus entrem facilmente no meio-ouvido. Além disso, as amígdalas maiores nos bebês podem interferir com a abertura dos tubos eustáquianos, tornando-os mais propensos a infecções.",
+      "retrieved_docs": [
+        {
+          "source": "https://kidshealth.org/en/parents/otitis-media.html",
+          "title": "Middle Ear Infections (Otitis Media) | Nemours KidsHealth",
+          "relevance_score": 0.9943810105323792,
+          "content": "When doctors refer to an ear infection, they usually mean otitis media rather than swimmer's ear (or otitis externa). Otitis media with effusion is when noninfected fluid builds up in the ear. It might not cause symptoms, but in some kids, the fluid creates a sensation of ear fullness or \"popping.\"\nWhy Do Kids Get Ear Infections?\nKids (especially in the first 2 to 4 years of life) get ear infections more than adults do for several reasons:\n- Their shorter, more horizontal eustachian tubes let ba"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/otitis-media.html",
+          "title": "Middle Ear Infections (Otitis Media) | Nemours KidsHealth",
+          "relevance_score": 0.9906831979751587,
+          "content": "- Keep children's immunizations up to date because certain vaccines can help prevent ear infections.\nWhen Should I Call the Doctor?\nVery rarely, ear infections that don't go away or severe repeated middle ear infections can lead to complications. So kids with an earache or a sense of fullness in the ear, especially when combined with fever, should be seen by their doctors if they aren't getting better after a couple of days.\nOther things can cause earaches, such as teething, a foreign object in "
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/otitis-media.html",
+          "title": "Middle Ear Infections (Otitis Media) | Nemours KidsHealth",
+          "relevance_score": 0.9903646111488342,
+          "content": "Middle Ear Infections (Otitis Media)\nWhat Are Middle Ear Infections?\nEar infections happen when viruses or bacteria get into the middle ear, the space behind the eardrum. When a child has an ear infection (also called otitis media), the middle ear fills with pus (infected fluid). The pus pushes on the eardrum, which can be very painful.\nWhat Are the Signs & Symptoms of an Ear Infection?\nEar pain is the main sign of a middle ear infection. Kids also might have:\n- a fever\n- trouble eating, drinkin"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/otitis-media.html",
+          "title": "Middle Ear Infections (Otitis Media) | Nemours KidsHealth",
+          "relevance_score": 0.9738396406173706,
+          "content": "Older kids can complain about ear pain, but a younger child might just tug at the ear or be fussy and cry more than usual.\nIf the pressure from the fluid buildup gets high enough, it can rupture the eardrum, with fluid draining from the ear. This is a common cause of ruptured eardrums in children. A child with a ruptured eardrum might feel dizzy or nauseated, and have ringing or buzzing in the ear.\nHow Do Ear Infections Happen?\nA middle ear infection usually happens because of swelling in one or"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/swimmer-ear.html",
+          "title": "Swimmer's Ear (Otitis Externa) | Nemours KidsHealth",
+          "relevance_score": 0.973089873790741,
+          "content": "Swimmer's Ear (Otitis Externa)\nOverview\nWhat Is Swimmer's Ear?\nSwimmer's ear is an infection of the ear canal, the passage that carries sounds from the outside of the body to the eardrum. It can be caused by different types of germs.\nCauses\nWhat Causes It?\nSwimmer's ear (or otitis externa) is common in kids who spend a lot of time in the water. Too much moisture in the ear can irritate the skin in the canal, letting bacteria or fungi get in. It happens most often in summertime, when swimming is "
+        }
+      ],
+      "is_negative": false,
+      "faithfulness": 0.6666666666666666,
+      "answer_relevancy": 0.6528560032308709,
+      "context_utilization": 0.9999999999,
+      "elapsed_s": 4.9
+    },
+    {
+      "question": "What is the history of the Roman Empire?",
+      "language": "English",
+      "label": 0,
+      "reasoning": "The context does not contain enough evidence to answer the question about the history of the Roman Empire as it is unrelated to pediatric or health-related topics. The question is off-topic for this conversation.",
+      "final_answer": "I don't know the history of the Roman Empire, but I can tell you that our conversation is focused on providing information related to children's health and development.",
+      "retrieved_docs": [],
+      "is_negative": true,
+      "faithfulness": null,
+      "answer_relevancy": null,
+      "context_utilization": null,
+      "elapsed_s": 0.814
+    },
+    {
+      "question": "What causes head lice in children?",
+      "language": "English",
+      "label": 1,
+      "reasoning": "The context contains enough evidence to answer this question as it provides information on what head lice are, how they spread, and their symptoms. The most relevant pieces of information found include that head lice live among human hairs and feed on blood from the scalp, and they can be tough to get rid of. However, there is a gap in understanding why some children get head lice more easily than others. Despite this uncertainty, the question is clearly in-scope as it pertains to pediatric health.",
+      "final_answer": "Head lice are tiny wingless insects that live among human hairs and feed on blood from the scalp. They spread easily from person to person, especially among children, and can be tough to get rid of. Head lice are not a sign of poor hygiene or dirtiness, but rather a common problem that anyone can get.",
+      "retrieved_docs": [
+        {
+          "source": "https://kidshealth.org/en/parents/head-lice.html",
+          "title": "Head Lice | Nemours KidsHealth",
+          "relevance_score": 0.9643986821174622,
+          "content": "Head Lice: Signs & Treatment\nWhat Are Head Lice?\nHead lice are tiny wingless insects. They live among human hairs and feed on blood from the scalp.\nHead lice are a common problem, especially for kids. They spread easily from person to person, and sometimes are tough to get rid of. Their bites can make a child's scalp itchy and irritated, and scratching can lead to infection.\nHead lice are annoying, but they're not dangerous and they don't spread disease. They're not a sign of poor hygiene — head"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/head-lice.html",
+          "title": "Head Lice | Nemours KidsHealth",
+          "relevance_score": 0.8999930024147034,
+          "content": "- Small red bumps or sores from scratching. Some kids have mild irritation from scratching, while others may get a bothersome rash. Scratching a lot can lead to a bacterial infection. Watch for swollen lymph nodes (glands) on the back or front of the neck, and red, tender skin that might have crusting and oozing. Doctors can treat a skin infection with an antibiotic.\nHow Can I Check My Child for Head Lice?\nLook for lice and nits on the scalp, behind the ears, and around the nape of the neck. It'"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/head-lice.html",
+          "title": "Head Lice | Nemours KidsHealth",
+          "relevance_score": 0.8901317715644836,
+          "content": "Will They Ever Be Gone?\nAs many parents know, fighting head lice can be an ongoing battle. There's no doubt that they can be hard bugs to get rid of.\nIf you've tried everything and your child still has lice, it could be because:\n- some nits were left behind (if you see nits far from the scalp — more than ½ inch (1 cm) — and no live lice, these are probably dead and treatment likely isn't needed)\n- your child is still around someone who has lice\n- the treatment you're using isn't effective\nIf you"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/head-lice.html",
+          "title": "Head Lice | Nemours KidsHealth",
+          "relevance_score": 0.8583894968032837,
+          "content": "What Else Should I Know?\nRemind your child that while having lice can be embarrassing, anyone can get them. Having head lice is not a sign of dirtiness or poor hygiene. The pesky little bugs can be a problem no matter how often kids do — or don't — wash their hair or bathe.\nDealing with head lice can be frustrating, but be patient. Follow the treatments and prevention tips from your doctor, and soon your family will be lice-free."
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/head-lice-sheet.html",
+          "title": "Head Lice: First Aid | Nemours KidsHealth",
+          "relevance_score": 0.7140034437179565,
+          "content": "How to Handle Head Lice\nHead lice are tiny, wingless insects that can attach to a person's hair, where they feed on tiny amounts of blood drawn from the scalp. Head lice, while annoying, aren't dangerous and they don't spread disease.\nWhat Are the Signs & Symptoms of Head Lice?\nSigns of head lice can include:\n- an itchy scalp\n- nits (lice eggs that look like tiny grey or yellow-white oval speck) on the hair shaft close to the scalp\n- lice (gray or reddish brown tiny insects) on the hair shaft\n- "
+        }
+      ],
+      "is_negative": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8129256531131955,
+      "context_utilization": 0.699999999965,
+      "elapsed_s": 1.845
+    },
+    {
+      "question": "Quels sont les symptômes de la varicelle chez les enfants ?",
+      "language": "French",
+      "label": 1,
+      "reasoning": "Le contexte fournit suffisamment d'informations sur les symptômes du varicelle chez les enfants. Les signes et symptômes mentionnés incluent une fièvre, une tête qui fait mal, un manque d'appétit, des maux de gorge, des nausées, une éruption cutanée itchante avec trois stades : des bosses rouges, des vésicules et des croûtes. Les informations les plus pertinentes sont celles concernant l'éruption cutanée et ses différentes étapes. Il y a quelques incertitudes quant aux réactions individuelles de chaque enfant. La question est bien dans le domaine de la santé pédiatrique.",
+      "final_answer": "Les symptômes du varicelle chez les enfants incluent une fièvre, une tête qui fait mal, un manque d'appétit, des maux de gorge, des nausées et une éruption cutanée itchante. L'éruption cutanée a trois stades : elle commence par des bosses rouges, puis devient des vésicules remplies de fluides qui se transforment en croûtes sèches après quelques jours.",
+      "retrieved_docs": [
+        {
+          "source": "https://kidshealth.org/en/parents/chicken-pox.html",
+          "title": "Chickenpox (Varicella) | Nemours KidsHealth",
+          "relevance_score": 0.9992619156837463,
+          "content": "- The chickenpox vaccine protects most kids from getting sick or makes symptoms much milder.\nSigns & Symptoms\nWhat Are the Signs & Symptoms of Chickenpox?\nEarly Symptoms\nChickenpox often starts with a headache, poor appetite, sore throat, stomachache, or fever. These symptoms may last for a few days.\nChickenpox Rash\nA red, itchy skin rash usually starts on the belly or back and face. Then it spreads to almost everywhere else on the body, including the scalp, mouth, arms, legs, and genitals.\nThe "
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/chicken-pox.html",
+          "title": "Chickenpox (Varicella) | Nemours KidsHealth",
+          "relevance_score": 0.9949365854263306,
+          "content": "The rash may spread wider or be more severe in kids who have weak immune systems or skin disorders like eczema.\nWhen Should I Call the Doctor?\nMost chickenpox infections don't need special medical treatment. But sometimes, problems can happen.\nGet medical attention right away if your child:\n- has trouble breathing\n- has a severe headache\n- is very drowsy or has trouble waking up\n- has trouble looking at bright lights\n- has trouble walking\n- seems confused\n- seems very ill\n- has a stiff neck\nCall"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/chickenpox-sheet.html",
+          "title": "Chickenpox: Treatment & Care | Nemours KidsHealth",
+          "relevance_score": 0.965684175491333,
+          "content": "Chickenpox: Treatment & Care\nChickenpox (varicella) infection is much less common in the United States than it used to be, thanks to the chickenpox vaccine. If someone does get the infection, the rash and other symptoms it causes will go away without treatment. Chickenpox is usually not a big deal, but it can sometimes cause serious problems.\nWhat Are the Signs & Symptoms of Chickenpox?\nThe classic chickenpox rash has three stages and all can appear on the body at the same time:\n1. Red bumps: Th"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/chicken-pox.html",
+          "title": "Chickenpox (Varicella) | Nemours KidsHealth",
+          "relevance_score": 0.9531437754631042,
+          "content": "Chickenpox (Varicella)\nOverview\nWhat Is Chickenpox?\nChickenpox is an infection that causes a fever and an itchy rash with spots all over the body. It’s due to a virus called varicella-zoster. Chickenpox used to be a common childhood illness in the United States, especially in kids under age 12. It's much rarer now, thanks to the chickenpox vaccine, which helps prevent the infection.\nAlthough chickenpox is usually not a big deal, it can sometimes cause serious problems. The infection usually last"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/chickenpox-sheet.html",
+          "title": "Chickenpox: Treatment & Care | Nemours KidsHealth",
+          "relevance_score": 0.9477272629737854,
+          "content": "Kids also can have:\nWhen Should I Call the Doctor?\nGet medical attention right away if your child:\n- has trouble breathing\n- has a severe headache\n- is very drowsy or has trouble waking up\n- has trouble looking at bright lights\n- has trouble walking\n- seems confused\n- seems very ill\n- has a stiff neck\nCall the doctor if your child:\n- has a fever that lasts for more than 4 days\n- has a bad cough\n- has an area of rash that leaks pus (thick, yellowish fluid) or becomes red, warm, swollen, or sore\n-"
+        }
+      ],
+      "is_negative": false,
+      "faithfulness": 0.7777777777777778,
+      "answer_relevancy": 0.944417414186069,
+      "context_utilization": 0.8666666666377778,
+      "elapsed_s": 2.855
+    },
+    {
+      "question": "Qu’est-ce qui cause les poux chez les enfants ?",
+      "language": "French",
+      "label": 1,
+      "reasoning": "Le contexte fournit suffisamment d'informations sur les puces d'enfants et leurs causes. Les pièces clés de l'information sont que les puces peuvent être causées par le fait que des nits ont été laissées derrière, que l'enfant est encore en contact avec quelqu'un qui a des puces ou que le traitement utilisé n'est pas efficace. Il y a quelques incertitudes quant à savoir si les symptômes tels que les démangeaisons et les irritations cutanées sont toujours présents après deux semaines de traitement. La question est en scope car elle concerne la santé des enfants.",
+      "final_answer": "Les puces d'enfants peuvent être causées par plusieurs facteurs. Tout d'abord, il est possible que des nits aient été laissées derrière, ce qui signifie qu'il faudra peut-être recommencer le traitement. Ensuite, si l'enfant est encore en contact avec quelqu'un qui a des puces, il y a de fortes chances qu'il attrape également les puces. Enfin, si le traitement utilisé n'est pas efficace, cela peut également contribuer à la persistance des puces.",
+      "retrieved_docs": [
+        {
+          "source": "https://kidshealth.org/en/parents/head-lice.html",
+          "title": "Head Lice | Nemours KidsHealth",
+          "relevance_score": 0.8579409718513489,
+          "content": "Will They Ever Be Gone?\nAs many parents know, fighting head lice can be an ongoing battle. There's no doubt that they can be hard bugs to get rid of.\nIf you've tried everything and your child still has lice, it could be because:\n- some nits were left behind (if you see nits far from the scalp — more than ½ inch (1 cm) — and no live lice, these are probably dead and treatment likely isn't needed)\n- your child is still around someone who has lice\n- the treatment you're using isn't effective\nIf you"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/head-lice.html",
+          "title": "Head Lice | Nemours KidsHealth",
+          "relevance_score": 0.8449327349662781,
+          "content": "- Small red bumps or sores from scratching. Some kids have mild irritation from scratching, while others may get a bothersome rash. Scratching a lot can lead to a bacterial infection. Watch for swollen lymph nodes (glands) on the back or front of the neck, and red, tender skin that might have crusting and oozing. Doctors can treat a skin infection with an antibiotic.\nHow Can I Check My Child for Head Lice?\nLook for lice and nits on the scalp, behind the ears, and around the nape of the neck. It'"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/head-lice.html",
+          "title": "Head Lice | Nemours KidsHealth",
+          "relevance_score": 0.743613064289093,
+          "content": "- Adult lice and nymphs (baby lice). Adult lice are no bigger than a sesame seed and are grayish-white or tan. Nymphs are smaller and become adult lice about 1–2 weeks after they hatch. This life cycle repeats itself about every 3 weeks. Most lice feed on blood several times a day, and they can survive up to 2 days off the scalp.\n- Scratching. With lice bites come itching and scratching. This is due to a reaction to the saliva (spit) of lice. But the itching doesn't always start right away. It d"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/head-lice.html",
+          "title": "Head Lice | Nemours KidsHealth",
+          "relevance_score": 0.7053267359733582,
+          "content": "What Else Should I Know?\nRemind your child that while having lice can be embarrassing, anyone can get them. Having head lice is not a sign of dirtiness or poor hygiene. The pesky little bugs can be a problem no matter how often kids do — or don't — wash their hair or bathe.\nDealing with head lice can be frustrating, but be patient. Follow the treatments and prevention tips from your doctor, and soon your family will be lice-free."
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/head-lice.html",
+          "title": "Head Lice | Nemours KidsHealth",
+          "relevance_score": 0.6775344014167786,
+          "content": "Head Lice: Signs & Treatment\nWhat Are Head Lice?\nHead lice are tiny wingless insects. They live among human hairs and feed on blood from the scalp.\nHead lice are a common problem, especially for kids. They spread easily from person to person, and sometimes are tough to get rid of. Their bites can make a child's scalp itchy and irritated, and scratching can lead to infection.\nHead lice are annoying, but they're not dangerous and they don't spread disease. They're not a sign of poor hygiene — head"
+        }
+      ],
+      "is_negative": false,
+      "faithfulness": 0.75,
+      "answer_relevancy": 0.5604064528278354,
+      "context_utilization": 0.8874999999778125,
+      "elapsed_s": 8.594
+    },
+    {
+      "question": "¿Cuál es la historia del Imperio Romano?",
+      "language": "Spanish",
+      "label": 0,
+      "reasoning": "El contexto proporcionado no contiene evidencia relacionada con la salud infantil o pediátrica, por lo que no hay suficiente información para responder la pregunta de manera precisa. La pregunta parece estar fuera del alcance de mi conocimiento como asistente pediátrico. No se mencionan vacunas, medicamentos ni síntomas relacionados con la salud infantil. Por tanto, no puedo proporcionar una respuesta adecuada.",
+      "final_answer": "Lo siento, pero no tengo información sobre la historia del Imperio Romano. Mi especialidad es la salud y el cuidado de los niños, por lo que no puedo responder preguntas fuera de mi alcance.",
+      "retrieved_docs": [],
+      "is_negative": true,
+      "faithfulness": null,
+      "answer_relevancy": null,
+      "context_utilization": null,
+      "elapsed_s": 1.733
+    },
+    {
+      "question": "¿Qué es el sarampión en niños y cómo se transmite?",
+      "language": "Spanish",
+      "label": 1,
+      "reasoning": "El contexto proporciona suficiente evidencia sobre el tema de la rubeola en niños, incluyendo sus síntomas y cómo se transmite. Las fuentes mencionan que la rubeola es una infección muy contagiosa que causa un erupción cutánea y síntomas similares a la gripe. Los primeros síntomas son generalmente tos, nariz congestionada, fiebre y ojos rojos. También se menciona que los niños pueden tener puntos de Koplik (puntos pequeños rojizos con centros azul-grisáceos) dentro de la boca antes de que aparezca la erupción. La erupción comienza como manchas planas rojas en la frente y luego se extiende a otras partes del cuerpo. Se menciona también que la rubeola se transmite cuando las personas inhalan o tienen contacto directo con fluidos infectados.",
+      "final_answer": "La rubeola es una infección muy contagiosa que causa un erupción cutánea y síntomas similares a la gripe en niños. Los primeros síntomas son generalmente tos, nariz congestionada, fiebre y ojos rojos. La erupción comienza como manchas planas rojas en la frente y luego se extiende a otras partes del cuerpo. La rubeola se transmite cuando las personas inhalan o tienen contacto directo con fluidos infectados.",
+      "retrieved_docs": [
+        {
+          "source": "https://kidshealth.org/en/parents/measles.html",
+          "title": "Measles (Rubeola) | Nemours KidsHealth",
+          "relevance_score": 0.9824930429458618,
+          "content": "Measles (Rubeola)\nAlso called: Rubeola\nWhat Is Measles?\nMeasles is a very contagious infection that causes a total-body skin rash and flu-like symptoms. Measles is uncommon in the United States thanks to widespread immunization. But millions of cases happen worldwide every year and outbreaks can spread quickly.\nMeasles is caused by a virus, so there's no specific medical treatment for it. The virus has to run its course. A child who is sick should drink plenty of liquids, get lots of rest, and s"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/measles-keeping-family-safe.html",
+          "title": "Measles: What You Need to Know | Nemours KidsHealth",
+          "relevance_score": 0.9373858571052551,
+          "content": "Measles: What You Need to Know\nYou may have heard that cases of measles are on the rise lately, but there’s no reason to panic. Here’s what you need to know about measles and how to keep your family safe.\nWhat Is Measles?\nMeasles is a very contagious infection that causes a total-body skin rash and flu-like symptoms. It’s caused by a virus, so there's no specific medical cure for it. Like other viruses, measles has to run its course.\nWhy Are More People Getting Measles?\nWidespread immunization a"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/measles-keeping-family-safe.html",
+          "title": "Measles: What You Need to Know | Nemours KidsHealth",
+          "relevance_score": 0.7718153595924377,
+          "content": "A red or reddish-brown skin rash breaks out 3–5 days after symptoms start, sometimes along with a high fever up to 104°F (40°C).\nThe rash usually begins as flat red spots on the forehead. On darker skin, these spots may be harder to see. The rash then spreads to the rest of the face, then down the neck and torso to the arms, legs, and feet.\nHow Do People Get Measles?\nMeasles spreads when people breathe in or have direct contact with measles-infected fluid. The virus passes to other people throug"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/german-measles.html",
+          "title": "Rubella (German Measles) | Nemours KidsHealth",
+          "relevance_score": 0.6233296394348145,
+          "content": "Rubella (German Measles)\nWhat Is Rubella?\nRubella is an infection that mostly affects the skin and lymph nodes. In kids, rubella — commonly called German measles or 3-day measles — is usually a mild illness. But the infection is dangerous for pregnant women because it can cause serious health problems in their babies.\nRubella is caused by the rubella (roo-BELL-uh) virus (not the same virus that causes measles). It spreads when people breathe in virus-infected fluid.\nBefore the rubella vaccine, e"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/measles.html",
+          "title": "Measles (Rubeola) | Nemours KidsHealth",
+          "relevance_score": 0.48522719740867615,
+          "content": "The rash breaks out 3–5 days after symptoms start, sometimes along with a high fever up to 104°F (40°C). The rash usually begins as flat red spots on the forehead. On darker skin, these spots may be harder to see. The rash then spreads to the rest of the face, then down the neck and torso to the arms, legs, and feet. The fever and rash slowly go away after a few days.\nIs Measles Contagious?\nMeasles is very contagious. In fact, 9 out of 10 people who aren't vaccinated for measles will get it if t"
+        }
+      ],
+      "is_negative": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.5848521516587477,
+      "context_utilization": 0.94999999997625,
+      "elapsed_s": 3.072
+    },
+    {
+      "question": "Was ist maschinelles Lernen?",
+      "language": "German",
+      "label": 0,
+      "reasoning": "[Reasoning unavailable — model did not return valid JSON]",
+      "final_answer": "Ich kann nicht helfen, da das Thema nicht pediatric/gesundheitsbezogen ist.",
+      "retrieved_docs": [],
+      "is_negative": true,
+      "faithfulness": null,
+      "answer_relevancy": null,
+      "context_utilization": null,
+      "elapsed_s": 0.442
+    },
+    {
+      "question": "What causes scarlet fever in kids?",
+      "language": "English",
+      "label": 1,
+      "reasoning": "The context contains enough evidence to answer the question as it provides information on what causes scarlet fever from multiple sources. The most relevant pieces of information found are that scarlet fever is caused by a bacterial infection, specifically Group A streptococcus (GAS), which can lead to strep throat or skin infections. There are no gaps or uncertainties in this information. The question is in-scope as it pertains to pediatric health and disease.",
+      "final_answer": "Scarlet fever in kids is caused by a bacterial infection, specifically Group A streptococcus (GAS), which can lead to strep throat or skin infections. This bacteria makes a toxin that causes the characteristic bright red, bumpy rash associated with scarlet fever. The infection can spread through sneezing and coughing, as well as contact with an infected person's skin.",
+      "retrieved_docs": [
+        {
+          "source": "https://kidshealth.org/en/parents/scarlet-fever.html",
+          "title": "Scarlet Fever | Nemours KidsHealth",
+          "relevance_score": 0.9989527463912964,
+          "content": "Scarlet Fever\nWhat Is Scarlet Fever?\nScarlet fever is an illness that can happen in kids, usually 5–15 years old, who also have strep throat or strep skin infections. The strep bacteria make a toxin (poison) that causes a bright red, bumpy rash.\nThe rash spreads over most of the body and is what gives scarlet fever (also known as scarlatina) its name. It often looks like a bad sunburn with fine bumps that may feel rough like sandpaper, and it can itch. It usually starts to go away after about 1 "
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/scarlet-fever.html",
+          "title": "Scarlet Fever | Nemours KidsHealth",
+          "relevance_score": 0.9971211552619934,
+          "content": "How Can Parents Help?\nEating can be painful for kids with severe strep throat, so serving soft foods or a liquid diet may be best. Include soothing teas and warm nutritious soups, or cool drinks, popsicles, or slushies. Help your child drinks plenty of fluids. You can give acetaminophen or ibuprofen for fever or throat pain.\nIf the rash itches, make sure that your child's fingernails are trimmed short so skin isn't damaged through scratching. Try an over-the-counter anti-itch medicine to help re"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/scarlet-fever.html",
+          "title": "Scarlet Fever | Nemours KidsHealth",
+          "relevance_score": 0.9713951349258423,
+          "content": "In rare cases, scarlet fever may develop from a streptococcal skin infection like impetigo or a cut that gets infected. In these cases, the child may not get a sore throat.\nHow Is Scarlet Fever Diagnosed?\nTo confirm whether a child has scarlet fever, doctors usually order a rapid strep test or throat culture (a painless swab of the throat) to check for the strep bacteria.\nHow Is Scarlet Fever Treated?\nIf a strep infection is confirmed, the doctor will prescribe an antibiotic for a child to take "
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/scarlet-fever.html",
+          "title": "Scarlet Fever | Nemours KidsHealth",
+          "relevance_score": 0.912136435508728,
+          "content": "What Are the Signs & Symptoms of Scarlet Fever?\nThe telltale rash is the main sign of scarlet fever. It usually starts on the neck, face, or chest, then spreads to the trunk, arms, and legs. The face is red, often with a clear area around the mouth. In body creases — especially around the underarms, elbows, and groin — the rash often is a brighter red and forms red streaks.\nOther symptoms of scarlet fever usually include:\n- a red, sore throat\n- a fever\n- swollen glands in the neck\nAlso, the tons"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/strep-throat.html",
+          "title": "Strep Throat in Kids & Teens | Nemours KidsHealth",
+          "relevance_score": 0.8125990629196167,
+          "content": "The most common symptoms of strep throat include:\n- sore throat that comes on quickly and is especially painful when swallowing\n- fever\n- red and swollen tonsils with white patches or streaks on them\n- painful or swollen neck glands (lymph nodes)\nOther symptoms in children can include:\n- headache\n- stomach pain\n- nausea or vomiting\n- loss of appetite\n- rash (if a red rash that looks like sandpaper happens along with strep throat, the condition is called scarlet fever)\nStrep throat is very uncomm"
+        }
+      ],
+      "is_negative": false,
+      "faithfulness": 0.5,
+      "answer_relevancy": 1.0,
+      "context_utilization": 0.94999999997625,
+      "elapsed_s": 1.904
+    },
+    {
+      "question": "Como tratar a infecção por rotavírus em bebês?",
+      "language": "Portuguese",
+      "label": 1,
+      "reasoning": "O contexto contém evidências suficientes para responder à pergunta. As informações mais relevantes encontradas incluem tratamento caseiro e hospitalar para rotavírus em bebês. O tratamento caseiro inclui a administração de solução reidratante oral, continuação da amamentação ou formulação, e evitar medicamentos sem prescrição médica. Já o tratamento hospitalar é necessário para casos de desidratação grave. Há uma lacuna na informação sobre a idade exata em que os bebês devem receber a vacina contra rotavírus. A pergunta está dentro do escopo, pois se refere à saúde infantil.",
+      "final_answer": "Para tratar a infecção por rotavírus em bebês, é importante continuar com a amamentação ou formulação, desde que não haja vômito excessivo. Além disso, é recomendável administrar solução reidratante oral para ajudar a prevenir desidratação. No entanto, é crucial evitar o uso de medicamentos sem prescrição médica, pois eles podem piorar os sintomas. Se o bebê estiver com desidratação grave ou outros sintomas graves, pode ser necessário tratamento hospitalar para administração de fluidos intravenosos.",
+      "retrieved_docs": [
+        {
+          "source": "https://kidshealth.org/en/parents/rsv.html",
+          "title": "Respiratory Syncytial Virus (RSV) | Nemours KidsHealth",
+          "relevance_score": 0.9981473684310913,
+          "content": "RSV infection can be more serious in babies and toddlers, though. Some might need treatment in a hospital where they can be watched closely and get supportive treatment for any breathing problems or dehydration.\nHome Care\nAt home:\n- Make your child as comfortable as possible.\n- Allow time for recovery.\n- Provide plenty of fluids. Babies may not feel like drinking, so offer fluids in small amounts often.\nAvoid hot-water and steam humidifiers, which can be hazardous and can scald skin. If you use "
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/rotavirus.html",
+          "title": "Rotavirus | Nemours KidsHealth",
+          "relevance_score": 0.9970728158950806,
+          "content": "- Drink small amounts of an oral rehydration solution (such are Pedialyte, Enfalyte, or a store brand) often. It has the right amount of water, sugar, and salt to help with dehydration. You can buy it without a prescription at drugstores or supermarkets.\n- Avoid full-strength (undiluted) fruit juices, soda, and sports drinks, which can make diarrhea worse.\n- Continue to breastfeed or take formula, as long as they are not vomiting a lot.\nAs your child starts to feel better, you can give less oral"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/rotavirus.html",
+          "title": "Rotavirus | Nemours KidsHealth",
+          "relevance_score": 0.993054211139679,
+          "content": "Washing hands well and often, especially after using the bathroom and before preparing or eating food, is the best way to prevent rotavirus infection. Kids with rotavirus should stay home from childcare until the diarrhea is gone.\nWhen Should I Call the Doctor?\nCall the doctor if you think child may have of a rotavirus infection. Call right away if your child:\n- can’t drink for several hours\n- is peeing less often than usual\n- has signs of dehydration, such as crying with few or no tears, having"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/rotavirus.html",
+          "title": "Rotavirus | Nemours KidsHealth",
+          "relevance_score": 0.985612690448761,
+          "content": "How Is Rotavirus Diagnosed?\nDoctors usually can tell if someone has stomach flu by hearing about the symptoms. Usually, no tests are needed. If a child is very sick or has blood or mucus in their poop, doctors might order a stool (poop) test to check for rotavirus and other germs that cause diarrhea. The doctor may also order a urine (pee) test or blood test to check for dehydration.\nHow Is Rotavirus Treated?\nBabies and toddlers who are dehydrated may need treatment in a hospital. They'll get in"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/norovirus.html",
+          "title": "Norovirus | Nemours KidsHealth",
+          "relevance_score": 0.8185444474220276,
+          "content": "How Is Norovirus Diagnosed?\nHealth care providers usually diagnose a norovirus infection based on symptoms, rather than a test.\nIf a child’s symptoms are severe, the provider may test the blood, poop, or pee.\nHow Is Norovirus Treated?\nMost norovirus infections get better on their own. As your child recovers at home:\n- They should get plenty of rest.\n- Give lots of fluids to help your child stay hydrated.\n- Give an oral rehydration solution (such as Pedialyte, Enfalyte, or a store brand) to repla"
+        }
+      ],
+      "is_negative": false,
+      "faithfulness": NaN,
+      "answer_relevancy": 0.7004125897259921,
+      "context_utilization": 0.499999999975,
+      "elapsed_s": 5.624
+    },
+    {
+      "question": "What are symptoms of norovirus in children?",
+      "language": "English",
+      "label": 1,
+      "reasoning": "The context contains enough evidence to answer the question as it provides detailed information about norovirus symptoms in children from multiple sources. The most relevant pieces of information found are that norovirus causes nausea and vomiting, watery diarrhea, belly pain, fever, chills, headache, or muscle aches in children. Some people might also have no symptoms but can still pass the virus to others. Gaps or uncertainties include the severity of symptoms in children with other health problems. The question is in-scope as it is related to pediatric health and norovirus infection.",
+      "final_answer": "Norovirus symptoms in children may include nausea and vomiting, watery diarrhea, belly pain, fever, chills, headache, or muscle aches. Some people might also have no symptoms but can still pass the virus to others. Children with other health problems may have more severe symptoms.",
+      "retrieved_docs": [
+        {
+          "source": "https://kidshealth.org/en/parents/norovirus.html",
+          "title": "Norovirus | Nemours KidsHealth",
+          "relevance_score": 0.9986818432807922,
+          "content": "Norovirus\nWhat Is Norovirus?\nNorovirus is a virus that causes diarrhea and vomiting. It’s sometimes called the stomach flu or stomach bug, but norovirus (NOR-uh-vy-ris) isn’t related to the flu.\nWhat Are the Signs & Symptoms of Norovirus Infection?\nAbout a day or two after contact with norovirus, a person may have symptoms such as:\n- nausea and vomiting\n- watery diarrhea\n- belly pain\nSome people might also have a fever, chills, headache, or muscle aches. Sometimes norovirus causes no symptoms, b"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/norovirus.html",
+          "title": "Norovirus | Nemours KidsHealth",
+          "relevance_score": 0.9177985191345215,
+          "content": "- Make sure your child washes their hands well and often to prevent the virus from spreading.\n- When your child’s vomiting stops, offer small amounts of foods. A child who isn’t throwing up can eat a regular diet if they feel up to it. It may take time for them to feel like eating. There's no need to avoid dairy products unless they make the vomiting or diarrhea worse. Your child may need to avoid greasy or fried foods until they feel better.\nHow Long Does Norovirus Last?\nSymptoms of norovirus i"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/norovirus.html",
+          "title": "Norovirus | Nemours KidsHealth",
+          "relevance_score": 0.9174787998199463,
+          "content": "How Is Norovirus Diagnosed?\nHealth care providers usually diagnose a norovirus infection based on symptoms, rather than a test.\nIf a child’s symptoms are severe, the provider may test the blood, poop, or pee.\nHow Is Norovirus Treated?\nMost norovirus infections get better on their own. As your child recovers at home:\n- They should get plenty of rest.\n- Give lots of fluids to help your child stay hydrated.\n- Give an oral rehydration solution (such as Pedialyte, Enfalyte, or a store brand) to repla"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/rotavirus.html",
+          "title": "Rotavirus | Nemours KidsHealth",
+          "relevance_score": 0.9135542511940002,
+          "content": "Rotavirus\nWhat Is Rotavirus?\nRotavirus is a common cause of gastroenteritis, often called stomach flu. The virus infects the stomach and intestines. It causes vomiting and diarrhea, especially in babies and young children. Infections are common during the winter and spring months, especially in childcare centers.\nThe rotavirus immunization is recommended for most infants. It can help prevent rotavirus infections.\nWhat Are the Signs & Symptoms of Rotavirus?\nKids with a rotavirus (ROE-tuh-vy-rus) "
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/norovirus.html",
+          "title": "Norovirus | Nemours KidsHealth",
+          "relevance_score": 0.8580063581466675,
+          "content": "Kids with other health problems may have more severe symptoms.\nIs Norovirus Contagious?\nYes. Norovirus spreads easily, even before someone has symptoms. Sometimes an infected person can spread it for weeks after they feel better. Anyone can get a norovirus infection, especially if they spend time where many people gather, like at childcare centers and schools and on cruise ships.\nThe virus is in the poop or vomit of infected people. It can get on an object or surface, especially when someone doe"
+        }
+      ],
+      "is_negative": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9985790600375217,
+      "context_utilization": 0.9999999999,
+      "elapsed_s": 2.013
+    },
+    {
+      "question": "O que é meningite e como afeta crianças?",
+      "language": "Portuguese",
+      "label": 1,
+      "reasoning": "O contexto contém evidências suficientes sobre meningite e como ela afeta crianças. As informações mais relevantes incluem que a meningite é uma inflamação das meninges, as membranas que cobrem o cérebro e a medula espinhal, e pode ser causada por vírus ou bactérias. Além disso, os sintomas da doença podem variar de acordo com a idade do paciente, incluindo fadiga, irritabilidade, falta de apetite, vômito e febre em crianças mais velhas, enquanto bebês podem apresentar dificuldade para se alimentar, sono excessivo ou dificuldade para acordar. Existem algumas lacunas na informação, como a necessidade de vacinação específica contra meningite, mas o contexto fornece uma visão geral clara da doença e seus sintomas.",
+      "final_answer": "A meningite é uma inflamação das meninges, as membranas que cobrem o cérebro e a medula espinhal. Ela pode ser causada por vírus ou bactérias e pode afetar crianças de diferentes maneiras dependendo da idade. Em crianças mais velhas, os sintomas podem incluir fadiga, irritabilidade, falta de apetite, vômito e febre, enquanto bebês podem apresentar dificuldade para se alimentar, sono excessivo ou dificuldade para acordar. É importante buscar atendimento médico imediatamente se você suspeitar que seu filho tenha meningite.",
+      "retrieved_docs": [
+        {
+          "source": "https://kidshealth.org/en/parents/meningitis.html",
+          "title": "Meningitis in Kids | Nemours KidsHealth",
+          "relevance_score": 0.9955007433891296,
+          "content": "Meningitis in Kids\nWhat Is Meningitis?\nMeningitis is an inflammation of the meninges (meh-NIN-jeez), the membranes that cover the brain and spinal cord. Some types of meningitis (meh-nen-JYE-tis) can be dangerous and even life-threatening. Routine vaccinations can help prevent it.\nQuick treatment of meningitis usually is successful. So it's important to know what symptoms it can cause and to get medical care right away if your child might have the illness.\nWhat Causes Meningitis?\nMeningitis is m"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/meningitis.html",
+          "title": "Meningitis in Kids | Nemours KidsHealth",
+          "relevance_score": 0.9333645105361938,
+          "content": "- nausea or vomiting\n- poor appetite\n- irritability\n- lack of energy or drowsiness\nMeningitis in Infants\nInfants with meningitis might have different symptoms. Babies might be cranky, feed poorly, and be sleepy or hard to wake up. It may be hard to comfort them, even when they're picked up and rocked, and their cry might be more high-pitched than usual. They also may have a fever or a lower-than-normal temperature. Sometimes they can have a stiff neck or a bulging fontanelle (soft spot on head)."
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/hib-vaccine.html",
+          "title": "Hib Vaccine for Kids | Nemours KidsHealth",
+          "relevance_score": 0.7537862658500671,
+          "content": "- meningitis\n- pneumonia\n- pericarditis (an infection of the membrane covering the heart)\n- infections of the blood, bones, and joints\nHib bacteria had been the leading cause of meningitis in children younger than 5 years old until the Hib vaccine became available. Hib bacteria also used to be a common cause of infections in the ears, lungs, blood, skin, and joints in children.\nWhen you get your child vaccinated with the Hib vaccine, you’re helping prevent the spread of Hib infections, so you’re"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/polio.html",
+          "title": "Polio | Nemours KidsHealth",
+          "relevance_score": 0.4396364092826843,
+          "content": "- headache\n- general feeling of being sick\nRarely, the virus affects the brain and spinal cord, causing much more serious symptoms, such as:\n- Meningitis. The polio virus can infect the meninges, which are the membranes around the brain and spinal cord. This causes a severe headache, a stiff neck, and sensitivity to light (when light hurts or bothers the eyes).\n- Muscle weakness or paralysis. The virus can destroy the nerve cells that control muscles. When this happens, the muscles get painful a"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/meningitis.html",
+          "title": "Meningitis in Kids | Nemours KidsHealth",
+          "relevance_score": 0.4266763925552368,
+          "content": "Avoiding Germs\nKids and adults should wash their hands well and often, especially before eating and after using the bathroom, and if they work closely with kids (as in a daycare). Avoid close contact with someone who looks ill and don't share food, drinks, or eating utensils.\nPreventive Antibiotics\nIn some cases, doctors may give antibiotics to anyone who has had close contact with a person who has bacterial meningitis to help prevent infection.\nWhen Should I Call the Doctor?\nGet medical care ri"
+        }
+      ],
+      "is_negative": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.6963610325662806,
+      "context_utilization": 0.99999999995,
+      "elapsed_s": 3.374
+    },
+    {
+      "question": "O que é celulite em crianças?",
+      "language": "Portuguese",
+      "label": 1,
+      "reasoning": "O contexto contém informações suficientes sobre a doença devido à existência de vários artigos da Nemours KidsHealth que descrevem a condição. As partes mais relevantes do conteúdo incluem a definição de cellulite, suas causas e sintomas, bem como dicas para prevenção. No entanto, há uma lacuna na informação sobre o tratamento específico da doença em crianças. Além disso, é importante notar que a questão está dentro do escopo das áreas de saúde infantil.",
+      "final_answer": "A cellulite é uma infecção cutânea que pode afetar qualquer área do corpo, mas é mais comum em partes expostas, como o rosto, braços ou pernas. Ela ocorre quando bactérias, como estafilococos e estreptococos, entram no corpo através de uma ferida aberta, causando infecção. Os sintomas incluem vermelhidão, dor, inchaço e calor na área afetada. É importante proteger a pele das crianças de cortes, escoriações e arranhões para prevenir a cellulite.",
+      "retrieved_docs": [
+        {
+          "source": "https://kidshealth.org/en/parents/cellulitis.html",
+          "title": "Cellulitis | Nemours KidsHealth",
+          "relevance_score": 0.032133448868989944,
+          "content": "Cellulitis\nWhat Is Cellulitis?\nCellulitis (sel-yuh-LY-tis) is a skin infection that involves areas of tissue below the skin's surface.\nCellulitis can affect any area of the body, but it's most common on exposed body parts, such as the face, arms, or lower legs.\nWhat Causes Cellulitis?\nMany different types of bacteria can cause cellulitis. The most common ones are group A streptococcus and Staphylococcus aureus. These bacteria usually live harmlessly on the skin and in the nose and throat, but so"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/rms.html",
+          "title": "Rhabdomyosarcoma (RMS) | Nemours KidsHealth",
+          "relevance_score": 0.012650884687900543,
+          "content": "Rhabdomyosarcoma (RMS)\nWhat Is Rhabdomyosarcoma (RMS)?\nRhabdomyosarcoma (RMS or \"rhabdo\") is a cancerous tumor that develops in the body's soft tissues, usually the muscles. It can affect the head, neck, bladder, vagina, arms, legs, trunk, or just about any body part. Cells from rhabdomyosarcomas are often fast growing and can spread (metastasize) to other parts of the body.\nRhabdomyosarcoma (rab-doe-myo-sar-KO-muh) is the most common type of soft-tissue cancer in children. Kids can develop it a"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/staphylococcus.html",
+          "title": "Staph Infections | Nemours KidsHealth",
+          "relevance_score": 0.01181404385715723,
+          "content": "- A furuncle (fyoor-UNK-ul), commonly known as a boil: These swollen, red, painful lumps in the skin usually are due to an infected hair follicle. The lump fills with pus, growing larger and more painful until it ruptures and drains. Furuncles often begin as folliculitis and then worsen. They most often appear on the face, neck, buttocks, armpits, and inner thighs, where small hairs can get irritated. A cluster of several furuncles is called a carbuncle (KAR-bunk-ul). Someone with a carbuncle ma"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/skincare-products.html",
+          "title": "Is It OK for My Child to Use Skin Care Products? | Nemours KidsHealth",
+          "relevance_score": 0.0054837791249156,
+          "content": "Is It OK for My Child to Use Skin Care Products?\nMany kids and teens want to try skin care products they hear about from friends, influencers, and celebrities. But young skin often doesn’t need these products, and many aren’t even safe for it.\nMost kids and teens don’t have the problems adult skin care products try to solve, like wrinkles, dark spots, and sagging. On young skin, these can cause things like acne, burns, and rashes. Then, kids might need to go to a dermatologist (a doctor who trea"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/cellulitis.html",
+          "title": "Cellulitis | Nemours KidsHealth",
+          "relevance_score": 0.004802851006388664,
+          "content": "Can Cellulitis Be Prevented?\nTo prevent cellulitis, protect skin from cuts, bruises, and scrapes. This isn't easy, especially in active kids or those who play sports.\nKids and teens should:\n- Use elbow and knee pads while skating.\n- Wear a bike helmet when riding.\n- Wear shin guards during soccer.\n- Wear long pants and long-sleeved shirts while hiking in the woods (this can also protect them from bug bites and stings).\n- Wear sandals on the beach.\nWhen kids do get a cut or scrape, wash it well w"
+        }
+      ],
+      "is_negative": false,
+      "faithfulness": 0.25,
+      "answer_relevancy": 0.43023256158181483,
+      "context_utilization": 0.3333333333,
+      "elapsed_s": 8.391
+    },
+    {
+      "question": "Comment apprendre la programmation Python ?",
+      "language": "French",
+      "label": 0,
+      "reasoning": "Le contexte fourni ne contient pas d'informations pertinentes pour répondre à la question de l'apprentissage du langage de programmation Python. La question est en-dehors du domaine de la pédiatrie et des soins de santé.",
+      "final_answer": "Je suis désolé, mais je n'ai pas les informations nécessaires pour vous aider avec votre question sur l'apprentissage du langage de programmation Python. Ma spécialité est la pédiatrie et les soins de santé, et je ne peux pas fournir d'informations ou de conseils sur ce sujet.",
+      "retrieved_docs": [],
+      "is_negative": true,
+      "faithfulness": null,
+      "answer_relevancy": null,
+      "context_utilization": null,
+      "elapsed_s": 1.425
+    },
+    {
+      "question": "What is RSV infection in infants?",
+      "language": "English",
+      "label": 1,
+      "reasoning": "The context contains enough evidence to answer the question as it provides detailed information about RSV infection in children. The most relevant pieces of information found are that RSV is a major cause of respiratory illness in children and can lead to breathing problems, bronchiolitis or pneumonia, especially in premature babies, infants younger than 1 year old, and kids with diseases that affect the lungs, heart, or immune system. There are some gaps or uncertainties regarding the specific symptoms of RSV infection in infants, but it is mentioned that they might have fever, cough, wheezing, and trouble breathing. The question is in-scope as it is related to pediatric health.",
+      "final_answer": "RSV infection in infants can cause respiratory illness and lead to breathing problems, bronchiolitis or pneumonia. Infants with RSV might experience symptoms such as a stuffy or runny nose, sore throat, mild headache, cough, fever, not eating or drinking well, and a general ill feeling. In some cases, an RSV infection can be more serious, especially in premature babies, infants younger than 1 year old, and kids with diseases that affect the lungs, heart, or immune system.",
+      "retrieved_docs": [
+        {
+          "source": "https://kidshealth.org/en/parents/rsv.html",
+          "title": "Respiratory Syncytial Virus (RSV) | Nemours KidsHealth",
+          "relevance_score": 0.9883996248245239,
+          "content": "Respiratory Syncytial Virus (RSV)\nOverview\nWhat Is Respiratory Syncytial Virus (RSV)?\nRespiratory syncytial (sin-SISH-ul) virus (RSV) is a major cause of respiratory illness in children. The virus usually causes a common cold. But sometimes it infects the lungs and breathing passages and can cause breathing problems in babies and young children.\nSigns & Symptoms\nWhat Are the Signs & Symptoms of Respiratory Syncytial Virus (RSV)?\nKids with RSV might have cold symptoms, such as:\n- a stuffy or runn"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/flu-vs-cold.html",
+          "title": "Is It a Cold, the Flu, an RSV Infection, or COVID-19? | Nemours KidsHealth",
+          "relevance_score": 0.9342578649520874,
+          "content": "RSV Infection\nSymptoms\nRSV — respiratory syncytial (sin-SISH-ul) virus — is caused by the RSV virus and usually causes cold symptoms. But in some infants and young children, it can lead to a more serious infection, such as bronchiolitis or pneumonia. Those with an RSV infection might have fever, cough, wheezing, and trouble breathing. They might breathe very fast, grunt with the effort, or have retractions (when the skin between and below the ribs pulls in during breathing). They might feed poor"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/bronchiolitis.html",
+          "title": "Bronchiolitis | Nemours KidsHealth",
+          "relevance_score": 0.8875964283943176,
+          "content": "Respiratory syncytial virus (RSV) is the most common cause of bronchiolitis. Sometimes, the common cold and the flu also can cause it.\nBronchiolitis:\n- most often affects infants and young children because their small airways can easily get blocked\n- is most common during the first 2 years of life, and especially among babies\n- is more common in premature babies, children with lung or heart problems, and kids with weak immune systems\nKids who are around secondhand smoke have a higher risk for br"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/bronchiolitis.html",
+          "title": "Bronchiolitis | Nemours KidsHealth",
+          "relevance_score": 0.8312769532203674,
+          "content": "Call your health care provider if your child:\n- develops a new or high fever\n- has a cough or other symptoms that get worse\n- is wheezing (a whistling sound heard with breathing)\nGet medical care right away if your child:\n- has trouble breathing. This may look like:\n- fast, shallow breathing, when you see the belly moving up and down quickly\n- your child is working hard to get breaths in. You may see the areas below the ribs, between the ribs, and/or in the neck sinking in with breathing.\n- flar"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/rsv.html",
+          "title": "Respiratory Syncytial Virus (RSV) | Nemours KidsHealth",
+          "relevance_score": 0.6864411234855652,
+          "content": "In kids, other respiratory viruses such as flu and COVID-19 can cause symptoms similar to those from RSV. Talk to the doctor to make sure your child is up to date on recommended vaccines.\nHow Is Respiratory Syncytial Virus (RSV) Diagnosed?\nHealth care providers usually diagnose a respiratory virus by taking a medical history and doing an exam. In many kids, they don't need to distinguish RSV infection from a common cold.\nBut if a child has other health conditions or more serious symptoms, doctor"
+        }
+      ],
+      "is_negative": false,
+      "faithfulness": NaN,
+      "answer_relevancy": 0.8851181609139035,
+      "context_utilization": NaN,
+      "elapsed_s": 2.354
+    },
+    {
+      "question": "O que causa escarlatina em crianças?",
+      "language": "Portuguese",
+      "label": 1,
+      "reasoning": "O contexto contém informações suficientes sobre a causa da febre escarlatina em crianças. A doença é causada pela bactéria estreptocócica, que também pode causar infecções de garganta e pele. O risco de contração da febre escarlatina aumenta se a criança tiver contato com alguém infectado ou tocar em superfícies contaminadas. A bactéria estreptocócica é contagiosa e pode ser transmitida por meio de gotículas respiratórias, contato com a pele infectada ou através de objetos contaminados.",
+      "final_answer": "A febre escarlatina é causada pela bactéria estreptocócica, que também pode causar infecções de garganta e pele. A bactéria estreptocócica é contagiosa e pode ser transmitida por meio de gotículas respiratórias, contato com a pele infectada ou através de objetos contaminados. Portanto, é importante manter as mãos limpas e evitar o contato com pessoas que possam estar infectadas.",
+      "retrieved_docs": [
+        {
+          "source": "https://kidshealth.org/en/parents/scarlet-fever.html",
+          "title": "Scarlet Fever | Nemours KidsHealth",
+          "relevance_score": 0.9988177418708801,
+          "content": "Scarlet Fever\nWhat Is Scarlet Fever?\nScarlet fever is an illness that can happen in kids, usually 5–15 years old, who also have strep throat or strep skin infections. The strep bacteria make a toxin (poison) that causes a bright red, bumpy rash.\nThe rash spreads over most of the body and is what gives scarlet fever (also known as scarlatina) its name. It often looks like a bad sunburn with fine bumps that may feel rough like sandpaper, and it can itch. It usually starts to go away after about 1 "
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/scarlet-fever.html",
+          "title": "Scarlet Fever | Nemours KidsHealth",
+          "relevance_score": 0.9969293475151062,
+          "content": "How Can Parents Help?\nEating can be painful for kids with severe strep throat, so serving soft foods or a liquid diet may be best. Include soothing teas and warm nutritious soups, or cool drinks, popsicles, or slushies. Help your child drinks plenty of fluids. You can give acetaminophen or ibuprofen for fever or throat pain.\nIf the rash itches, make sure that your child's fingernails are trimmed short so skin isn't damaged through scratching. Try an over-the-counter anti-itch medicine to help re"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/scarlet-fever.html",
+          "title": "Scarlet Fever | Nemours KidsHealth",
+          "relevance_score": 0.9737452864646912,
+          "content": "In rare cases, scarlet fever may develop from a streptococcal skin infection like impetigo or a cut that gets infected. In these cases, the child may not get a sore throat.\nHow Is Scarlet Fever Diagnosed?\nTo confirm whether a child has scarlet fever, doctors usually order a rapid strep test or throat culture (a painless swab of the throat) to check for the strep bacteria.\nHow Is Scarlet Fever Treated?\nIf a strep infection is confirmed, the doctor will prescribe an antibiotic for a child to take "
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/scarlet-fever.html",
+          "title": "Scarlet Fever | Nemours KidsHealth",
+          "relevance_score": 0.9246671199798584,
+          "content": "What Are the Signs & Symptoms of Scarlet Fever?\nThe telltale rash is the main sign of scarlet fever. It usually starts on the neck, face, or chest, then spreads to the trunk, arms, and legs. The face is red, often with a clear area around the mouth. In body creases — especially around the underarms, elbows, and groin — the rash often is a brighter red and forms red streaks.\nOther symptoms of scarlet fever usually include:\n- a red, sore throat\n- a fever\n- swollen glands in the neck\nAlso, the tons"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/labtest11.html",
+          "title": "Strep Test: Throat Culture | Nemours KidsHealth",
+          "relevance_score": 0.9022373557090759,
+          "content": "Strep Test: Throat Culture\nWhat Is a Throat Culture?\nA throat culture or strep test is done by using a throat swab to detect the presence of group A streptococcus bacteria, the most common cause of strep throat. These bacteria also can cause other infections (including scarlet fever, abscesses, and pneumonia).\nA sample swabbed from the back of the throat is put on a special plate (culture) that enables bacteria to grow in the lab. If bacteria don't grow, the culture is negative and the person do"
+        }
+      ],
+      "is_negative": false,
+      "faithfulness": NaN,
+      "answer_relevancy": 0.4037368350742404,
+      "context_utilization": 0.94999999997625,
+      "elapsed_s": 2.859
+    },
+    {
+      "question": "Was verursacht Läuse bei Kindern?",
+      "language": "German",
+      "label": 1,
+      "reasoning": "Der Kontext enthält ausreichend Beweise, um die Ursachen von Läusen bei Kindern zu verstehen. Die relevantesten Informationen sind, dass Läuse sich leicht verbreiten und oft schwer zu entfernen sind. Es gibt auch Hinweise darauf, dass Nester hinterlassen werden können, wenn nicht alle Nits entfernt werden. Einige Kinder haben eine empfindliche Haut, die reagiert, indem sie jucken und kratzen. Dies kann zu einer Infektion führen. Es gibt jedoch keine offensichtlichen Lücken oder Unsicherheiten in der Information. Die Frage ist auch in den Bereich von Gesundheit und Pädiatrie gefallen.",
+      "final_answer": "Läuse bei Kindern können durch verschiedene Faktoren verursacht werden, einschließlich der Möglichkeit, dass Nester hinterlassen wurden, wenn nicht alle Nits entfernt wurden. Ein weiterer Grund ist die Anwesenheit eines anderen Kindes mit Läusen oder eine mangelnde Wirksamkeit der verwendeten Behandlung. Es ist auch möglich, dass das Kind noch immer in Kontakt mit jemandem steht, der Läuse hat.",
+      "retrieved_docs": [
+        {
+          "source": "https://kidshealth.org/en/parents/head-lice.html",
+          "title": "Head Lice | Nemours KidsHealth",
+          "relevance_score": 0.8579409718513489,
+          "content": "Will They Ever Be Gone?\nAs many parents know, fighting head lice can be an ongoing battle. There's no doubt that they can be hard bugs to get rid of.\nIf you've tried everything and your child still has lice, it could be because:\n- some nits were left behind (if you see nits far from the scalp — more than ½ inch (1 cm) — and no live lice, these are probably dead and treatment likely isn't needed)\n- your child is still around someone who has lice\n- the treatment you're using isn't effective\nIf you"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/head-lice.html",
+          "title": "Head Lice | Nemours KidsHealth",
+          "relevance_score": 0.8449327349662781,
+          "content": "- Small red bumps or sores from scratching. Some kids have mild irritation from scratching, while others may get a bothersome rash. Scratching a lot can lead to a bacterial infection. Watch for swollen lymph nodes (glands) on the back or front of the neck, and red, tender skin that might have crusting and oozing. Doctors can treat a skin infection with an antibiotic.\nHow Can I Check My Child for Head Lice?\nLook for lice and nits on the scalp, behind the ears, and around the nape of the neck. It'"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/head-lice.html",
+          "title": "Head Lice | Nemours KidsHealth",
+          "relevance_score": 0.743613064289093,
+          "content": "- Adult lice and nymphs (baby lice). Adult lice are no bigger than a sesame seed and are grayish-white or tan. Nymphs are smaller and become adult lice about 1–2 weeks after they hatch. This life cycle repeats itself about every 3 weeks. Most lice feed on blood several times a day, and they can survive up to 2 days off the scalp.\n- Scratching. With lice bites come itching and scratching. This is due to a reaction to the saliva (spit) of lice. But the itching doesn't always start right away. It d"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/head-lice.html",
+          "title": "Head Lice | Nemours KidsHealth",
+          "relevance_score": 0.7053267359733582,
+          "content": "What Else Should I Know?\nRemind your child that while having lice can be embarrassing, anyone can get them. Having head lice is not a sign of dirtiness or poor hygiene. The pesky little bugs can be a problem no matter how often kids do — or don't — wash their hair or bathe.\nDealing with head lice can be frustrating, but be patient. Follow the treatments and prevention tips from your doctor, and soon your family will be lice-free."
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/head-lice.html",
+          "title": "Head Lice | Nemours KidsHealth",
+          "relevance_score": 0.6775344014167786,
+          "content": "Head Lice: Signs & Treatment\nWhat Are Head Lice?\nHead lice are tiny wingless insects. They live among human hairs and feed on blood from the scalp.\nHead lice are a common problem, especially for kids. They spread easily from person to person, and sometimes are tough to get rid of. Their bites can make a child's scalp itchy and irritated, and scratching can lead to infection.\nHead lice are annoying, but they're not dangerous and they don't spread disease. They're not a sign of poor hygiene — head"
+        }
+      ],
+      "is_negative": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8553633085682986,
+      "context_utilization": 0.699999999965,
+      "elapsed_s": 2.653
+    },
+    {
+      "question": "What is measles in children and how does it spread?",
+      "language": "English",
+      "label": 1,
+      "reasoning": "The context contains enough evidence to answer the question as it provides detailed information about measles from reputable sources such as Nemours KidsHealth. The most relevant pieces of information found include that measles is a contagious infection caused by a virus, symptoms include cough, runny nose, fever, and red eyes, and a rash breaks out 3–5 days after symptoms start. However, there are some gaps or uncertainties regarding the exact incubation period for people who have been exposed to the virus. The question is in-scope as it pertains to pediatric health-related information.",
+      "final_answer": "Measles is a very contagious infection that causes a total-body skin rash and flu-like symptoms in children. It's caused by a virus, so there's no specific medical treatment for it. The first symptoms of measles are usually a cough, runny nose, fever, and red eyes. Kids also may have Koplik's spots inside the mouth before the rash starts. A red or reddish-brown skin rash breaks out 3–5 days after symptoms start, sometimes along with a high fever up to 104°F (40°C). Measles spreads when people breathe in or have direct contact with measles-infected fluid, and it can pass through droplets sprayed into the air when someone with measles sneezes or coughs. Someone exposed to the virus usually shows symptoms 6–21 days later.",
+      "retrieved_docs": [
+        {
+          "source": "https://kidshealth.org/en/parents/measles.html",
+          "title": "Measles (Rubeola) | Nemours KidsHealth",
+          "relevance_score": 0.9916675686836243,
+          "content": "Measles (Rubeola)\nAlso called: Rubeola\nWhat Is Measles?\nMeasles is a very contagious infection that causes a total-body skin rash and flu-like symptoms. Measles is uncommon in the United States thanks to widespread immunization. But millions of cases happen worldwide every year and outbreaks can spread quickly.\nMeasles is caused by a virus, so there's no specific medical treatment for it. The virus has to run its course. A child who is sick should drink plenty of liquids, get lots of rest, and s"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/measles-keeping-family-safe.html",
+          "title": "Measles: What You Need to Know | Nemours KidsHealth",
+          "relevance_score": 0.9653568267822266,
+          "content": "Measles: What You Need to Know\nYou may have heard that cases of measles are on the rise lately, but there’s no reason to panic. Here’s what you need to know about measles and how to keep your family safe.\nWhat Is Measles?\nMeasles is a very contagious infection that causes a total-body skin rash and flu-like symptoms. It’s caused by a virus, so there's no specific medical cure for it. Like other viruses, measles has to run its course.\nWhy Are More People Getting Measles?\nWidespread immunization a"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/measles-keeping-family-safe.html",
+          "title": "Measles: What You Need to Know | Nemours KidsHealth",
+          "relevance_score": 0.9245203733444214,
+          "content": "A red or reddish-brown skin rash breaks out 3–5 days after symptoms start, sometimes along with a high fever up to 104°F (40°C).\nThe rash usually begins as flat red spots on the forehead. On darker skin, these spots may be harder to see. The rash then spreads to the rest of the face, then down the neck and torso to the arms, legs, and feet.\nHow Do People Get Measles?\nMeasles spreads when people breathe in or have direct contact with measles-infected fluid. The virus passes to other people throug"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/german-measles.html",
+          "title": "Rubella (German Measles) | Nemours KidsHealth",
+          "relevance_score": 0.7720765471458435,
+          "content": "Rubella (German Measles)\nWhat Is Rubella?\nRubella is an infection that mostly affects the skin and lymph nodes. In kids, rubella — commonly called German measles or 3-day measles — is usually a mild illness. But the infection is dangerous for pregnant women because it can cause serious health problems in their babies.\nRubella is caused by the rubella (roo-BELL-uh) virus (not the same virus that causes measles). It spreads when people breathe in virus-infected fluid.\nBefore the rubella vaccine, e"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/measles.html",
+          "title": "Measles (Rubeola) | Nemours KidsHealth",
+          "relevance_score": 0.7696748971939087,
+          "content": "The rash breaks out 3–5 days after symptoms start, sometimes along with a high fever up to 104°F (40°C). The rash usually begins as flat red spots on the forehead. On darker skin, these spots may be harder to see. The rash then spreads to the rest of the face, then down the neck and torso to the arms, legs, and feet. The fever and rash slowly go away after a few days.\nIs Measles Contagious?\nMeasles is very contagious. In fact, 9 out of 10 people who aren't vaccinated for measles will get it if t"
+        }
+      ],
+      "is_negative": false,
+      "faithfulness": NaN,
+      "answer_relevancy": 0.8141686250693272,
+      "context_utilization": 0.94999999997625,
+      "elapsed_s": 8.593
+    },
+    {
+      "question": "¿Qué es la bronquiolitis en bebés?",
+      "language": "French",
+      "label": 1,
+      "reasoning": "Le contexte fournit suffisamment d'informations sur la bronchiolite en bébés, car il s'agit d'une infection des voies respiratoires causée par le virus syncytial respiratoire (RSV). Les symptômes incluent une toux, une difficulté à respirer et une fièvre. Le RSV est plus commun chez les bébés de moins de 1 an, en particulier ceux qui sont prématurés ou ont des problèmes respiratoires ou cardiaques. Il n'y a pas d'informations sur la prévention spécifique dans le contexte fourni.",
+      "final_answer": "La bronchiolite est une infection des voies respiratoires causée par le virus syncytial respiratoire (RSV) qui affecte principalement les bébés de moins de 1 an. Les symptômes incluent une toux, une difficulté à respirer et une fièvre. Le RSV peut causer des problèmes respiratoires graves chez les bébés prématurés ou ceux avec des problèmes respiratoires ou cardiaques.",
+      "retrieved_docs": [
+        {
+          "source": "https://kidshealth.org/en/parents/bronchiolitis.html",
+          "title": "Bronchiolitis | Nemours KidsHealth",
+          "relevance_score": 0.9974392652511597,
+          "content": "Bronchiolitis\nWhat Is Bronchiolitis?\nBronchiolitis (brong-kee-oh-LYE-tiss) is an infection of the respiratory tract. It happens when tiny airways called bronchioles (BRONG-kee-olz) get infected with a virus. They swell and fill with mucus, which can make breathing hard.\nBronchiolitis is more common during the fall and winter months. Most cases can be managed at home.\nWhat Are the Signs & Symptoms of Bronchiolitis?\nThe first symptoms of bronchiolitis are usually the same as those of a cold:\nUsual"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/bronchiolitis.html",
+          "title": "Bronchiolitis | Nemours KidsHealth",
+          "relevance_score": 0.9012435078620911,
+          "content": "Respiratory syncytial virus (RSV) is the most common cause of bronchiolitis. Sometimes, the common cold and the flu also can cause it.\nBronchiolitis:\n- most often affects infants and young children because their small airways can easily get blocked\n- is most common during the first 2 years of life, and especially among babies\n- is more common in premature babies, children with lung or heart problems, and kids with weak immune systems\nKids who are around secondhand smoke have a higher risk for br"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/bronchiolitis.html",
+          "title": "Bronchiolitis | Nemours KidsHealth",
+          "relevance_score": 0.7145302295684814,
+          "content": "Call your health care provider if your child:\n- develops a new or high fever\n- has a cough or other symptoms that get worse\n- is wheezing (a whistling sound heard with breathing)\nGet medical care right away if your child:\n- has trouble breathing. This may look like:\n- fast, shallow breathing, when you see the belly moving up and down quickly\n- your child is working hard to get breaths in. You may see the areas below the ribs, between the ribs, and/or in the neck sinking in with breathing.\n- flar"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/rsv.html",
+          "title": "Respiratory Syncytial Virus (RSV) | Nemours KidsHealth",
+          "relevance_score": 0.6691766977310181,
+          "content": "Respiratory Syncytial Virus (RSV)\nOverview\nWhat Is Respiratory Syncytial Virus (RSV)?\nRespiratory syncytial (sin-SISH-ul) virus (RSV) is a major cause of respiratory illness in children. The virus usually causes a common cold. But sometimes it infects the lungs and breathing passages and can cause breathing problems in babies and young children.\nSigns & Symptoms\nWhat Are the Signs & Symptoms of Respiratory Syncytial Virus (RSV)?\nKids with RSV might have cold symptoms, such as:\n- a stuffy or runn"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/flu-vs-cold.html",
+          "title": "Is It a Cold, the Flu, an RSV Infection, or COVID-19? | Nemours KidsHealth",
+          "relevance_score": 0.5831447839736938,
+          "content": "RSV Infection\nSymptoms\nRSV — respiratory syncytial (sin-SISH-ul) virus — is caused by the RSV virus and usually causes cold symptoms. But in some infants and young children, it can lead to a more serious infection, such as bronchiolitis or pneumonia. Those with an RSV infection might have fever, cough, wheezing, and trouble breathing. They might breathe very fast, grunt with the effort, or have retractions (when the skin between and below the ribs pulls in during breathing). They might feed poor"
+        }
+      ],
+      "is_negative": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.5032736756610949,
+      "context_utilization": 0.99999999998,
+      "elapsed_s": 8.594
+    },
+    {
+      "question": "What is the stock market?",
+      "language": "English",
+      "label": 0,
+      "reasoning": "The context does not contain enough evidence to answer this question as it is unrelated to pediatric care or health-related topics. The most relevant pieces of information found are none, as the topic is outside our scope. There are gaps and uncertainties in answering a question about the stock market without any related context or evidence. This question is out-of-scope for a pediatric assistant.",
+      "final_answer": "I don't know what you're referring to, but I'm here to help with questions about your child's health and development.",
+      "retrieved_docs": [],
+      "is_negative": true,
+      "faithfulness": null,
+      "answer_relevancy": null,
+      "context_utilization": null,
+      "elapsed_s": 0.984
+    },
+    {
+      "question": "¿Qué causa la otitis en niños?",
+      "language": "Spanish",
+      "label": 1,
+      "reasoning": "El contexto proporciona suficiente evidencia sobre las causas de la otitis en niños. Los factores relevantes incluyen el exceso de humedad en el oído, lesiones en la piel del canal auditivo, eczema, limpieza del oído con algodones, objetos introducidos en el oído y la infección por bacterias o hongos. Sin embargo, hay algunas lagunas en cuanto a las causas específicas de la otitis externa versus la otitis media. Además, aunque se menciona que la otitis puede ser causada por virus o bacterias, no se proporcionan detalles sobre los tipos específicos de infecciones. El tema es relevante para la salud infantil y pediátrica.",
+      "final_answer": "La otitis en niños puede ser causada por varios factores, incluyendo el exceso de humedad en el oído, lesiones en la piel del canal auditivo, eczema, limpieza del oído con algodones o introducir objetos en el oído. También pueden surgir infecciones bacterianas o fúngicas. Es importante tener en cuenta que la otitis externa y la otitis media tienen causas diferentes, aunque algunas veces se relacionan entre sí.",
+      "retrieved_docs": [
+        {
+          "source": "https://kidshealth.org/en/parents/swimmer-ear.html",
+          "title": "Swimmer's Ear (Otitis Externa) | Nemours KidsHealth",
+          "relevance_score": 0.9690852165222168,
+          "content": "Swimmer's Ear (Otitis Externa)\nOverview\nWhat Is Swimmer's Ear?\nSwimmer's ear is an infection of the ear canal, the passage that carries sounds from the outside of the body to the eardrum. It can be caused by different types of germs.\nCauses\nWhat Causes It?\nSwimmer's ear (or otitis externa) is common in kids who spend a lot of time in the water. Too much moisture in the ear can irritate the skin in the canal, letting bacteria or fungi get in. It happens most often in summertime, when swimming is "
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/tonsillitis.html",
+          "title": "Tonsillitis | Nemours KidsHealth",
+          "relevance_score": 0.9659835696220398,
+          "content": "Treatment depends on whether the tonsillitis is caused by:\n- a virus, in which case the body will fight the infection on its own\n- bacteria, in which case the doctor will prescribe an antibiotic. Help your child take the antibiotic exactly as directed. This helps symptoms clear up quickly and prevents spreading the infection to others.\nIt's important to finish the entire prescription — even if your child feels better in a few days — or the infection could come back. This also helps prevent other"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/ear-infections.html",
+          "title": "Ear Tube Surgery | Nemours KidsHealth",
+          "relevance_score": 0.825848400592804,
+          "content": "Why Is Ear Tube Surgery Done?\nMany kids get middle ear infections (otitis media). This often happens when a child has a cold or other respiratory infection. Bacteria or viruses can enter the middle ear and fill it with fluid or pus. When fluid pushes on the eardrum, it can cause an earache and affect hearing. Long periods of decreased hearing in young children can lead to delays in speech development.\nChildren who get a lot of ear infections are sometimes sent for hearing tests.\nA doctor might s"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/otitis-media.html",
+          "title": "Middle Ear Infections (Otitis Media) | Nemours KidsHealth",
+          "relevance_score": 0.7897619605064392,
+          "content": "Middle Ear Infections (Otitis Media)\nWhat Are Middle Ear Infections?\nEar infections happen when viruses or bacteria get into the middle ear, the space behind the eardrum. When a child has an ear infection (also called otitis media), the middle ear fills with pus (infected fluid). The pus pushes on the eardrum, which can be very painful.\nWhat Are the Signs & Symptoms of an Ear Infection?\nEar pain is the main sign of a middle ear infection. Kids also might have:\n- a fever\n- trouble eating, drinkin"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/meningitis.html",
+          "title": "Meningitis in Kids | Nemours KidsHealth",
+          "relevance_score": 0.5945443511009216,
+          "content": "Meningitis in Kids\nWhat Is Meningitis?\nMeningitis is an inflammation of the meninges (meh-NIN-jeez), the membranes that cover the brain and spinal cord. Some types of meningitis (meh-nen-JYE-tis) can be dangerous and even life-threatening. Routine vaccinations can help prevent it.\nQuick treatment of meningitis usually is successful. So it's important to know what symptoms it can cause and to get medical care right away if your child might have the illness.\nWhat Causes Meningitis?\nMeningitis is m"
+        }
+      ],
+      "is_negative": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9810835360131231,
+      "context_utilization": 0.9999999999,
+      "elapsed_s": 8.601
+    },
+    {
+      "question": "What is the tallest mountain in the world?",
+      "language": "English",
+      "label": 0,
+      "reasoning": "The context does not contain enough evidence to answer this question as it is unrelated to pediatric or health-related topics. The most relevant information found is none, as the topic of mountains and geography is outside the scope of the provided context. There are gaps in knowledge regarding geographical features. This question is out-of-scope for a pediatric assistant.",
+      "final_answer": "I don't know, but I can help with questions related to your child's health or development.",
+      "retrieved_docs": [],
+      "is_negative": true,
+      "faithfulness": null,
+      "answer_relevancy": null,
+      "context_utilization": null,
+      "elapsed_s": 7.828
+    },
+    {
+      "question": "Wie repariere ich einen tropfenden Wasserhahn?",
+      "language": "German",
+      "label": 0,
+      "reasoning": "Das bereitgestellte Kontext enthält keine Hinweise auf Gesundheit oder Kinderpflege, daher ist die Frage nicht in meinem Bereich von Kenntnissen. Es fehlt an jeglicher Evidenz für eine medizinische Frage. Die Frage bezieht sich nicht auf das Thema der Pflege von Kindern oder ihrer Gesundheit.",
+      "final_answer": "Ich kann diese Frage leider nicht beantworten, da sie nicht in meinem Bereich von Kenntnissen liegt.",
+      "retrieved_docs": [],
+      "is_negative": true,
+      "faithfulness": null,
+      "answer_relevancy": null,
+      "context_utilization": null,
+      "elapsed_s": 1.084
+    },
+    {
+      "question": "Qual é a história do Império Romano?",
+      "language": "Portuguese",
+      "label": 0,
+      "reasoning": "O contexto fornecido não contém evidências suficientes para responder à pergunta sobre a história do Império Romano. Não há informações relevantes ou específicas sobre o assunto. A pergunta também está fora do escopo de pediatria e saúde, que é o meu campo de especialização.",
+      "final_answer": "Infelizmente, não tenho conhecimento suficiente para responder à sua pergunta sobre a história do Império Romano. Minha área de especialização é assistência pediátrica e saúde, então posso oferecer informações sobre cuidados infantis e saúde em geral.",
+      "retrieved_docs": [],
+      "is_negative": true,
+      "faithfulness": null,
+      "answer_relevancy": null,
+      "context_utilization": null,
+      "elapsed_s": 2.45
+    },
+    {
+      "question": "How is rotavirus infection treated in infants?",
+      "language": "English",
+      "label": 1,
+      "reasoning": "[Reasoning unavailable — model did not return valid JSON]",
+      "final_answer": "{\n    \"reasoning\": \n    The context contains enough evidence to answer this question as it provides information on the treatment of rotavirus infection in infants from multiple sources. \n    The most relevant pieces of information found are that babies and toddlers who are dehydrated may need treatment in a hospital, where they'll get intravenous (IV) fluids to bring their body's fluid and salt levels back to normal. For mild dehydration, kids can be treated at home with oral rehydration solution, such as Pedialyte or Enfalyte, which has the right amount of water, sugar, and salt to help with dehydration.\n    There are no gaps or uncertainties in this information as it is clearly stated in the sources provided. \n    The question is in-scope (pediatric / health-related) as it pertains to the treatment of rotavirus infection in infants.\n\n    \"answer\": \n    Rotavirus infection can be treated at home with oral rehydration solution for mild dehydration, such as Pedialyte or Enfalyte, which has the right amount of water, sugar, and salt to help with dehydration. However, babies and toddlers who are severely dehydrated may need treatment in a hospital where they'll receive intravenous (IV) fluids to bring their body's fluid and salt levels back to normal. It is essential to continue breastfeeding or formula feeding as long as the infant is not vomiting excessively and to avoid giving over-the-counter medicines for vomiting or diarrhea unless recommended by a doctor.\n}",
+      "retrieved_docs": [
+        {
+          "source": "https://kidshealth.org/en/parents/rsv.html",
+          "title": "Respiratory Syncytial Virus (RSV) | Nemours KidsHealth",
+          "relevance_score": 0.9888784289360046,
+          "content": "RSV infection can be more serious in babies and toddlers, though. Some might need treatment in a hospital where they can be watched closely and get supportive treatment for any breathing problems or dehydration.\nHome Care\nAt home:\n- Make your child as comfortable as possible.\n- Allow time for recovery.\n- Provide plenty of fluids. Babies may not feel like drinking, so offer fluids in small amounts often.\nAvoid hot-water and steam humidifiers, which can be hazardous and can scald skin. If you use "
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/rotavirus.html",
+          "title": "Rotavirus | Nemours KidsHealth",
+          "relevance_score": 0.9843107461929321,
+          "content": "How Is Rotavirus Diagnosed?\nDoctors usually can tell if someone has stomach flu by hearing about the symptoms. Usually, no tests are needed. If a child is very sick or has blood or mucus in their poop, doctors might order a stool (poop) test to check for rotavirus and other germs that cause diarrhea. The doctor may also order a urine (pee) test or blood test to check for dehydration.\nHow Is Rotavirus Treated?\nBabies and toddlers who are dehydrated may need treatment in a hospital. They'll get in"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/rotavirus.html",
+          "title": "Rotavirus | Nemours KidsHealth",
+          "relevance_score": 0.9020114541053772,
+          "content": "Washing hands well and often, especially after using the bathroom and before preparing or eating food, is the best way to prevent rotavirus infection. Kids with rotavirus should stay home from childcare until the diarrhea is gone.\nWhen Should I Call the Doctor?\nCall the doctor if you think child may have of a rotavirus infection. Call right away if your child:\n- can’t drink for several hours\n- is peeing less often than usual\n- has signs of dehydration, such as crying with few or no tears, having"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/rotavirus.html",
+          "title": "Rotavirus | Nemours KidsHealth",
+          "relevance_score": 0.7106748819351196,
+          "content": "Rotavirus\nWhat Is Rotavirus?\nRotavirus is a common cause of gastroenteritis, often called stomach flu. The virus infects the stomach and intestines. It causes vomiting and diarrhea, especially in babies and young children. Infections are common during the winter and spring months, especially in childcare centers.\nThe rotavirus immunization is recommended for most infants. It can help prevent rotavirus infections.\nWhat Are the Signs & Symptoms of Rotavirus?\nKids with a rotavirus (ROE-tuh-vy-rus) "
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/rotavirus.html",
+          "title": "Rotavirus | Nemours KidsHealth",
+          "relevance_score": 0.6028775572776794,
+          "content": "- Drink small amounts of an oral rehydration solution (such are Pedialyte, Enfalyte, or a store brand) often. It has the right amount of water, sugar, and salt to help with dehydration. You can buy it without a prescription at drugstores or supermarkets.\n- Avoid full-strength (undiluted) fruit juices, soda, and sports drinks, which can make diarrhea worse.\n- Continue to breastfeed or take formula, as long as they are not vomiting a lot.\nAs your child starts to feel better, you can give less oral"
+        }
+      ],
+      "is_negative": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9492738960692633,
+      "context_utilization": 0.4499999999775,
+      "elapsed_s": 2.686
+    },
+    {
+      "question": "What are the symptoms of chickenpox in children?",
+      "language": "English",
+      "label": 1,
+      "reasoning": "The context contains enough evidence to answer this question as it includes detailed information on the signs and symptoms of chickenpox from multiple sources. The most relevant pieces of information found are that chickenpox often starts with a headache, poor appetite, sore throat, stomachache, or fever, followed by a red, itchy skin rash in three stages: red bumps, blisters, and scabs. There are also specific symptoms that require immediate medical attention, such as trouble breathing, severe headache, drowsiness, stiff neck, and vomiting. However, there are gaps in the information regarding the exact duration of each symptom stage and how to distinguish between normal and abnormal reactions. The question is in-scope as it pertains to pediatric health.",
+      "final_answer": "The symptoms of chickenpox in children often start with a headache, poor appetite, sore throat, stomachache, or fever, which can last for a few days. This is followed by the appearance of a red, itchy skin rash in three stages: first as many small red bumps that look like pimples or insect bites, then developing into thin-walled blisters filled with fluid, and finally becoming dry, brown scabs. It's essential to monitor your child closely for any signs of complications, such as trouble breathing, severe headache, drowsiness, stiff neck, or vomiting, which may require immediate medical attention.",
+      "retrieved_docs": [
+        {
+          "source": "https://kidshealth.org/en/parents/chicken-pox.html",
+          "title": "Chickenpox (Varicella) | Nemours KidsHealth",
+          "relevance_score": 0.9992619156837463,
+          "content": "- The chickenpox vaccine protects most kids from getting sick or makes symptoms much milder.\nSigns & Symptoms\nWhat Are the Signs & Symptoms of Chickenpox?\nEarly Symptoms\nChickenpox often starts with a headache, poor appetite, sore throat, stomachache, or fever. These symptoms may last for a few days.\nChickenpox Rash\nA red, itchy skin rash usually starts on the belly or back and face. Then it spreads to almost everywhere else on the body, including the scalp, mouth, arms, legs, and genitals.\nThe "
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/chicken-pox.html",
+          "title": "Chickenpox (Varicella) | Nemours KidsHealth",
+          "relevance_score": 0.9949365854263306,
+          "content": "The rash may spread wider or be more severe in kids who have weak immune systems or skin disorders like eczema.\nWhen Should I Call the Doctor?\nMost chickenpox infections don't need special medical treatment. But sometimes, problems can happen.\nGet medical attention right away if your child:\n- has trouble breathing\n- has a severe headache\n- is very drowsy or has trouble waking up\n- has trouble looking at bright lights\n- has trouble walking\n- seems confused\n- seems very ill\n- has a stiff neck\nCall"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/chickenpox-sheet.html",
+          "title": "Chickenpox: Treatment & Care | Nemours KidsHealth",
+          "relevance_score": 0.965684175491333,
+          "content": "Chickenpox: Treatment & Care\nChickenpox (varicella) infection is much less common in the United States than it used to be, thanks to the chickenpox vaccine. If someone does get the infection, the rash and other symptoms it causes will go away without treatment. Chickenpox is usually not a big deal, but it can sometimes cause serious problems.\nWhat Are the Signs & Symptoms of Chickenpox?\nThe classic chickenpox rash has three stages and all can appear on the body at the same time:\n1. Red bumps: Th"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/chicken-pox.html",
+          "title": "Chickenpox (Varicella) | Nemours KidsHealth",
+          "relevance_score": 0.9531437754631042,
+          "content": "Chickenpox (Varicella)\nOverview\nWhat Is Chickenpox?\nChickenpox is an infection that causes a fever and an itchy rash with spots all over the body. It’s due to a virus called varicella-zoster. Chickenpox used to be a common childhood illness in the United States, especially in kids under age 12. It's much rarer now, thanks to the chickenpox vaccine, which helps prevent the infection.\nAlthough chickenpox is usually not a big deal, it can sometimes cause serious problems. The infection usually last"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/chickenpox-sheet.html",
+          "title": "Chickenpox: Treatment & Care | Nemours KidsHealth",
+          "relevance_score": 0.9477272629737854,
+          "content": "Kids also can have:\nWhen Should I Call the Doctor?\nGet medical attention right away if your child:\n- has trouble breathing\n- has a severe headache\n- is very drowsy or has trouble waking up\n- has trouble looking at bright lights\n- has trouble walking\n- seems confused\n- seems very ill\n- has a stiff neck\nCall the doctor if your child:\n- has a fever that lasts for more than 4 days\n- has a bad cough\n- has an area of rash that leaks pus (thick, yellowish fluid) or becomes red, warm, swollen, or sore\n-"
+        }
+      ],
+      "is_negative": false,
+      "faithfulness": 0.8888888888888888,
+      "answer_relevancy": 0.9479355073137015,
+      "context_utilization": 0.7499999999625,
+      "elapsed_s": 8.696
+    },
+    {
+      "question": "¿Qué es la celulitis en niños?",
+      "language": "Spanish",
+      "label": 1,
+      "reasoning": "El contexto proporcionado contiene suficiente evidencia sobre la condición de celulitis en niños. La información más relevante es que la celulitis es una infección cutánea que puede afectar cualquier área del cuerpo, pero es más común en áreas expuestas como la cara, brazos o piernas. Los gérmenes más comunes que causan celulitis son el estreptococo A y Staphylococcus aureus. Sin embargo, hay algunas lagunas en la información, ya que no se menciona específicamente cómo diagnosticar la celulitis ni qué tratamiento es efectivo para ella. El tema de la pregunta está dentro del alcance de la salud infantil.",
+      "final_answer": "La celulitis en niños es una infección cutánea que puede causar dolor, hinchazón y calentura en la piel. Los gérmenes más comunes que causan celulitis son el estreptococo A y Staphylococcus aureus, que a menudo viven en la piel y pueden infectarla cuando hay una herida o abrasión. Es importante proteger la piel de los cortes y rasguños para prevenir la celulitis. Si su hijo desarrolla un área roja, dolorosa y hinchada en la piel, con o sin fiebre, es importante llamar al médico para que lo evalúe.",
+      "retrieved_docs": [
+        {
+          "source": "https://kidshealth.org/en/parents/cellulitis.html",
+          "title": "Cellulitis | Nemours KidsHealth",
+          "relevance_score": 0.032133448868989944,
+          "content": "Cellulitis\nWhat Is Cellulitis?\nCellulitis (sel-yuh-LY-tis) is a skin infection that involves areas of tissue below the skin's surface.\nCellulitis can affect any area of the body, but it's most common on exposed body parts, such as the face, arms, or lower legs.\nWhat Causes Cellulitis?\nMany different types of bacteria can cause cellulitis. The most common ones are group A streptococcus and Staphylococcus aureus. These bacteria usually live harmlessly on the skin and in the nose and throat, but so"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/rms.html",
+          "title": "Rhabdomyosarcoma (RMS) | Nemours KidsHealth",
+          "relevance_score": 0.012650884687900543,
+          "content": "Rhabdomyosarcoma (RMS)\nWhat Is Rhabdomyosarcoma (RMS)?\nRhabdomyosarcoma (RMS or \"rhabdo\") is a cancerous tumor that develops in the body's soft tissues, usually the muscles. It can affect the head, neck, bladder, vagina, arms, legs, trunk, or just about any body part. Cells from rhabdomyosarcomas are often fast growing and can spread (metastasize) to other parts of the body.\nRhabdomyosarcoma (rab-doe-myo-sar-KO-muh) is the most common type of soft-tissue cancer in children. Kids can develop it a"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/staphylococcus.html",
+          "title": "Staph Infections | Nemours KidsHealth",
+          "relevance_score": 0.01181404385715723,
+          "content": "- A furuncle (fyoor-UNK-ul), commonly known as a boil: These swollen, red, painful lumps in the skin usually are due to an infected hair follicle. The lump fills with pus, growing larger and more painful until it ruptures and drains. Furuncles often begin as folliculitis and then worsen. They most often appear on the face, neck, buttocks, armpits, and inner thighs, where small hairs can get irritated. A cluster of several furuncles is called a carbuncle (KAR-bunk-ul). Someone with a carbuncle ma"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/skincare-products.html",
+          "title": "Is It OK for My Child to Use Skin Care Products? | Nemours KidsHealth",
+          "relevance_score": 0.0054837791249156,
+          "content": "Is It OK for My Child to Use Skin Care Products?\nMany kids and teens want to try skin care products they hear about from friends, influencers, and celebrities. But young skin often doesn’t need these products, and many aren’t even safe for it.\nMost kids and teens don’t have the problems adult skin care products try to solve, like wrinkles, dark spots, and sagging. On young skin, these can cause things like acne, burns, and rashes. Then, kids might need to go to a dermatologist (a doctor who trea"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/cellulitis.html",
+          "title": "Cellulitis | Nemours KidsHealth",
+          "relevance_score": 0.004802851006388664,
+          "content": "Can Cellulitis Be Prevented?\nTo prevent cellulitis, protect skin from cuts, bruises, and scrapes. This isn't easy, especially in active kids or those who play sports.\nKids and teens should:\n- Use elbow and knee pads while skating.\n- Wear a bike helmet when riding.\n- Wear shin guards during soccer.\n- Wear long pants and long-sleeved shirts while hiking in the woods (this can also protect them from bug bites and stings).\n- Wear sandals on the beach.\nWhen kids do get a cut or scrape, wash it well w"
+        }
+      ],
+      "is_negative": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.5756069934190627,
+      "context_utilization": 0.8333333332916666,
+      "elapsed_s": 9.608
+    },
+    {
+      "question": "Was ist Cellulitis bei Kindern?",
+      "language": "German",
+      "label": 1,
+      "reasoning": "Das gegebene Kontext enthält ausreichend Beweise, um über Cellulitis in Kindern zu sprechen. Die wichtigsten Informationen sind, dass Cellulitis eine Hautinfektion ist, die sich unter der Haut befindet und durch Bakterien verursacht wird. Es gibt keine Lücken oder Unsicherheiten im Kontext. Die Frage ist auch in den Bereich von Kinderkrankheiten und Gesundheit verwandt.",
+      "final_answer": "Cellulitis ist eine Hautinfektion, die sich unter der Haut befindet und durch Bakterien verursacht wird. Sie kann auf jedem Körperteil auftreten, aber sie ist am häufigsten auf den Expositionsteilen wie Gesicht, Arme oder Beine zu finden. Die Symptome von Cellulitis sind Schmerzen, Schwellung, Wärme und Rötung der betroffenen Hautstelle. Wenn die Infektion fortschreitet, kann ein Kind auch Fieber haben und sich krank fühlen.",
+      "retrieved_docs": [
+        {
+          "source": "https://kidshealth.org/en/parents/cellulitis.html",
+          "title": "Cellulitis | Nemours KidsHealth",
+          "relevance_score": 0.9773194193840027,
+          "content": "Cellulitis\nWhat Is Cellulitis?\nCellulitis (sel-yuh-LY-tis) is a skin infection that involves areas of tissue below the skin's surface.\nCellulitis can affect any area of the body, but it's most common on exposed body parts, such as the face, arms, or lower legs.\nWhat Causes Cellulitis?\nMany different types of bacteria can cause cellulitis. The most common ones are group A streptococcus and Staphylococcus aureus. These bacteria usually live harmlessly on the skin and in the nose and throat, but so"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/staphylococcus.html",
+          "title": "Staph Infections | Nemours KidsHealth",
+          "relevance_score": 0.7789320349693298,
+          "content": "- A furuncle (fyoor-UNK-ul), commonly known as a boil: These swollen, red, painful lumps in the skin usually are due to an infected hair follicle. The lump fills with pus, growing larger and more painful until it ruptures and drains. Furuncles often begin as folliculitis and then worsen. They most often appear on the face, neck, buttocks, armpits, and inner thighs, where small hairs can get irritated. A cluster of several furuncles is called a carbuncle (KAR-bunk-ul). Someone with a carbuncle ma"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/cellulitis.html",
+          "title": "Cellulitis | Nemours KidsHealth",
+          "relevance_score": 0.7271803021430969,
+          "content": "Cellulitis is not contagious. It can't spread from person to person. But the bacteria that cause it can spread from an open wound to other people.\nWhat Are the Signs & Symptoms of Cellulitis?\nCellulitis begins with a small area of skin that's:\n- painful\n- swollen\n- warm\n- red\nAs this area begins to spread, a child may begin to feel ill and get a fever. Swollen (sometimes called swollen “glands”) are sometimes found near the area of infected skin.\nThe time it takes for symptoms to start varies, d"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/cellulitis.html",
+          "title": "Cellulitis | Nemours KidsHealth",
+          "relevance_score": 0.49307510256767273,
+          "content": "- Your child gets a large cut or a deep puncture wound.\n- An animal bites your child, especially if the puncture wound is deep. Cellulitis can happen quickly after an animal bite. Human bites can cause skin infections too, so call the doctor if this happens.\nHow Can Parents Help?\n- Make sure your child takes the antibiotics exactly as directed and for the full course.\n- Follow the doctor's suggestions for treating the area of cellulitis, such as raising the affected part of the body or applying "
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/cellulitis.html",
+          "title": "Cellulitis | Nemours KidsHealth",
+          "relevance_score": 0.4211432635784149,
+          "content": "How Is Cellulitis Diagnosed?\nA doctor can usually diagnose cellulitis by asking questions and examining the area of affected skin. Usually other tests aren’t needed unless a person looks very sick. Then the doctor may take a blood sample to see if bacteria are in the bloodstream.\nHow Is Cellulitis Treated?\nFor a mild case of cellulitis, doctors prescribe oral antibiotics (taken by mouth). Your child should start to feel better in a couple of days, but they should take all the antibiotics as pres"
+        }
+      ],
+      "is_negative": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.7352527708749313,
+      "context_utilization": 0.9999999999666667,
+      "elapsed_s": 2.761
+    },
+    {
+      "question": "Was ist Bronchiolitis bei Säuglingen?",
+      "language": "German",
+      "label": 1,
+      "reasoning": "Der Kontext enthält ausreichend Beweise für die Frage. Die relevantesten Informationen sind, dass Bronchiolitis eine Infektion der Atemwege ist und durch das Respiratory Syncytial Virus (RSV) verursacht wird. Es gibt jedoch einige Lücken in den Informationen, wie z.B. keine detaillierten Beschreibungen der Symptome oder Behandlungsmöglichkeiten. Die Frage ist jedoch im Bereich der Kinderheilkunde und Gesundheit relevant.",
+      "final_answer": "Bronchiolitis ist eine Infektion der Atemwege bei Säuglingen, die durch das Respiratory Syncytial Virus (RSV) verursacht wird. Es kann zu Symptomen wie Husten, Fieber, Atemnot und Blaufärbung der Lippen oder Fingernägel führen. Wenn Sie als Elternteil Bedenken haben, sollten Sie sofort Ihren Arzt kontaktieren, insbesondere wenn Ihr Kind einen neuen oder hohen Fieber hat, hustet oder andere Symptome zeigt, die schlimmer werden.",
+      "retrieved_docs": [
+        {
+          "source": "https://kidshealth.org/en/parents/bronchiolitis.html",
+          "title": "Bronchiolitis | Nemours KidsHealth",
+          "relevance_score": 0.997033953666687,
+          "content": "Bronchiolitis\nWhat Is Bronchiolitis?\nBronchiolitis (brong-kee-oh-LYE-tiss) is an infection of the respiratory tract. It happens when tiny airways called bronchioles (BRONG-kee-olz) get infected with a virus. They swell and fill with mucus, which can make breathing hard.\nBronchiolitis is more common during the fall and winter months. Most cases can be managed at home.\nWhat Are the Signs & Symptoms of Bronchiolitis?\nThe first symptoms of bronchiolitis are usually the same as those of a cold:\nUsual"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/bronchiolitis.html",
+          "title": "Bronchiolitis | Nemours KidsHealth",
+          "relevance_score": 0.8925763368606567,
+          "content": "Respiratory syncytial virus (RSV) is the most common cause of bronchiolitis. Sometimes, the common cold and the flu also can cause it.\nBronchiolitis:\n- most often affects infants and young children because their small airways can easily get blocked\n- is most common during the first 2 years of life, and especially among babies\n- is more common in premature babies, children with lung or heart problems, and kids with weak immune systems\nKids who are around secondhand smoke have a higher risk for br"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/rsv.html",
+          "title": "Respiratory Syncytial Virus (RSV) | Nemours KidsHealth",
+          "relevance_score": 0.6832788586616516,
+          "content": "Respiratory Syncytial Virus (RSV)\nOverview\nWhat Is Respiratory Syncytial Virus (RSV)?\nRespiratory syncytial (sin-SISH-ul) virus (RSV) is a major cause of respiratory illness in children. The virus usually causes a common cold. But sometimes it infects the lungs and breathing passages and can cause breathing problems in babies and young children.\nSigns & Symptoms\nWhat Are the Signs & Symptoms of Respiratory Syncytial Virus (RSV)?\nKids with RSV might have cold symptoms, such as:\n- a stuffy or runn"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/flu-vs-cold.html",
+          "title": "Is It a Cold, the Flu, an RSV Infection, or COVID-19? | Nemours KidsHealth",
+          "relevance_score": 0.6590810418128967,
+          "content": "RSV Infection\nSymptoms\nRSV — respiratory syncytial (sin-SISH-ul) virus — is caused by the RSV virus and usually causes cold symptoms. But in some infants and young children, it can lead to a more serious infection, such as bronchiolitis or pneumonia. Those with an RSV infection might have fever, cough, wheezing, and trouble breathing. They might breathe very fast, grunt with the effort, or have retractions (when the skin between and below the ribs pulls in during breathing). They might feed poor"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/bronchiolitis.html",
+          "title": "Bronchiolitis | Nemours KidsHealth",
+          "relevance_score": 0.5774132609367371,
+          "content": "Call your health care provider if your child:\n- develops a new or high fever\n- has a cough or other symptoms that get worse\n- is wheezing (a whistling sound heard with breathing)\nGet medical care right away if your child:\n- has trouble breathing. This may look like:\n- fast, shallow breathing, when you see the belly moving up and down quickly\n- your child is working hard to get breaths in. You may see the areas below the ribs, between the ribs, and/or in the neck sinking in with breathing.\n- flar"
+        }
+      ],
+      "is_negative": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.7204416296196715,
+      "context_utilization": 0.99999999998,
+      "elapsed_s": 2.556
+    },
+    {
+      "question": "¿Qué causa la gastroenteritis en niños?",
+      "language": "Spanish",
+      "label": 1,
+      "reasoning": "El contexto proporciona suficiente evidencia para responder a la pregunta. Los virus son el causante más común de gastroenteritis en niños, seguido por bacterias y parásitos. La rotavirus es un tipo de virus que causa gastroenteritis en bebés y niños pequeños. Sin embargo, no hay información sobre las otras causas de gastroenteritis en los niños, como la ingesta excesiva de jugo o alimentos alérgenos. La pregunta está dentro del ámbito de salud infantil.",
+      "final_answer": "La gastroenteritis en niños se puede causar por varios agentes infecciosos, pero los virus son el causante más común. El rotavirus es un tipo de virus que causa gastroenteritis en bebés y niños pequeños, especialmente durante los meses de invierno y primavera. Los síntomas pueden incluir diarrea, vómito, dolor abdominal y fiebre. Es importante recordar que la gastroenteritis es una infección contagiosa y se puede prevenir mediante el lavado de manos frecuente y evitar contactar con personas enfermas.",
+      "retrieved_docs": [
+        {
+          "source": "https://kidshealth.org/en/parents/diarrhea.html",
+          "title": "Diarrhea | Nemours KidsHealth",
+          "relevance_score": 0.994016170501709,
+          "content": "The germs that cause gastroenteritis are:\n- viruses (most common)\n- bacteria\n- parasites\nViruses\nViral gastroenteritis (or \"stomach flu\") is a top cause of diarrhea in kids. It also can bring on nausea, vomiting, and belly pain. Symptoms usually last a few days, and kids can get dehydrated if they don’t drink enough liquids while they’re sick.\nRotavirus is a common cause of watery diarrhea in infants and young children. Outbreaks are more common in the winter and early spring, especially in chil"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/gastroenteritis.html",
+          "title": "Gastroenteritis (Stomach Flu) in Children | Nemours KidsHealth",
+          "relevance_score": 0.9931424856185913,
+          "content": "Gastroenteritis (Stomach Flu) in Kids & Teens\nAlso called: Stomach Flu, Stomach Bug, Stomach Virus\nOverview\nWhat is Gastroenteritis (Stomach Flu)?\nGastroenteritis (gass-troh-en-teh-RYE-tis), often called the stomach flu, is a common illness that causes nausea, vomiting, belly cramps, and diarrhea. It usually lasts a few days and isn't serious. Most kids and teens get better at home by resting and drinking plenty of liquids.\nThe stomach flu is different from the flu (or influenza). Some of the sy"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/diarrhea.html",
+          "title": "Diarrhea | Nemours KidsHealth",
+          "relevance_score": 0.9876003265380859,
+          "content": "Diarrhea\nWhat Is Diarrhea?\nDiarrhea is frequent soft or loose bowel movements (poop). Most kids have diarrhea from time to time. It usually doesn't last long and often gets better on its own.\nCauses & Prevention\nWhat Causes Diarrhea?\nDiarrhea (dye-uh-REE-uh) is usually caused by an infection in the intestines, called gastroenteritis (gastro-end-ter-EYE-tiss).\nGastroenteritis can cause crampy belly pain, followed by diarrhea that lasts about 3–5 days. Other symptoms may include:\n- fever\n- loss of"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/diarrhea.html",
+          "title": "Diarrhea | Nemours KidsHealth",
+          "relevance_score": 0.9797732830047607,
+          "content": "Bacteria\nMany different types of bacteria can cause diarrhea, including E. coli, Salmonella, Campylobacter, and Shigella. These bacteria are often responsible for food poisoning, which can cause diarrhea and vomiting within a few hours of eating contaminated food.\nParasites\nGiardia is the most common parasitic infection that causes diarrhea in kids. Young children are more likely to get giardia, especially in childcare centers.\nWhat Are Other Causes of Diarrhea?\nKids can sometimes get diarrhea f"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/rotavirus.html",
+          "title": "Rotavirus | Nemours KidsHealth",
+          "relevance_score": 0.9694674611091614,
+          "content": "Rotavirus\nWhat Is Rotavirus?\nRotavirus is a common cause of gastroenteritis, often called stomach flu. The virus infects the stomach and intestines. It causes vomiting and diarrhea, especially in babies and young children. Infections are common during the winter and spring months, especially in childcare centers.\nThe rotavirus immunization is recommended for most infants. It can help prevent rotavirus infections.\nWhat Are the Signs & Symptoms of Rotavirus?\nKids with a rotavirus (ROE-tuh-vy-rus) "
+        }
+      ],
+      "is_negative": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8072603425789486,
+      "context_utilization": 0.94999999997625,
+      "elapsed_s": 2.858
+    },
+    {
+      "question": "Comment réparer un robinet qui fuit ?",
+      "language": "French",
+      "label": 0,
+      "reasoning": "Le contexte fourni ne contient pas d'informations pertinentes pour répondre à la question posée. Il n'y a aucune mention de santé ou de soins infirmiers. La question est donc hors du champ de compétences de ce professionnel.",
+      "final_answer": "Je suis désolé, mais je ne peux pas vous aider à résoudre le problème d'un robinet qui fuit car il s'agit d'une question liée à la réparation des appareils ménagers et non à la santé ou aux soins infirmiers.",
+      "retrieved_docs": [],
+      "is_negative": true,
+      "faithfulness": null,
+      "answer_relevancy": null,
+      "context_utilization": null,
+      "elapsed_s": 1.22
+    },
+    {
+      "question": "How do I bake a chocolate cake?",
+      "language": "English",
+      "label": 0,
+      "reasoning": "The context does not contain enough evidence to answer the question as it is unrelated to pediatric or health-related topics. The most relevant piece of information found is that there are no relevant pieces of information related to baking a chocolate cake in the provided context. There are gaps and uncertainties regarding the recipe, ingredients, and cooking methods for baking a chocolate cake. The question is out-of-scope as it does not pertain to pediatric or health-related matters.",
+      "final_answer": "I don't know how to bake a chocolate cake based on this conversation.",
+      "retrieved_docs": [],
+      "is_negative": true,
+      "faithfulness": null,
+      "answer_relevancy": null,
+      "context_utilization": null,
+      "elapsed_s": 0.922
+    },
+    {
+      "question": "¿Qué es la conjuntivitis en niños?",
+      "language": "Spanish",
+      "label": 1,
+      "reasoning": "La información proporcionada contiene suficientes evidencias sobre la conjuntivitis en niños, incluyendo sus causas, síntomas y formas de prevención. Los artículos mencionan que la conjuntivitis es una inflamación del revestimiento del ojo y los párpados, y que puede ser causada por bacterias, virus u otros irritantes. También se menciona que algunos tipos de conjuntivitis son contagiosos y pueden propagarse a través del contacto directo con las lágrimas infectadas. Los síntomas incluyen dolor en el ojo, secreción, enrojecimiento y sensibilidad a la luz. La información también proporciona consejos para prevenir la propagación de la enfermedad, como lavar las manos frecuentemente y evitar compartir objetos personales.",
+      "final_answer": "La conjuntivitis en niños es una inflamación del revestimiento del ojo y los párpados que puede ser causada por bacterias, virus u otros irritantes. Los síntomas incluyen dolor en el ojo, secreción, enrojecimiento y sensibilidad a la luz. Es importante buscar atención médica si se sospecha que su hijo tiene conjuntivitis, ya que algunos tipos de la enfermedad pueden ser contagiosos y requerir tratamiento.",
+      "retrieved_docs": [
+        {
+          "source": "https://kidshealth.org/en/parents/conjunctivitis.html",
+          "title": "Conjunctivitis (Pinkeye) In Kids | Nemours KidsHealth",
+          "relevance_score": 0.883115291595459,
+          "content": "Conjunctivitis (Pinkeye) In Kids\nWhat Is Pinkeye?\nThe eye infection conjunctivitis (kun-junk-tih-VY-tus) — often called pinkeye — is common in young kids. It's usually contagious, and breakouts can sweep through preschools and playgrounds. But even teens and adults can get pinkeye.\nPinkeye is an inflammation of the conjunctiva, the white part of the eye and the inner eyelids. It's a minor infection and although it might look bad, usually isn't serious.\nStill, if your child shows signs of pinkeye"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/conjunctivitis.html",
+          "title": "Conjunctivitis (Pinkeye) In Kids | Nemours KidsHealth",
+          "relevance_score": 0.07703627645969391,
+          "content": "What Are the Signs & Symptoms of Pinkeye?\nBesides the telltale red or pink color that gives pinkeye its name, eye discomfort is a common symptom. Kids might say that it feels like there's sand in the eye. Often, there's some discharge from the eye, and pain and swelling of the conjunctiva. Some kids have swollen eyelids or sensitivity to bright light. Pinkeye can affect one or both eyes.\nIn cases of allergic conjunctivitis, itchiness and watery eyes are common symptoms.\nIs Pinkeye Contagious?\nPi"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/conjunctivitis.html",
+          "title": "Conjunctivitis (Pinkeye) In Kids | Nemours KidsHealth",
+          "relevance_score": 0.019175104796886444,
+          "content": "Doctors usually recommend keeping kids with contagious conjunctivitis out of school, childcare, or summer camp for a short time.\nCan Pinkeye Be Prevented?\nInfectious conjunctivitis is highly contagious, so teach kids to wash their hands well and often with warm water and soap. They also should not share eye drops, tissues, eye makeup, washcloths, towels, or pillowcases.\nBe sure to wash your own hands well after touching an infected child's eyes, and throw away items like gauze or cotton balls af"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/conjunctivitis.html",
+          "title": "Conjunctivitis (Pinkeye) In Kids | Nemours KidsHealth",
+          "relevance_score": 0.011032160371541977,
+          "content": "Some kinds of pinkeye are noninfectious, such as:\n- allergic conjunctivitis, which happens more often in kids with other allergic conditions, like hay fever. Triggers include grass, ragweed pollen, animal dander, and dust mites.\n- irritant conjunctivitis, caused by anything that irritates the eyes, such as air pollution or chlorine in pools\nPinkeye in Newborns\nNewborns are at risk for pinkeye and can develop serious health problems if it's not treated. If a pregnant woman has an STD, during deli"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/conjunctivitis.html",
+          "title": "Conjunctivitis (Pinkeye) In Kids | Nemours KidsHealth",
+          "relevance_score": 0.00718700373545289,
+          "content": "If your child has allergic conjunctivitis, your doctor may prescribe anti-allergy medicine, either as pills, liquid, or eye drops.\nYou also can give acetaminophen or ibuprofen to relieve discomfort (check instructions for correct amount).\nHow Can Parents Help?\nUsing cool or warm compresses on the eyes may make your child more comfortable. Clean the edges of the infected eye carefully with warm water and gauze or cotton balls. This can also remove the crusts of dried discharge that make the eyeli"
+        }
+      ],
+      "is_negative": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.6975908316102052,
+      "context_utilization": 0.9166666666361111,
+      "elapsed_s": 3.788
+    },
+    {
+      "question": "O que é rubéola e por que é perigosa em crianças?",
+      "language": "Portuguese",
+      "label": 1,
+      "reasoning": "O contexto contém evidências suficientes sobre a rubéola e suas consequências em crianças. As informações mais relevantes incluem que a rubéola é uma infecção causada pelo vírus da rubéola, que pode levar a problemas sérios em bebês de mães grávidas. Além disso, o contexto menciona que a vacina contra a rubéola protege as pessoas do vírus e previne a disseminação da doença. No entanto, há uma lacuna na informação sobre como a rubéola afeta crianças em particular, além de problemas graves com suas saúde. A questão está dentro do escopo de saúde infantil.",
+      "final_answer": "A rubéola é uma infecção causada pelo vírus da rubéola que pode levar a problemas sérios em bebês de mães grávidas. Ela geralmente afeta crianças com sintomas leves, mas se não for tratada adequadamente, pode causar complicações graves. A vacina contra a rubéola é uma medida eficaz para prevenir a disseminação da doença e proteger as crianças de problemas sérios.",
+      "retrieved_docs": [
+        {
+          "source": "https://kidshealth.org/en/parents/german-measles.html",
+          "title": "Rubella (German Measles) | Nemours KidsHealth",
+          "relevance_score": 0.9832219481468201,
+          "content": "Rubella (German Measles)\nWhat Is Rubella?\nRubella is an infection that mostly affects the skin and lymph nodes. In kids, rubella — commonly called German measles or 3-day measles — is usually a mild illness. But the infection is dangerous for pregnant women because it can cause serious health problems in their babies.\nRubella is caused by the rubella (roo-BELL-uh) virus (not the same virus that causes measles). It spreads when people breathe in virus-infected fluid.\nBefore the rubella vaccine, e"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/german-measles.html",
+          "title": "Rubella (German Measles) | Nemours KidsHealth",
+          "relevance_score": 0.47235599160194397,
+          "content": "Pregnant women who are not immune should avoid anyone who has the illness, then get the vaccine after their baby is born so they'll be immune during any future pregnancies.\nHow Is Rubella Treated?\nAntibiotics can't treat rubella because they only work against bacteria, not viruses. Unless it causes other problems, rubella will get better on its own. Rubella usually is mild in kids, who often can be cared for at home. Check your child's temperature and call the doctor if the fever climbs too high"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/german-measles.html",
+          "title": "Rubella (German Measles) | Nemours KidsHealth",
+          "relevance_score": 0.28796637058258057,
+          "content": "The virus also can pass through a pregnant woman's bloodstream to infect her unborn child. Babies born with congenital rubella syndrome are at risk for serious problems with their growth, thinking, heart and eyes, hearing, and liver, spleen, and bone marrow. They also can shed the virus in their urine (pee) and fluid from their nose and throat for a year or more, so can pass the virus to people who aren't immunized against it.\nCan Rubella Be Prevented?\nThe rubella vaccine protects people from th"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/german-measles.html",
+          "title": "Rubella (German Measles) | Nemours KidsHealth",
+          "relevance_score": 0.2606392502784729,
+          "content": "What Are the Signs & Symptoms of Rubella?\nRubella infection may begin with 1–2 days of mild fever (99°–100°F, 37.2°–37.8°C) and swollen, tender lymph nodes, usually in the back of the neck or behind the ears. A rash then begins on the face and spreads downward. As it spreads, it usually clears on the face.\nThe rubella rash is often the first sign of illness that a parent notices. It can look like many other viral rashes, appearing as either pink or light red spots, which may merge to form evenly"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/mmr-vaccine.html",
+          "title": "Your Child's Vaccines: Measles, Mumps & Rubella (MMR) Vaccine | Nemours KidsHealth",
+          "relevance_score": 0.22623145580291748,
+          "content": "The U.S. has had recent outbreaks of mumps and measles. An outbreak is when a disease happens in greater numbers than expected in a particular area. During an outbreak, doctors may recommend a third vaccine dose for some people, in addition to vaccinating babies from 6 months of age. A dose of the measles vaccine also can help protect unvaccinated people from getting sick after exposure to measles if they get it within 3 days. If you have questions about vaccinating your family during an outbrea"
+        }
+      ],
+      "is_negative": false,
+      "faithfulness": 0.8333333333333334,
+      "answer_relevancy": 0.6088054155985141,
+      "context_utilization": 0.3333333333,
+      "elapsed_s": 2.757
+    },
+    {
+      "question": "¿Qué es la infección por RSV en bebés?",
+      "language": "Spanish",
+      "label": 1,
+      "reasoning": "El contexto proporciona suficientes evidencias sobre el RSV (Virus Respiratorio Sincitial) y sus efectos en los bebés. Las fuentes mencionan que el RSV es una causa común de enfermedades respiratorias en niños, especialmente en bebés menores de un año. Los síntomas incluyen fiebre, tos, congestión nasal, etc. También se menciona la importancia de llamar al médico si el niño desarrolla nuevos o altos niveles de fiebre, tiene dificultad para respirar, o muestra otros signos de complicación. Sin embargo, hay algunas lagunas en cuanto a la información sobre las pruebas y tratamientos específicos para RSV en bebés. Además, no se menciona explícitamente si el RSV es una infección pediátrica, pero dado que los artículos provienen de Nemours KidsHealth, podemos asumir que está relacionado con la salud infantil.",
+      "final_answer": "El RSV (Virus Respiratorio Sincitial) es una infección viral que causa enfermedades respiratorias en bebés. Los síntomas pueden incluir fiebre, tos, congestión nasal, y dificultad para respirar. Es importante llamar al médico si el niño desarrolla nuevos o altos niveles de fiebre, tiene dificultad para respirar, o muestra otros signos de complicación. La mayoría de los casos de RSV se resuelven solo con cuidados en casa, pero en algunos casos más graves puede ser necesario tratamiento hospitalario.",
+      "retrieved_docs": [
+        {
+          "source": "https://kidshealth.org/en/parents/rsv.html",
+          "title": "Respiratory Syncytial Virus (RSV) | Nemours KidsHealth",
+          "relevance_score": 0.987500786781311,
+          "content": "Respiratory Syncytial Virus (RSV)\nOverview\nWhat Is Respiratory Syncytial Virus (RSV)?\nRespiratory syncytial (sin-SISH-ul) virus (RSV) is a major cause of respiratory illness in children. The virus usually causes a common cold. But sometimes it infects the lungs and breathing passages and can cause breathing problems in babies and young children.\nSigns & Symptoms\nWhat Are the Signs & Symptoms of Respiratory Syncytial Virus (RSV)?\nKids with RSV might have cold symptoms, such as:\n- a stuffy or runn"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/flu-vs-cold.html",
+          "title": "Is It a Cold, the Flu, an RSV Infection, or COVID-19? | Nemours KidsHealth",
+          "relevance_score": 0.9072805643081665,
+          "content": "RSV Infection\nSymptoms\nRSV — respiratory syncytial (sin-SISH-ul) virus — is caused by the RSV virus and usually causes cold symptoms. But in some infants and young children, it can lead to a more serious infection, such as bronchiolitis or pneumonia. Those with an RSV infection might have fever, cough, wheezing, and trouble breathing. They might breathe very fast, grunt with the effort, or have retractions (when the skin between and below the ribs pulls in during breathing). They might feed poor"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/bronchiolitis.html",
+          "title": "Bronchiolitis | Nemours KidsHealth",
+          "relevance_score": 0.8940909504890442,
+          "content": "Call your health care provider if your child:\n- develops a new or high fever\n- has a cough or other symptoms that get worse\n- is wheezing (a whistling sound heard with breathing)\nGet medical care right away if your child:\n- has trouble breathing. This may look like:\n- fast, shallow breathing, when you see the belly moving up and down quickly\n- your child is working hard to get breaths in. You may see the areas below the ribs, between the ribs, and/or in the neck sinking in with breathing.\n- flar"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/bronchiolitis.html",
+          "title": "Bronchiolitis | Nemours KidsHealth",
+          "relevance_score": 0.8922678232192993,
+          "content": "Respiratory syncytial virus (RSV) is the most common cause of bronchiolitis. Sometimes, the common cold and the flu also can cause it.\nBronchiolitis:\n- most often affects infants and young children because their small airways can easily get blocked\n- is most common during the first 2 years of life, and especially among babies\n- is more common in premature babies, children with lung or heart problems, and kids with weak immune systems\nKids who are around secondhand smoke have a higher risk for br"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/rsv.html",
+          "title": "Respiratory Syncytial Virus (RSV) | Nemours KidsHealth",
+          "relevance_score": 0.7549675107002258,
+          "content": "In kids, other respiratory viruses such as flu and COVID-19 can cause symptoms similar to those from RSV. Talk to the doctor to make sure your child is up to date on recommended vaccines.\nHow Is Respiratory Syncytial Virus (RSV) Diagnosed?\nHealth care providers usually diagnose a respiratory virus by taking a medical history and doing an exam. In many kids, they don't need to distinguish RSV infection from a common cold.\nBut if a child has other health conditions or more serious symptoms, doctor"
+        }
+      ],
+      "is_negative": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.6636512332271632,
+      "context_utilization": 0.999999999975,
+      "elapsed_s": 3.33
+    },
+    {
+      "question": "O que é conjuntivite em crianças?",
+      "language": "Portuguese",
+      "label": 1,
+      "reasoning": "O contexto contém evidências suficientes sobre conjuntivite em crianças, incluindo as causas, sintomas e maneiras de prevenir a doença. As informações mais relevantes incluem que a conjuntivite é uma infecção ou inflamação do revestimento da córnea e da conjuntiva, e pode ser causada por bactérias, vírus ou alergias. Existem alguns pontos de incerteza sobre as medidas específicas para prevenir a doença em bebês recém-nascidos. A questão está dentro do escopo de saúde infantil.",
+      "final_answer": "A conjuntivite é uma infecção ou inflamação do revestimento da córnea e da conjuntiva, que pode ser causada por bactérias, vírus ou alergias. Os sintomas incluem vermelhidão, desconforto nos olhos, secreção e dor na área afetada. A doença é altamente contagiosa e pode ser transmitida por contato direto com os olhos de uma pessoa infectada.",
+      "retrieved_docs": [
+        {
+          "source": "https://kidshealth.org/en/parents/conjunctivitis.html",
+          "title": "Conjunctivitis (Pinkeye) In Kids | Nemours KidsHealth",
+          "relevance_score": 0.883115291595459,
+          "content": "Conjunctivitis (Pinkeye) In Kids\nWhat Is Pinkeye?\nThe eye infection conjunctivitis (kun-junk-tih-VY-tus) — often called pinkeye — is common in young kids. It's usually contagious, and breakouts can sweep through preschools and playgrounds. But even teens and adults can get pinkeye.\nPinkeye is an inflammation of the conjunctiva, the white part of the eye and the inner eyelids. It's a minor infection and although it might look bad, usually isn't serious.\nStill, if your child shows signs of pinkeye"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/conjunctivitis.html",
+          "title": "Conjunctivitis (Pinkeye) In Kids | Nemours KidsHealth",
+          "relevance_score": 0.07703627645969391,
+          "content": "What Are the Signs & Symptoms of Pinkeye?\nBesides the telltale red or pink color that gives pinkeye its name, eye discomfort is a common symptom. Kids might say that it feels like there's sand in the eye. Often, there's some discharge from the eye, and pain and swelling of the conjunctiva. Some kids have swollen eyelids or sensitivity to bright light. Pinkeye can affect one or both eyes.\nIn cases of allergic conjunctivitis, itchiness and watery eyes are common symptoms.\nIs Pinkeye Contagious?\nPi"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/conjunctivitis.html",
+          "title": "Conjunctivitis (Pinkeye) In Kids | Nemours KidsHealth",
+          "relevance_score": 0.019175104796886444,
+          "content": "Doctors usually recommend keeping kids with contagious conjunctivitis out of school, childcare, or summer camp for a short time.\nCan Pinkeye Be Prevented?\nInfectious conjunctivitis is highly contagious, so teach kids to wash their hands well and often with warm water and soap. They also should not share eye drops, tissues, eye makeup, washcloths, towels, or pillowcases.\nBe sure to wash your own hands well after touching an infected child's eyes, and throw away items like gauze or cotton balls af"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/conjunctivitis.html",
+          "title": "Conjunctivitis (Pinkeye) In Kids | Nemours KidsHealth",
+          "relevance_score": 0.011032160371541977,
+          "content": "Some kinds of pinkeye are noninfectious, such as:\n- allergic conjunctivitis, which happens more often in kids with other allergic conditions, like hay fever. Triggers include grass, ragweed pollen, animal dander, and dust mites.\n- irritant conjunctivitis, caused by anything that irritates the eyes, such as air pollution or chlorine in pools\nPinkeye in Newborns\nNewborns are at risk for pinkeye and can develop serious health problems if it's not treated. If a pregnant woman has an STD, during deli"
+        },
+        {
+          "source": "https://kidshealth.org/en/parents/conjunctivitis.html",
+          "title": "Conjunctivitis (Pinkeye) In Kids | Nemours KidsHealth",
+          "relevance_score": 0.00718700373545289,
+          "content": "If your child has allergic conjunctivitis, your doctor may prescribe anti-allergy medicine, either as pills, liquid, or eye drops.\nYou also can give acetaminophen or ibuprofen to relieve discomfort (check instructions for correct amount).\nHow Can Parents Help?\nUsing cool or warm compresses on the eyes may make your child more comfortable. Clean the edges of the infected eye carefully with warm water and gauze or cotton balls. This can also remove the crusts of dried discharge that make the eyeli"
+        }
+      ],
+      "is_negative": false,
+      "faithfulness": 0.7272727272727273,
+      "answer_relevancy": 0.4821351054828401,
+      "context_utilization": 0.999999999975,
+      "elapsed_s": 2.544
+    }
+  ]
+}

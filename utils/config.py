@@ -19,8 +19,10 @@ class GenConfig:
     # ── Model info ────────────────────────────────────────────────────────────
     model_name      = "llama3.1:8b"             # llama3.1:8b qwen3:8b gemma3:4b
     judge_name      = "qwen3:8b"                # LLM as a judge for Ragas
-    embedding_model = "BAAI/bge-large-en-v1.5"  # multilingual embedding model name ("BAAI/bge-m3", intfloat/multilingual-e5-small, BAAI/bge-small-en-v1.5)
-    re_rank_model   = "BAAI/bge-reranker-large" # re-rank model  ("BAAI/bge-reranker-v2-m3", BAAI/bge-reranker-base)
+    embedding_model = "BAAI/bge-large-en-v1.5"  # multilingual embedding model name 
+    # BAAI/bge-m3", BAAI/bge-small-en-v1.5 33.4M / base 109M / large 335M
+    re_rank_model   = "BAAI/bge-reranker-base"  # re-rank model  
+    # BAAI/bge-reranker-v2-m3, BAAI/bge-reranker-base 278M, large 560M
     temperature     = 0.3                       # temperature for the model
     ollama_url      = "https://yiyuan.tsc.uc3m.es"      # URL of the Ollama server
 
@@ -30,7 +32,7 @@ class GenConfig:
     retrieval_num   = 5             # number of chunks to finally retrieve
     max_ret_num     = 20            # min number of relevant chunks to retrieve for each query
     ret_threshold   = 0.45          # threshold to consider a chunk relevant (% of similarity)
-    emb_device      = 'cpu'         # "cuda" if is_available() else "cpu"
+    emb_device      = "cuda" if is_available() else "cpu"
 
     # ── Chat parameters ───────────────────────────────────────────────────────    
     no_info_patterns = [
