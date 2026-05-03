@@ -1,58 +1,370 @@
 [
   {
-    "source": "https://kidshealth.org/en/parents/impetigo.html",
-    "title": "Impetigo | Nemours KidsHealth",
-    "appearances": 4,
-    "avg_faithfulness": 1.0,
-    "avg_answer_relevancy": 0.8782,
-    "avg_context_utilization": 1.0
+    "source": "https://kidshealth.org/en/parents/norovirus.html",
+    "title": "Norovirus | Nemours KidsHealth",
+    "appearances": 22,
+    "avg_faithfulness": NaN,
+    "avg_answer_relevancy": 0.8833,
+    "avg_context_utilization": NaN
   },
   {
-    "source": "https://kidshealth.org/en/parents/staphylococcus.html",
-    "title": "Staph Infections | Nemours KidsHealth",
-    "appearances": 1,
-    "avg_faithfulness": 1.0,
-    "avg_answer_relevancy": 0.8782,
-    "avg_context_utilization": 1.0
+    "source": "https://kidshealth.org/en/parents/measles.html",
+    "title": "Measles (Rubeola) | Nemours KidsHealth",
+    "appearances": 8,
+    "avg_faithfulness": NaN,
+    "avg_answer_relevancy": 0.5789,
+    "avg_context_utilization": 0.9139
   },
   {
-    "source": "https://kidshealth.org/en/parents/mumps.html",
-    "title": "Mumps | Nemours KidsHealth",
+    "source": "https://kidshealth.org/en/parents/measles-keeping-family-safe.html",
+    "title": "Measles: What You Need to Know | Nemours KidsHealth",
+    "appearances": 8,
+    "avg_faithfulness": NaN,
+    "avg_answer_relevancy": 0.5789,
+    "avg_context_utilization": 0.9139
+  },
+  {
+    "source": "https://kidshealth.org/en/parents/german-measles.html",
+    "title": "Rubella (German Measles) | Nemours KidsHealth",
+    "appearances": 20,
+    "avg_faithfulness": NaN,
+    "avg_answer_relevancy": 0.5636,
+    "avg_context_utilization": 0.9828
+  },
+  {
+    "source": "https://kidshealth.org/en/parents/diarrhea.html",
+    "title": "Diarrhea | Nemours KidsHealth",
+    "appearances": 9,
+    "avg_faithfulness": 1.0,
+    "avg_answer_relevancy": 0.8359,
+    "avg_context_utilization": 0.9181
+  },
+  {
+    "source": "https://kidshealth.org/en/parents/gastroenteritis.html",
+    "title": "Gastroenteritis (Stomach Flu) in Children | Nemours KidsHealth",
     "appearances": 3,
     "avg_faithfulness": 1.0,
-    "avg_answer_relevancy": 0.5215,
+    "avg_answer_relevancy": 0.8359,
+    "avg_context_utilization": 0.9181
+  },
+  {
+    "source": "https://kidshealth.org/en/parents/eczema-atopic-dermatitis.html",
+    "title": "Eczema (Atopic Dermatitis) | Nemours KidsHealth",
+    "appearances": 3,
+    "avg_faithfulness": 0.9583,
+    "avg_answer_relevancy": 0.464,
     "avg_context_utilization": 1.0
   },
   {
-    "source": "https://kidshealth.org/en/parents/adenovirus.html",
-    "title": "Adenovirus Infections | Nemours KidsHealth",
-    "appearances": 2,
-    "avg_faithfulness": 1.0,
-    "avg_answer_relevancy": 0.7499,
-    "avg_context_utilization": 0.9333
+    "source": "https://kidshealth.org/en/parents/rotavirus.html",
+    "title": "Rotavirus | Nemours KidsHealth",
+    "appearances": 23,
+    "avg_faithfulness": NaN,
+    "avg_answer_relevancy": 0.7573,
+    "avg_context_utilization": NaN
   },
   {
-    "source": "https://kidshealth.org/en/parents/hives.html",
-    "title": "Hives (Urticaria) | Nemours KidsHealth",
+    "source": "https://kidshealth.org/en/parents/strep-throat.html",
+    "title": "Strep Throat in Kids & Teens | Nemours KidsHealth",
+    "appearances": 8,
+    "avg_faithfulness": 1.0,
+    "avg_answer_relevancy": 0.9359,
+    "avg_context_utilization": 1.0
+  },
+  {
+    "source": "https://kidshealth.org/en/parents/labtest11.html",
+    "title": "Strep Test: Throat Culture | Nemours KidsHealth",
+    "appearances": 2,
+    "avg_faithfulness": 1.0,
+    "avg_answer_relevancy": 0.9359,
+    "avg_context_utilization": 1.0
+  },
+  {
+    "source": "https://kidshealth.org/en/parents/mmr-vaccine.html",
+    "title": "Your Child's Vaccines: Measles, Mumps & Rubella (MMR) Vaccine | Nemours KidsHealth",
+    "appearances": 4,
+    "avg_faithfulness": NaN,
+    "avg_answer_relevancy": 0.5598,
+    "avg_context_utilization": 1.0
+  },
+  {
+    "source": "https://kidshealth.org/en/parents/meningitis.html",
+    "title": "Meningitis in Kids | Nemours KidsHealth",
+    "appearances": 5,
+    "avg_faithfulness": 1.0,
+    "avg_answer_relevancy": 0.8726,
+    "avg_context_utilization": 0.8044
+  },
+  {
+    "source": "https://kidshealth.org/en/parents/ear-infections-swimming.html",
+    "title": "Can I Prevent Ear Infections When My Child Swims? | Nemours KidsHealth",
     "appearances": 1,
     "avg_faithfulness": 1.0,
-    "avg_answer_relevancy": 0.5215,
+    "avg_answer_relevancy": 0.9815,
+    "avg_context_utilization": 1.0
+  },
+  {
+    "source": "https://kidshealth.org/en/parents/hib-vaccine.html",
+    "title": "Hib Vaccine for Kids | Nemours KidsHealth",
+    "appearances": 1,
+    "avg_faithfulness": 1.0,
+    "avg_answer_relevancy": 0.8454,
+    "avg_context_utilization": 0.7556
+  },
+  {
+    "source": "https://kidshealth.org/en/parents/impetigo.html",
+    "title": "Impetigo | Nemours KidsHealth",
+    "appearances": 20,
+    "avg_faithfulness": 0.9667,
+    "avg_answer_relevancy": 0.7419,
+    "avg_context_utilization": 0.9667
+  },
+  {
+    "source": "https://kidshealth.org/en/parents/scabies.html",
+    "title": "Scabies | Nemours KidsHealth",
+    "appearances": 11,
+    "avg_faithfulness": 0.9457,
+    "avg_answer_relevancy": 0.5264,
+    "avg_context_utilization": 1.0
+  },
+  {
+    "source": "https://kidshealth.org/en/parents/swimmer-ear.html",
+    "title": "Swimmer's Ear (Otitis Externa) | Nemours KidsHealth",
+    "appearances": 4,
+    "avg_faithfulness": 0.9416,
+    "avg_answer_relevancy": 0.8541,
+    "avg_context_utilization": 0.7222
+  },
+  {
+    "source": "https://kidshealth.org/en/parents/conjunctivitis.html",
+    "title": "Conjunctivitis (Pinkeye) In Kids | Nemours KidsHealth",
+    "appearances": 16,
+    "avg_faithfulness": 0.9375,
+    "avg_answer_relevancy": 0.5722,
+    "avg_context_utilization": 0.9792
+  },
+  {
+    "source": "https://kidshealth.org/en/parents/vaginitis.html",
+    "title": "Vaginitis in Children | Nemours KidsHealth",
+    "appearances": 4,
+    "avg_faithfulness": 0.9375,
+    "avg_answer_relevancy": 0.5722,
+    "avg_context_utilization": 0.9792
+  },
+  {
+    "source": "https://kidshealth.org/en/parents/otitis-media.html",
+    "title": "Middle Ear Infections (Otitis Media) | Nemours KidsHealth",
+    "appearances": 11,
+    "avg_faithfulness": 0.9362,
+    "avg_answer_relevancy": 0.8102,
+    "avg_context_utilization": 0.6742
+  },
+  {
+    "source": "https://kidshealth.org/en/parents/pneumonia.html",
+    "title": "Pneumonia in Kids | Nemours KidsHealth",
+    "appearances": 10,
+    "avg_faithfulness": 0.936,
+    "avg_answer_relevancy": 0.8842,
+    "avg_context_utilization": 0.8875
+  },
+  {
+    "source": "https://kidshealth.org/en/parents/pneumomediastinum.html",
+    "title": "Pneumomediastinum | Nemours KidsHealth",
+    "appearances": 5,
+    "avg_faithfulness": 0.936,
+    "avg_answer_relevancy": 0.8842,
+    "avg_context_utilization": 0.8875
+  },
+  {
+    "source": "https://kidshealth.org/en/parents/walking-pneumonia.html",
+    "title": "Walking Pneumonia in Kids: Signs, Diagnosis & Treatment | Nemours KidsHealth",
+    "appearances": 10,
+    "avg_faithfulness": 0.936,
+    "avg_answer_relevancy": 0.8842,
+    "avg_context_utilization": 0.8875
+  },
+  {
+    "source": "https://kidshealth.org/en/parents/rsv.html",
+    "title": "Respiratory Syncytial Virus (RSV) | Nemours KidsHealth",
+    "appearances": 13,
+    "avg_faithfulness": 0.9284,
+    "avg_answer_relevancy": 0.7612,
     "avg_context_utilization": 1.0
   },
   {
     "source": "https://kidshealth.org/en/parents/chicken-pox.html",
     "title": "Chickenpox (Varicella) | Nemours KidsHealth",
-    "appearances": 3,
-    "avg_faithfulness": 1.0,
-    "avg_answer_relevancy": 0.9784,
-    "avg_context_utilization": 0.8667
+    "appearances": 15,
+    "avg_faithfulness": 0.9247,
+    "avg_answer_relevancy": 0.8166,
+    "avg_context_utilization": 0.8264
   },
   {
     "source": "https://kidshealth.org/en/parents/chickenpox-sheet.html",
     "title": "Chickenpox: Treatment & Care | Nemours KidsHealth",
+    "appearances": 5,
+    "avg_faithfulness": 0.9247,
+    "avg_answer_relevancy": 0.8166,
+    "avg_context_utilization": 0.8264
+  },
+  {
+    "source": "https://kidshealth.org/en/parents/ear-infections.html",
+    "title": "Ear Tube Surgery | Nemours KidsHealth",
+    "appearances": 3,
+    "avg_faithfulness": 0.9221,
+    "avg_answer_relevancy": 0.9301,
+    "avg_context_utilization": 0.713
+  },
+  {
+    "source": "https://kidshealth.org/en/parents/flu-vs-cold.html",
+    "title": "Is It a Cold, the Flu, an RSV Infection, or COVID-19? | Nemours KidsHealth",
+    "appearances": 9,
+    "avg_faithfulness": 0.9178,
+    "avg_answer_relevancy": 0.7624,
+    "avg_context_utilization": 1.0
+  },
+  {
+    "source": "https://kidshealth.org/en/parents/scarlet-fever.html",
+    "title": "Scarlet Fever | Nemours KidsHealth",
+    "appearances": 16,
+    "avg_faithfulness": 0.9167,
+    "avg_answer_relevancy": 0.6351,
+    "avg_context_utilization": 1.0
+  },
+  {
+    "source": "https://kidshealth.org/en/parents/fever.html",
+    "title": "Fever (High Temperature) in Children | Nemours KidsHealth",
+    "appearances": 4,
+    "avg_faithfulness": 0.9167,
+    "avg_answer_relevancy": 0.6351,
+    "avg_context_utilization": 1.0
+  },
+  {
+    "source": "https://kidshealth.org/en/parents/bronchiolitis.html",
+    "title": "Bronchiolitis | Nemours KidsHealth",
+    "appearances": 23,
+    "avg_faithfulness": 0.9118,
+    "avg_answer_relevancy": 0.7631,
+    "avg_context_utilization": 1.0
+  },
+  {
+    "source": "https://kidshealth.org/en/parents/syphilis.html",
+    "title": "Syphilis | Nemours KidsHealth",
     "appearances": 1,
-    "avg_faithfulness": 1.0,
-    "avg_answer_relevancy": 0.9784,
-    "avg_context_utilization": 0.8667
+    "avg_faithfulness": 0.8889,
+    "avg_answer_relevancy": 0.8069,
+    "avg_context_utilization": 1.0
+  },
+  {
+    "source": "https://kidshealth.org/en/parents/mrsa.html",
+    "title": "MRSA | Nemours KidsHealth",
+    "appearances": 1,
+    "avg_faithfulness": 0.8889,
+    "avg_answer_relevancy": 0.8069,
+    "avg_context_utilization": 1.0
+  },
+  {
+    "source": "https://kidshealth.org/en/parents/staphylococcus.html",
+    "title": "Staph Infections | Nemours KidsHealth",
+    "appearances": 12,
+    "avg_faithfulness": 0.8831,
+    "avg_answer_relevancy": 0.6154,
+    "avg_context_utilization": 0.9375
+  },
+  {
+    "source": "https://kidshealth.org/en/parents/adenovirus.html",
+    "title": "Adenovirus Infections | Nemours KidsHealth",
+    "appearances": 11,
+    "avg_faithfulness": 0.8466,
+    "avg_answer_relevancy": 0.8118,
+    "avg_context_utilization": 0.7999
+  },
+  {
+    "source": "https://kidshealth.org/en/parents/rotavirus-vaccine.html",
+    "title": "Your Child's Vaccines: Rotavirus Vaccine (RV) | Nemours KidsHealth",
+    "appearances": 4,
+    "avg_faithfulness": 0.8333,
+    "avg_answer_relevancy": 0.7381,
+    "avg_context_utilization": 0.9097
+  },
+  {
+    "source": "https://kidshealth.org/en/parents/head-lice.html",
+    "title": "Head Lice | Nemours KidsHealth",
+    "appearances": 18,
+    "avg_faithfulness": 0.7704,
+    "avg_answer_relevancy": 0.6757,
+    "avg_context_utilization": 0.7845
+  },
+  {
+    "source": "https://kidshealth.org/en/parents/pet-infections.html",
+    "title": "Infections That Pets Can Spread | Nemours KidsHealth",
+    "appearances": 1,
+    "avg_faithfulness": 0.75,
+    "avg_answer_relevancy": 0.0,
+    "avg_context_utilization": 1.0
+  },
+  {
+    "source": "https://kidshealth.org/en/parents/head-lice-sheet.html",
+    "title": "Head Lice: First Aid | Nemours KidsHealth",
+    "appearances": 2,
+    "avg_faithfulness": 0.7333,
+    "avg_answer_relevancy": 0.7804,
+    "avg_context_utilization": 0.825
+  },
+  {
+    "source": "https://kidshealth.org/en/parents/ringworm-sheet.html",
+    "title": "Ringworm: What to Do | Nemours KidsHealth",
+    "appearances": 4,
+    "avg_faithfulness": 0.7083,
+    "avg_answer_relevancy": 0.2835,
+    "avg_context_utilization": 0.9333
+  },
+  {
+    "source": "https://kidshealth.org/en/parents/pityriasis-rosea.html",
+    "title": "Pityriasis Rosea | Nemours KidsHealth",
+    "appearances": 2,
+    "avg_faithfulness": 0.7083,
+    "avg_answer_relevancy": 0.2835,
+    "avg_context_utilization": 0.9333
+  },
+  {
+    "source": "https://kidshealth.org/en/parents/cellulitis.html",
+    "title": "Cellulitis | Nemours KidsHealth",
+    "appearances": 10,
+    "avg_faithfulness": 0.7,
+    "avg_answer_relevancy": 0.5251,
+    "avg_context_utilization": 0.825
+  },
+  {
+    "source": "https://kidshealth.org/en/parents/fungal-ringworm.html",
+    "title": "Ringworm | Nemours KidsHealth",
+    "appearances": 3,
+    "avg_faithfulness": 0.6944,
+    "avg_answer_relevancy": 0.378,
+    "avg_context_utilization": 0.9111
+  },
+  {
+    "source": "https://kidshealth.org/en/parents/skincare-products.html",
+    "title": "Is It OK for My Child to Use Skin Care Products? | Nemours KidsHealth",
+    "appearances": 2,
+    "avg_faithfulness": 0.5,
+    "avg_answer_relevancy": 0.3264,
+    "avg_context_utilization": 0.7083
+  },
+  {
+    "source": "https://kidshealth.org/en/parents/mumps.html",
+    "title": "Mumps | Nemours KidsHealth",
+    "appearances": 6,
+    "avg_faithfulness": 0.4,
+    "avg_answer_relevancy": 0.6582,
+    "avg_context_utilization": 0.5
+  },
+  {
+    "source": "https://kidshealth.org/en/parents/hives.html",
+    "title": "Hives (Urticaria) | Nemours KidsHealth",
+    "appearances": 2,
+    "avg_faithfulness": 0.4,
+    "avg_answer_relevancy": 0.6582,
+    "avg_context_utilization": 0.5
   }
 ]

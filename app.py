@@ -1,4 +1,4 @@
-import sys, os, json, time
+import sys, os, time, base64
 from pathlib import Path
 
 # Fix path to import utils
@@ -23,12 +23,157 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
+def get_base64_of_bin_file(bin_file):
+    with open(bin_file, 'rb') as f:
+        data = f.read()
+    return base64.b64encode(data).decode()
+img_base64 = get_base64_of_bin_file(cfg.root_dir  / "utils" / "wallpaper" / "small_baby_wallpaper.png")
+
+
 # ── Global CSS for Styling ──
-st.markdown("""
+# st.markdown(f"""
+# <style>
+#     html, body, [class*="st-"] {{
+#         font-size: 18px !important; 
+#     }}
+#     [data-testid="stAppViewContainer"] {{
+#         background-image: url("data:image/png;base64,{img_base64}");
+#         background-size: cover;
+#         background-attachment: fixed;
+#     }}
+#     .welcome-hero {{ text-align: center; padding: 2rem 0; background-color: rgba(248, 249, 250, 0.85); border-radius: 15px; margin-bottom: 2rem; }}
+#     .hero-icon {{ font-size: 4rem; margin-bottom: 1rem; }}
+#     .related-header {{ margin-top: 20px; font-weight: bold; color: #555; font-size: 1rem; }}
+# </style>
+# """, unsafe_allow_html=True)
+
+st.markdown(f"""
 <style>
-    .welcome-hero { text-align: center; padding: 2rem 0; background-color: #f8f9fa; border-radius: 15px; margin-bottom: 2rem; }
-    .hero-icon { font-size: 4rem; margin-bottom: 1rem; }
-    .related-header { margin-top: 20px; font-weight: bold; color: #555; font-size: 0.9rem; }
+
+    /* ───────── BACKGROUND ───────── */
+    [data-testid="stAppViewContainer"] {{
+        background-image: url("data:image/png;base64,{img_base64}");
+        background-size: cover;
+        background-attachment: fixed;
+    }}
+
+    /* ───────── Global text ───────── */
+    html, body {{
+        font-size: 20px !important;
+    }}
+
+    p {{
+        font-size: 1.1rem !important;
+    }}
+
+    /* ───────── HERO ───────── */
+    .welcome-hero {{
+        text-align: center;
+        padding: 3.5rem 2rem;
+        background-color: rgba(255, 255, 255, 0.95);
+        border-radius: 20px;
+        margin: 2rem auto;
+        max-width: 750px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+        /* ✨ microanimación de entrada */
+        animation: fadeInUp 0.6s ease-out;
+    }}
+
+    /* Icon animation */
+    .hero-icon {{
+        font-size: 7rem;
+        margin-bottom: 0.5rem;
+        line-height: 1;
+
+        animation: float 3s ease-in-out infinite;
+    }}
+
+    /* Title */
+    .hero-title {{
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 0.8rem;
+        letter-spacing: 1px;
+
+        transition: transform 0.2s ease;
+    }}
+
+    .hero-title:hover {{
+        transform: scale(1.03);
+    }}
+
+    /* SUBTÍTULO */
+    .hero-subtitle {{
+        font-size: 1.8rem;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+    }}
+
+    /* DESCRIPCIÓN */
+    .hero-description {{
+        font-size: 1.2rem;
+        color: #555;
+    }}
+
+    /* ───────── CHAT CARDS ───────── */
+    [data-testid="stChatMessage"] {{
+        background-color: white !important;
+        border-radius: 15px !important;
+        padding: 1rem !important;
+        margin-bottom: 12px !important;
+        font-size: 1.1rem !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }}
+
+    [data-testid="stChatMessage"]:hover {{
+        transform: translateY(-2px);
+        box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+    }}
+
+    /* ───────── INPUT ───────── */
+    textarea {{
+        font-size: 1.1rem !important;
+        background-color: white !important;
+        border-radius: 10px !important;
+    }}
+
+    /* ───────── Buttons ───────── */
+    button {{
+        font-size: 1rem !important;
+        border-radius: 10px !important;
+        padding: 0.6rem 1rem !important;
+
+        transition: transform 0.15s ease;
+    }}
+
+    button:hover {{
+        transform: scale(1.02);
+    }}
+
+    /* ───────── Animations ───────── */
+    @keyframes fadeInUp {{
+        from {{
+            opacity: 0;
+            transform: translateY(20px);
+        }}
+        to {{
+            opacity: 1;
+            transform: translateY(0);
+        }}
+    }}
+
+    @keyframes float {{
+        0%, 100% {{
+            transform: translateY(0px);
+        }}
+        50% {{
+            transform: translateY(-10px);
+        }}
+    }}
+
 </style>
 """, unsafe_allow_html=True)
 
@@ -94,10 +239,14 @@ def render_message(msg_idx, role, content, reasoning="", docs=None, related_qs=N
             show_analysis = st.toggle("Show Source Analysis", key=f"analysis_toggle_{msg_idx}")
             if show_analysis:
                 st.markdown("---")
-                with st.spinner("Summarizing context..."):
-                    lang = bot._detect_language(content)
-                    st.markdown(f"**Context Summary:**\n{bot.summarize_docs(docs, lang)}")
+                if "summary" not in st.session_state.messages[msg_idx]:
+                    with st.spinner("Summarizing context..."):
+                        lang = bot._detect_language(content)
+                        # Save it in the session_state for future re-runs
+                        st.session_state.messages[msg_idx]["summary"] = bot.summarize_docs(docs, lang)
                 
+                # Display the summary directly from the session_state
+                st.markdown(f"**Context Summary:**\n{st.session_state.messages[msg_idx]['summary']}")
                 st.markdown("**Retrieved Documents & Relevance:**")
                 for i, doc in enumerate(docs):
                     score = doc.metadata.get("relevance_score", 0.0)
