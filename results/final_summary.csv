@@ -1,0 +1,2 @@
+label,n_total,TP,FP,TN,FN,accuracy,precision,recall,f1,document_coverage,hallucination_rate,avg_response_time,avg_docs_retrieved,faithfulness,answer_relevancy,context_utilization,rag_system_quality
+Best Config (Full Dataset),70,40,0,29,1,0.986,1.0,0.976,0.988,0.976,0.0,10.0,2.93,0.88,0.69,0.93,0.833
