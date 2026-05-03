@@ -5,15 +5,15 @@ baby_venv/
 .env
 
 # Database and database files
-chroma_db/
-chroma_db/*
+chroma_db_*/
+# chroma_db/*
 # data/
 
 # Python and VSCode
 */__pycache__/
 __pycache__/
 .vscode/
-reports/
+# reports/
 
 # my enviroment
 .gitignore

@@ -342,7 +342,7 @@ class RAGChat:
                     prev_conversation += f"Parent: {q}\nAI: {a}\n\n"
             context = f"Previous conversation: {prev_conversation}\n\n" + context
 
-        # 3. Build CoT prompt
+        # 3. Build Reasoning prompt
         final_prompt = cfg.prompt_template.format(
             lang=lang,
             context=context,
