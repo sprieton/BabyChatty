@@ -20,7 +20,7 @@ class GenConfig:
     model_name      = "llama3.1:8b"             # llama3.1:8b qwen3:8b gemma3:4b
     judge_name      = "qwen3:8b"                # LLM as a judge for Ragas
     embedding_model = "BAAI/bge-large-en-v1.5"  # multilingual embedding model name ("BAAI/bge-m3", intfloat/multilingual-e5-small, BAAI/bge-small-en-v1.5)
-    re_rank_model   = "BAAI/bge-reranker-large" # re-rank model  ("BAAI/bge-reranker-v2-m3", BAAI/bge-reranker-base)
+    re_rank_model   = "BAAI/bge-reranker-base" # re-rank model  ("BAAI/bge-reranker-v2-m3", BAAI/bge-reranker-large)
     temperature     = 0.3                       # temperature for the model
     ollama_url      = "https://yiyuan.tsc.uc3m.es"      # URL of the Ollama server
 
